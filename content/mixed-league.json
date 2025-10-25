@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "title": "The South's Premier\nMixed Netball League",
+    "subtitle": "Join Momentum Mixed – where competitive netball meets an inclusive, social atmosphere. Open to all skill levels, genders, and backgrounds.",
+    "ctaText": "Book Your Place",
+    "ctaLink": "#register",
+    "badge": "500+ Active Players"
+  },
+  "about": {
+    "title": "What is Momentum Mixed?",
+    "description": "Momentum Mixed is Hampshire's leading mixed netball league, bringing together players of all genders, ages, and abilities for competitive yet welcoming matches. Whether you're a seasoned player or completely new to netball, our league offers flexible playing arrangements, multiple venues, and a vibrant community."
+  },
+  "features": [
+    {
+      "number": "01",
+      "title": "Flexible Team Options",
+      "description": "Play as a team or join individually – we'll help you find teammates. Perfect for mixed-gender teams, friends wanting to try something new, or solo players looking to meet people."
+    },
+    {
+      "number": "02",
+      "title": "Multiple Hampshire Venues",
+      "description": "Convenient locations across Hampshire and surrounding areas. Evening and weekend sessions fit around your schedule. Indoor courts ensure year-round play regardless of weather."
+    },
+    {
+      "number": "03",
+      "title": "All Abilities Welcome",
+      "description": "From beginners learning the basics to experienced league players. Our friendly approach means everyone gets court time and support. Skill levels are accommodated across divisions."
+    },
+    {
+      "number": "04",
+      "title": "Competitive Yet Social",
+      "description": "Serious netball with a welcoming atmosphere. Competitive matches balanced with social activities, end-of-season celebrations, and Players of the Season awards."
+    }
+  ],
+  "howItWorks": {
+    "title": "How Momentum Mixed Works",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Book Your Place",
+        "description": "Register your interest online or book through our booking system. Tell us your location, availability, and experience level."
+      },
+      {
+        "step": "2",
+        "title": "Get Started",
+        "description": "Arrive at your chosen venue on match day. We provide bibs, balls, and court hire. Just bring appropriate sports kit and indoor trainers."
+      },
+      {
+        "step": "3",
+        "title": "Play & Compete",
+        "description": "Weekly matches throughout the season. Results are tracked, and you can see league standings and player statistics online."
+      },
+      {
+        "step": "4",
+        "title": "Join the Community",
+        "description": "Connect with other players, attend social events, and be part of Hampshire's most welcoming netball community."
+      }
+    ]
+  },
+  "stats": {
+    "title": "Why Momentum?",
+    "subtitle": "Join Hampshire's fastest-growing netball community",
+    "stats": [
+      {
+        "value": "500",
+        "suffix": "+",
+        "label": "Active Players"
+      },
+      {
+        "value": "40",
+        "suffix": "+",
+        "label": "Weekly Sessions"
+      },
+      {
+        "value": "8",
+        "label": "Venues Across the South"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What is Momentum Mixed Netball?",
+        "answer": "Momentum Mixed is our mixed-gender netball league open to all players regardless of gender identity. Teams compete in friendly yet competitive matches across multiple divisions, accommodating all skill levels from beginners to experienced players."
+      },
+      {
+        "question": "I've never played netball before – can I join?",
+        "answer": "Absolutely! Momentum welcomes complete beginners. Our friendly environment and experienced players help newcomers learn the game. Many of our current players started with us having never picked up a netball before."
+      },
+      {
+        "question": "How do I book and how much does it cost?",
+        "answer": "Booking is easy through our online system at momentumnetball.co.uk or mixed-league.momentumnetball.co.uk. Prices vary by venue and session type (team booking vs individual), typically ranging from £5-8 per person per match. All fees cover court hire, equipment, and organisation."
+      },
+      {
+        "question": "Where are the sessions held?",
+        "answer": "We operate across multiple Hampshire locations. Current venues include indoor sports halls and netball facilities in and around Hampshire. Specific venues are listed when you book, and we'll match you with the most convenient location."
+      },
+      {
+        "question": "Do I need to bring a team or can I come alone?",
+        "answer": "Both options work perfectly! Individual players are welcome – we help arrange teams or you can join existing teams. Many friendships form through Momentum as individual players meet and form regular teams together."
+      },
+      {
+        "question": "What kit do I need?",
+        "answer": "Comfortable sports clothing and non-marking indoor court shoes (trainers). We provide bibs and match balls. Optional extras include proper netball trainers and protective eyewear if you wear glasses."
+      },
+      {
+        "question": "When are matches played?",
+        "answer": "Sessions run throughout the week – evenings during the week and some weekend sessions. Check our booking system for current availability at each venue. Each session typically lasts around 1 hour."
+      },
+      {
+        "question": "Is there anything else I should know?",
+        "answer": "We follow a Code of Conduct ensuring all players are treated with respect. Safety is paramount – indoor courts minimise injury risk. All abilities are welcome, and we celebrate improvement and teamwork over just winning. Check out our Players of the Season awards on the main website!"
+      }
+    ]
+  }
+}
+
