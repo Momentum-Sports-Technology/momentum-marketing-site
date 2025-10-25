@@ -30,7 +30,7 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-black/10 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span
-              className={`font-bold text-2xl md:text-3xl transition-colors font-black-mango ${
+              className={`font-bold text-1xl md:text-2xl transition-colors font-black-mango ${
                 isScrolled ? "text-gray-900" : "text-white"
               }`}
             >

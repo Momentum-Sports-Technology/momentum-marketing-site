@@ -18,6 +18,7 @@ Netball League"
         ctaText="Book a Session"
         ctaLink="#leagues"
         badge="500+ Active Players"
+        image="/images/momentum-womens.jpg"
       />
 
       <section id="leagues" className="py-24 bg-gray-50">
