@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_BOOKING_URL: ${NEXT_PUBLIC_BOOKING_URL:-https://booking.momentumnetball.co.uk}
+        NEXT_PUBLIC_MST_URL: ${NEXT_PUBLIC_MST_URL:-https://momentumsportstechnology.com}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://momentumnetball.co.uk}
+    container_name: momentum-marketing-prod
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      CONTENT_DIR: /app/content
+      DATA_DIR: /app/data
+    ports:
+      - "127.0.0.1:3120:3000"
+    volumes:
+      - momentum_marketing_content:/app/content
+      - momentum_marketing_data:/app/data
+
+volumes:
+  momentum_marketing_content:
+  momentum_marketing_data:
