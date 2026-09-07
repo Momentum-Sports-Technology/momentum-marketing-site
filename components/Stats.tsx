@@ -53,4 +53,3 @@ export default function Stats({ title, subtitle, stats }: StatsProps) {
     </section>
   );
 }
-

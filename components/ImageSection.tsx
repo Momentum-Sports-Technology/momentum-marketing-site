@@ -19,13 +19,10 @@ export default function ImageSection() {
           {/* Content */}
           <div>
             <h2 className="text-4xl font-bold mb-4">Your Content Here</h2>
-            <p className="text-gray-600 text-lg">
-              Example of how to use images in your site.
-            </p>
+            <p className="text-gray-600 text-lg">Example of how to use images in your site.</p>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

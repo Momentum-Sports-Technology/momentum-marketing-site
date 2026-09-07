@@ -140,4 +140,3 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
     </section>
   );
 }
-

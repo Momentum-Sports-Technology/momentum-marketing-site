@@ -59,4 +59,3 @@ export default function Features({ title, subtitle, features }: FeaturesProps) {
     </section>
   );
 }
-
