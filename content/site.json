@@ -27,8 +27,8 @@
       "tagline": "Competitive weekly matches",
       "description": "Our women's leagues run in divisions so every team plays at its level. We're constantly expanding, with new netball centres opening regularly to bring the game closer to you.",
       "price": "Team subs from £400 per season, including hall hire, insurance, affiliated umpires, 40-minute weekly matches, and end-of-season prizes.",
-      "ctaText": "Register a team",
-      "ctaHref": "/events/womens-league",
+      "ctaText": "Enquire about a team place",
+      "ctaHref": "/#contact",
       "featured": true
     },
     {
@@ -36,25 +36,41 @@
       "name": "Mixed League",
       "tagline": "High energy, all genders",
       "description": "Our mixed matches bring high energy, fast-paced action, and an unbeatable adrenaline rush. Join our mixed training sessions to learn new skills, improve your technique, and take your game to the next level.",
-      "ctaText": "Find out more",
-      "ctaHref": "/mixed",
+      "ctaText": "Book mixed netball",
+      "ctaHref": "/events/mixed-netball-john-hanson",
       "featured": true
+    },
+    {
+      "slug": "pay-to-play",
+      "name": "Pay to Play",
+      "tagline": "No commitment, same great fun",
+      "description": "Play a league match for Thunder without joining a team. Book week by week, no commitment.",
+      "ctaText": "Book a match slot",
+      "ctaHref": "/events/thunder-pay-to-play"
+    },
+    {
+      "slug": "netball-hour",
+      "name": "Netball Hour",
+      "tagline": "Monday evenings, Andover",
+      "description": "An hour of netball for experienced players and refreshers. Book a single week or a block.",
+      "ctaText": "Book Netball Hour",
+      "ctaHref": "/events/netball-hour-andover"
+    },
+    {
+      "slug": "walking-netball",
+      "name": "Walking Netball",
+      "tagline": "Tuesday afternoons, St Mary Bourne",
+      "description": "A gentler, walking-pace game at St Mary Bourne Village Hall. Your first session is free.",
+      "ctaText": "Book Walking Netball",
+      "ctaHref": "/events/walking-netball-smb"
     },
     {
       "slug": "coaching",
       "name": "Coaching",
       "tagline": "England Netball approved coaches",
       "description": "Are you part of a team looking to gain that competitive edge? Sign up for our coaching sessions and let us help you sharpen your skills, refine your strategy, and elevate your performance.",
-      "ctaText": "Book coaching",
-      "ctaHref": "/events/coaching"
-    },
-    {
-      "slug": "pay-to-play",
-      "name": "Pay to Play",
-      "tagline": "No commitment, same great fun",
-      "description": "Turn up and play on an ad-hoc basis. Register your interest in our pay-to-play sessions and join in whenever suits you.",
-      "ctaText": "See sessions",
-      "ctaHref": "/events/pay-to-play"
+      "ctaText": "Book training",
+      "ctaHref": "/events/training-match-play"
     },
     {
       "slug": "new-to-netball",
@@ -74,10 +90,25 @@
     }
   ],
   "stats": [
-    { "value": "500", "suffix": "+", "label": "Active Players" },
-    { "value": "40", "suffix": "+", "label": "Weekly Matches" },
-    { "value": "3", "label": "Divisions" },
-    { "value": "30", "suffix": "+", "label": "Years of Experience" }
+    {
+      "value": "500",
+      "suffix": "+",
+      "label": "Active Players"
+    },
+    {
+      "value": "40",
+      "suffix": "+",
+      "label": "Weekly Matches"
+    },
+    {
+      "value": "3",
+      "label": "Divisions"
+    },
+    {
+      "value": "30",
+      "suffix": "+",
+      "label": "Years of Experience"
+    }
   ],
   "fixtures": {
     "title": "Results & Upcoming Fixtures",
