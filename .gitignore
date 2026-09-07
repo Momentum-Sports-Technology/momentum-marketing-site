@@ -34,9 +34,10 @@ yarn-error.log*
 next-env.d.ts
 
 # Data
-/data/registrations/
+/data/
 
 # IDE
 .vscode/
 .idea/
 
+.gitnexus

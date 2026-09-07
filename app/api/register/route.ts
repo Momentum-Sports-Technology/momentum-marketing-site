@@ -1,58 +1,42 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { z } from "zod";
+import { ADMIN_EMAIL, escapeForEmail, sendEmail } from "@/lib/email";
+import { appendSubmission } from "@/lib/submissions";
 
-interface RegistrationData {
-  name: string;
-  email: string;
-  phone: string;
-  experience: string;
-  message: string;
-  timestamp: string;
-}
+const registrationSchema = z.object({
+  name: z.string().trim().min(1).max(120),
+  email: z.string().trim().email().max(200),
+  phone: z.string().trim().min(1).max(40),
+  experience: z.enum(["beginner", "intermediate", "advanced"]).default("beginner"),
+  message: z.string().trim().max(4000).optional().default(""),
+  website: z.string().max(0).optional().default(""),
+});
 
 export async function POST(request: NextRequest) {
+  const parsed = registrationSchema.safeParse(await request.json().catch(() => ({})));
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+  const data = parsed.data;
+
   try {
-    const body = await request.json();
-
-    // Basic validation
-    if (!body.name || !body.email || !body.phone) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-    }
-
-    // Create registrations directory if it doesn't exist
-    const registrationsDir = path.join(process.cwd(), "data", "registrations");
-    if (!fs.existsSync(registrationsDir)) {
-      fs.mkdirSync(registrationsDir, { recursive: true });
-    }
-
-    // Save registration data
-    const registration: RegistrationData = {
-      ...body,
-      timestamp: new Date().toISOString(),
-    };
-
-    const filename = `registration-${Date.now()}.json`;
-    const filepath = path.join(registrationsDir, filename);
-
-    fs.writeFileSync(filepath, JSON.stringify(registration, null, 2));
-
-    // TODO: In production, send email notification here
-    // Example with Resend:
-    // if (process.env.RESEND_API_KEY) {
-    //   const resend = new Resend(process.env.RESEND_API_KEY);
-    //   await resend.emails.send({
-    //     from: 'Momentum Netball <noreply@momentumnetball.co.uk>',
-    //     to: process.env.ADMIN_EMAIL || 'admin@momentumnetball.co.uk',
-    //     subject: 'New Mixed League Registration',
-    //     html: `<p>New registration from ${registration.name}</p>...`
-    //   });
-    // }
-
+    appendSubmission("register", data);
+    await sendEmail({
+      to: ADMIN_EMAIL,
+      replyTo: data.email,
+      subject: `Mixed League registration: ${escapeForEmail(data.name)}`,
+      text: [
+        `Name: ${escapeForEmail(data.name)}`,
+        `Email: ${escapeForEmail(data.email)}`,
+        `Phone: ${escapeForEmail(data.phone)}`,
+        `Experience: ${data.experience}`,
+        "",
+        data.message || "(no message)",
+      ].join("\n"),
+    });
     return NextResponse.json({ success: true, message: "Registration received" });
   } catch (error) {
     console.error("Registration error:", error);
     return NextResponse.json({ error: "Failed to process registration" }, { status: 500 });
   }
 }
-

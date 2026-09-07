@@ -1,48 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-
-// Simple session store (in production, use a proper database or session store)
-const sessions = new Map<string, { userId: string; expiresAt: number }>();
+import { createSession, destroySession, isValidSession } from "@/lib/sessions";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const { action, password, sessionId } = body;
 
   if (action === "signin") {
-    // Check password
-    if (password === process.env.ADMIN_PASSWORD) {
-      // Create session
-      const newSessionId = crypto.randomUUID();
-      sessions.set(newSessionId, {
-        userId: "admin",
-        expiresAt: Date.now() + 24 * 60 * 60 * 1000, // 24 hours
-      });
-
-      return NextResponse.json({
-        success: true,
-        sessionId: newSessionId,
-      });
+    if (process.env.ADMIN_PASSWORD && password === process.env.ADMIN_PASSWORD) {
+      return NextResponse.json({ success: true, sessionId: createSession() });
     }
-
     return NextResponse.json({ success: false, error: "Invalid password" }, { status: 401 });
   }
 
   if (action === "signout") {
-    if (sessionId) {
-      sessions.delete(sessionId);
-    }
+    if (sessionId) destroySession(sessionId);
     return NextResponse.json({ success: true });
   }
 
   if (action === "session") {
-    if (sessionId) {
-      const session = sessions.get(sessionId);
-      if (session && session.expiresAt > Date.now()) {
-        return NextResponse.json({
-          authenticated: true,
-          user: { id: session.userId, name: "Admin" },
-        });
-      }
-      sessions.delete(sessionId);
+    if (isValidSession(sessionId)) {
+      return NextResponse.json({ authenticated: true, user: { id: "admin", name: "Admin" } });
     }
     return NextResponse.json({ authenticated: false });
   }

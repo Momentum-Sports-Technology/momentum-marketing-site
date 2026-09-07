@@ -1,0 +1,52 @@
+{
+  "title": "Code of Conduct",
+  "strapline": "Playing Fair, Staying Kind, and Making Netball Fun For All",
+  "intro": "We want every session to be positive, inclusive, and enjoyable whether you're brand new to netball or a seasoned pro. Our code of conduct sets out a few key expectations for players, parents, and spectators so we can all support a respectful, friendly environment on and off the court.",
+  "sections": [
+    {
+      "heading": "Players",
+      "items": [
+        "Respect every player, umpire, coach, and spectator, whatever the score.",
+        "Play to the rules and accept the umpire's decisions without argument.",
+        "Keep language and behaviour appropriate. Abuse, bullying, and discrimination have no place at Momentum.",
+        "Arrive on time, in suitable kit and non-marking trainers, ready to warm up.",
+        "Look after the venue, the equipment, and each other. Report injuries or hazards to the organiser straight away.",
+        "Shake hands and thank your opponents and umpire after every match."
+      ]
+    },
+    {
+      "heading": "Captains",
+      "items": [
+        "Make sure your team knows and follows this code.",
+        "Confirm your team's attendance and let us know as early as possible if you cannot field a team.",
+        "Be the first point of contact for the umpire and the organiser on match night.",
+        "Raise concerns with the organiser calmly, away from the court."
+      ]
+    },
+    {
+      "heading": "Parents and spectators",
+      "items": [
+        "Encourage every player on both teams. Applaud good play wherever it comes from.",
+        "Never shout at, criticise, or coach from the sideline. Leave the umpiring to the umpire.",
+        "Stay off the court and out of the team areas during play.",
+        "Set the example you would want the players to follow."
+      ]
+    },
+    {
+      "heading": "Safeguarding and wellbeing",
+      "items": [
+        "Momentum Netball follows England Netball safeguarding guidance. Every coach and umpire is expected to keep players safe.",
+        "If you see or experience anything that worries you, tell the organiser on the night or email hello@momentumnetball.co.uk.",
+        "Concerns are handled in confidence and taken seriously."
+      ]
+    },
+    {
+      "heading": "If the code is broken",
+      "items": [
+        "The organiser or umpire may issue a warning, ask a player to sit out, or ask a spectator to leave.",
+        "Repeated or serious breaches can lead to suspension from the league without refund, as set out in our Terms and Conditions."
+      ]
+    }
+  ],
+  "closing": "Thank you for helping us keep Momentum a place where everyone can enjoy their netball."
+}

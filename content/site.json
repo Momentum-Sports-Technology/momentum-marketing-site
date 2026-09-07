@@ -1,0 +1,155 @@
+{
+  "contact": {
+    "email": "hello@momentumnetball.co.uk",
+    "instagram": "https://www.instagram.com/momentumnetball",
+    "facebook": "https://www.facebook.com/momentumnetball",
+    "area": "Andover, Hampshire and surrounding areas"
+  },
+  "hero": {
+    "title": "The South's Premier\nNetball League",
+    "subtitle": "Welcome to Momentum Netball. Women's and mixed leagues, coaching, and pay-to-play sessions across Hampshire. Join the action today.",
+    "ctaText": "Book a Session",
+    "ctaLink": "/book",
+    "badge": "500+ Active Players",
+    "image": "/images/momentum-womens.jpg"
+  },
+  "about": {
+    "title": "Who We Are",
+    "body": [
+      "Our passion is netball and we want to spread that passion to all. With over 30 years of experience, we specialise in sharing the techniques, strategies, and insights needed to master the game.",
+      "Momentum Netball runs competitive and social leagues for players of every ability across Hampshire and the surrounding areas. Whether you are a seasoned player, returning after a break, or brand new to the sport, there is a place for you on court."
+    ]
+  },
+  "programmes": [
+    {
+      "slug": "womens-league",
+      "name": "Women's League",
+      "tagline": "Competitive weekly matches",
+      "description": "Our women's leagues run in divisions so every team plays at its level. We're constantly expanding, with new netball centres opening regularly to bring the game closer to you.",
+      "price": "Team subs from £400 per season, including hall hire, insurance, affiliated umpires, 40-minute weekly matches, and end-of-season prizes.",
+      "ctaText": "Register a team",
+      "ctaHref": "/events/womens-league",
+      "featured": true
+    },
+    {
+      "slug": "mixed-league",
+      "name": "Mixed League",
+      "tagline": "High energy, all genders",
+      "description": "Our mixed matches bring high energy, fast-paced action, and an unbeatable adrenaline rush. Join our mixed training sessions to learn new skills, improve your technique, and take your game to the next level.",
+      "ctaText": "Find out more",
+      "ctaHref": "/mixed",
+      "featured": true
+    },
+    {
+      "slug": "coaching",
+      "name": "Coaching",
+      "tagline": "England Netball approved coaches",
+      "description": "Are you part of a team looking to gain that competitive edge? Sign up for our coaching sessions and let us help you sharpen your skills, refine your strategy, and elevate your performance.",
+      "ctaText": "Book coaching",
+      "ctaHref": "/events/coaching"
+    },
+    {
+      "slug": "pay-to-play",
+      "name": "Pay to Play",
+      "tagline": "No commitment, same great fun",
+      "description": "Turn up and play on an ad-hoc basis. Register your interest in our pay-to-play sessions and join in whenever suits you.",
+      "ctaText": "See sessions",
+      "ctaHref": "/events/pay-to-play"
+    },
+    {
+      "slug": "new-to-netball",
+      "name": "New to Netball",
+      "tagline": "Start here",
+      "description": "Not sure where to start? We're here to help you get on the court. Whether you're a complete beginner or coming from another sport, we'll guide you with tailored coaching to build your skills, confidence, and fitness.",
+      "ctaText": "Get in touch",
+      "ctaHref": "/#contact"
+    },
+    {
+      "slug": "individuals",
+      "name": "Individual Players",
+      "tagline": "No team? No problem",
+      "description": "Register as an individual and we will find the right fit for you with like-minded players. Many of our regular teams formed when individuals met through Momentum sessions.",
+      "ctaText": "Register interest",
+      "ctaHref": "/#contact"
+    }
+  ],
+  "stats": [
+    { "value": "500", "suffix": "+", "label": "Active Players" },
+    { "value": "40", "suffix": "+", "label": "Weekly Matches" },
+    { "value": "3", "label": "Divisions" },
+    { "value": "30", "suffix": "+", "label": "Years of Experience" }
+  ],
+  "fixtures": {
+    "title": "Results & Upcoming Fixtures",
+    "subtitle": "Live standings and fixtures, straight from our league system",
+    "leagues": []
+  },
+  "venues": [
+    {
+      "name": "Winton Academy",
+      "town": "Andover",
+      "description": "Both inside and outside courts",
+      "what3words": "reward.crunching.forgives",
+      "mapUrl": "https://what3words.com/reward.crunching.forgives"
+    },
+    {
+      "name": "Harroway School",
+      "town": "Andover",
+      "description": "Both inside and outside courts",
+      "what3words": "skidding.ruffling.fortunate",
+      "mapUrl": "https://what3words.com/skidding.ruffling.fortunate"
+    },
+    {
+      "name": "John Hanson School",
+      "town": "Andover",
+      "description": "Both inside and outside courts",
+      "what3words": "blank.times.frame",
+      "mapUrl": "https://what3words.com/blank.times.frame"
+    }
+  ],
+  "events": [
+    {
+      "title": "Rise of Mixed",
+      "date": "New for this season",
+      "description": "Mixed netball has been rapidly gaining popularity in the UK. This fun and inclusive format invites all genders to play together on the same team."
+    },
+    {
+      "title": "New Centre Opening",
+      "date": "Coming soon",
+      "description": "Our newest netball centre is almost here, offering more chances to play and connect. Sign up to the newsletter to be first to hear."
+    }
+  ],
+  "reviews": [
+    {
+      "quote": "What started as reluctantly filling in for my daughter's netball training has become transformative. I've gone from doom-scrolling to playing a fast-paced, tactical game that challenges both body and mind. Most importantly, it's given me time with my daughter that's properly ours, and a real sense of community.",
+      "author": "Adam Knight",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do I join?",
+      "answer": "Register your interest through the contact form or book directly on our booking site and we will be in touch."
+    },
+    {
+      "question": "Can I register as an individual?",
+      "answer": "Yes. We can find the right fit for you with like-minded players."
+    },
+    {
+      "question": "I haven't played in a long time, can I register?",
+      "answer": "Yes. We love to share our passion with new, old, or returning players and have sessions to suit."
+    },
+    {
+      "question": "Can I just turn up?",
+      "answer": "Register your interest in our pay-to-play sessions on an ad-hoc basis. No commitment, just the same great fun."
+    },
+    {
+      "question": "My fitness is not great, can I start to play?",
+      "answer": "Yes. Register your interest and we can help you build the skills required to play."
+    },
+    {
+      "question": "What should I bring?",
+      "answer": "Comfortable sports clothing and non-marking indoor trainers. We provide bibs and match balls."
+    }
+  ]
+}

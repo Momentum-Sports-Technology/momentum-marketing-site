@@ -1,0 +1,13 @@
+{
+  "title": "Shop",
+  "intro": "Momentum kit and accessories. Checkout is handled securely by Stripe.",
+  "products": [
+    {
+      "name": "Momentum Water Bottle",
+      "description": "Keep hydrated on court with the official Momentum Netball bottle.",
+      "price": "£9.99",
+      "image": "/images/shop/water-bottle.jpg",
+      "paymentLinkUrl": ""
+    }
+  ]
+}
