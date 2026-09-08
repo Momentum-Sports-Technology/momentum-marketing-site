@@ -8,8 +8,11 @@ import type { ContentSlug } from "@/lib/content";
 import MixedLeagueEditor from "@/components/admin/MixedLeagueEditor";
 import JsonEditor from "@/components/admin/JsonEditor";
 import type { SaveState } from "@/components/admin/types";
+import SubmissionsPanel from "@/components/admin/SubmissionsPanel";
 
-const tabs: Array<{ slug: ContentSlug; label: string; hint: string }> = [
+type TabSlug = ContentSlug | "submissions";
+
+const tabs: Array<{ slug: TabSlug; label: string; hint: string }> = [
   {
     slug: "site",
     label: "Homepage & site",
@@ -23,12 +26,13 @@ const tabs: Array<{ slug: ContentSlug; label: string; hint: string }> = [
   },
   { slug: "code-of-conduct", label: "Code of Conduct", hint: "Sections and rules" },
   { slug: "shop", label: "Shop", hint: "Products and Stripe Payment Links" },
+  { slug: "submissions", label: "Submissions", hint: "Contact form, registrations and newsletter sign-ups" },
 ];
 
 export default function AdminPage() {
   const router = useRouter();
   const [authenticated, setAuthenticated] = useState(false);
-  const [activeSlug, setActiveSlug] = useState<ContentSlug>("site");
+  const [activeSlug, setActiveSlug] = useState<TabSlug>("site");
   const [content, setContent] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
   const [saveState, setSaveState] = useState<SaveState>({ status: "idle" });
@@ -46,7 +50,7 @@ export default function AdminPage() {
   }, [router]);
 
   useEffect(() => {
-    if (!authenticated) return;
+    if (!authenticated || activeSlug === "submissions") return;
     let cancelled = false;
     setLoading(true);
     setSaveState({ status: "idle" });
@@ -141,7 +145,9 @@ export default function AdminPage() {
         </div>
         <p className="text-sm text-gray-500 mb-6">{activeTab.hint}</p>
 
-        {loading || content === null ? (
+        {activeSlug === "submissions" ? (
+          <SubmissionsPanel />
+        ) : loading || content === null ? (
           <p className="text-gray-500">Loading...</p>
         ) : activeSlug === "mixed-league" ? (
           <MixedLeagueEditor
