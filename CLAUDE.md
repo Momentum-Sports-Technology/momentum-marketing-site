@@ -39,7 +39,7 @@ create one.
 - Server components read content with `getContent(slug)`; pages that read content declare
   `export const dynamic = "force-dynamic"` so admin edits show without a rebuild.
 - Client components never import `lib/content.ts` (it uses `fs`). Use `lib/urls.ts` or props.
-- Programme `ctaHref` values starting with `/` are paths on the booking site, resolved by
+- Programme `ctaHref` values starting with `/events/` or `/my-bookings` are paths on the booking site, resolved by
   `resolveCta`. Anything else is used as-is.
 - Redirects for old WordPress URLs live in `next.config.js`. Keep them when adding routes.
 - Design tokens are in `tailwind.config.ts` (`momentum-orange`, `momentum-dark`). Headings use

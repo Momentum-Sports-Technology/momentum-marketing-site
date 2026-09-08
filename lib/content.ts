@@ -42,7 +42,7 @@ export const programmeSchema = z.object({
   description: z.string(),
   price: z.string().optional(),
   ctaText: z.string(),
-  /** Absolute URL, or a path on the booking site when it starts with "/" */
+  /** "/events/<slug>" or "/my-bookings" resolve to the booking site; anything else is used as-is */
   ctaHref: z.string(),
   featured: z.boolean().optional(),
 });
