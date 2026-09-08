@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { BOOKING_URL } from "@/lib/urls";
 
@@ -16,11 +17,14 @@ const navLinks = [
 ];
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  // Pages without a dark hero (admin) need the solid bar from the top.
+  const isScrolled = scrolled || pathname.startsWith("/admin");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
