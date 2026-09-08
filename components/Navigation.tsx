@@ -43,7 +43,11 @@ export default function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-3">
-            <img src="/images/logo.png" alt="" className="h-10 w-10" />
+            <img
+              src={isScrolled ? "/images/logo.png" : "/images/logo-white.png"}
+              alt=""
+              className="h-11 w-11"
+            />
             <span
               className={`font-bold text-lg lg:text-2xl transition-colors font-black-mango ${
                 isScrolled ? "text-gray-900" : "text-white"
