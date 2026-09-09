@@ -341,3 +341,61 @@ Commercial leagues charge £56 to £70 per team per match. A move from £18 to �
 Ltd better off in the new venue than it is today. Governance: shared directors declare the
 conflict, the CIC board gets independent members, and the court-hire contract is at the
 published rate.
+
+## 10. The column grid (added 2026-09-09, third pass)
+
+The building has already been measured. Test Valley planning application **23/02973/FULLN**
+(change of use, decided 22 February 2024, applicant Cara Investment Five Ltd) carries the
+landlord's Hollis as-built survey: drawing 10250 C10, existing ground floor plan, 1:100 at A0,
+January 2023, client Mileway Real Estate UK. A copy is in
+`docs/survey/unit-28-hollis-as-built-ground-floor-10250-C10.pdf`. The first floor plan (10250
+C00) is on the same application. Source:
+https://view-applications.testvalley.gov.uk/online-applications/applicationDetails.do?activeTab=documents&keyVal=S4FJ86QCMS200
+
+What the plan shows, scaled from the drawing (survey grid in metres, origin at the drawing's
+left edge):
+
+| Element | Position |
+| --- | --- |
+| West wall | x = 13.5 m |
+| Internal column row 1 | x = 34 m, six columns at y = 27, 34.5, 42, 49.5, 57, 64.5 m |
+| Internal column row 2 | x = 54 m, same six positions |
+| Extension | x = 54 to 75 m runs north to y = 11.5 m; the rest of the hall starts at y = 19.5 m |
+| East block | x = 75 to 96 m, y = 34.5 to 72 m, no columns drawn |
+| South wall | y = 72 m; office strip x = 62 to 96 m, y = 68 to 72 m, two stairs |
+
+So: **spans of 20 m, frames every 7.5 m, two internal column rows.** The aerial shows four
+roof spans, so the line at x = 75 m must carry the roof: either columns the survey omitted or a
+transfer beam where an old wall came out. That is a ten-minute check on site and the first
+question for the agent.
+
+### What it does to the layout
+
+- **A club-standard court fits one per span.** Overall space 18.25 m in a 20 m span leaves about
+  0.9 m each side to the column faces. Courts run north to south along the span. Three spans
+  take a full 34.5 m court; the east block is 33.5 m deep above the offices, so a fourth court
+  needs 1.5 m end run-offs or the office strip removed.
+- **Padel does not fit the 20 m grid.** A padel court is 20 m long and needs a clear 20 m plus
+  access. It fits only in the 21 m spans of the extension and east block, running east to west.
+  Two courts sit in the extension south of Court 3 and three in the east block, if the 75 m line
+  is clear. Otherwise padel needs a column removed and a transfer beam, roughly £20,000 to
+  £40,000 per column.
+- **Span ends are 18 m × 20 m.** Gym in one, two pickleball courts or a junior and walking netball
+  court in the other. Pickleball needs 18.3 m × 9.1 m per court and about 5.5 m of height.
+- **Height.** Eaves and valleys are 7.1 m at every column row; each span has its own ridge. At a
+  6° pitch the ridge is about 8.1 m and the court sidelines about 7.2 m. Below England Netball's
+  7.5 m at the edges, fine for league play. The pitch is not on the plan. One laser measurement at
+  a column and one at a ridge gives the profile.
+
+Net effect on the model: 3 netball plus 5 padel instead of 4 plus 4. Netball external hire drops
+by about a quarter and Momentum's evening block uses half the remaining evening capacity;
+one more padel court adds about £85,000. Roughly revenue-neutral, and the padel side now
+depends on the 75 m line.
+
+### Still to check on site
+
+1. Columns or beam at x = 75 m, and where the columns are if they exist.
+2. Roof pitch and clear height at ridge, valley and haunch.
+3. Haunch depth at the knee of each frame; anything hanging below the purlins (lights, heaters,
+   sprinkler mains) inside a court envelope.
+4. Floor flatness and the slab spec for a sprung floor build-up.
