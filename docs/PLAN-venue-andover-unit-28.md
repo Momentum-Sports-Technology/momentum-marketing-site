@@ -399,3 +399,38 @@ depends on the 75 m line.
 3. Haunch depth at the knee of each frame; anything hanging below the purlins (lights, heaters,
    sprinkler mains) inside a court envelope.
 4. Floor flatness and the slab spec for a sprung floor build-up.
+
+## 11. Sensitivities and cash (added 2026-09-09, for Max)
+
+Max is an accountant; the pitch page now carries the workings. Recorded here so they survive.
+All figures Base case, CIC with full rates unless stated, from the model.
+
+| One change at a time | EBITDA effect |
+| --- | ---: |
+| Rates relief 80% / 100% | +£158k / +£192k |
+| Padel fill 35% / 55% | −£73k / +£73k |
+| Rent stepped to £405k | +£45k |
+| Staff salaries ±10% | ∓£42k |
+| PV benefit lost / utilities +£20k | −£42k / −£21k |
+| Padel rate £32 / £40 | ∓£37k |
+| Sponsorship £30k / £110k | −£34k / +£40k |
+| Gym members 350 / 550 | ∓£34k |
+| Café visits 3,500 / 4,900 | ∓£28k |
+| Café spend £1.35 / £1.85 | ∓£26k |
+| Netball evening fill 55% / 85% | ∓£17k |
+
+Fixed costs about £1,227k of £1,461k (84%). Break-even padel fill after £82k a year of loan
+repayments: 58% with full rates, 36% with 80% relief.
+
+Cumulative cash after loan repayments, Base: full rates (£44k), (£238k), (£333k), (£371k),
+(£377k) over years 1 to 5; with 80% relief +£114k, +£79k, +£143k, +£263k, +£416k. Without relief
+the venue does not recover inside five years.
+
+Open tax questions for Max: VAT on rent (Mileway will have opted; £90k a year) against the
+sports exemption for a non-profit eligible body versus standard-rating to recover fit-out VAT;
+corporation tax on CIC surpluses; capital allowances on fit-out; the yearly nature of TVBC
+discretionary relief; personal guarantees (position: none, capped if unavoidable, joint decision).
+
+Adam's steer 2026-09-09: the venue does not need to meet England Netball's affiliated-venue
+standard. League play in a 7.1 m eaves building is acceptable; a fourth court at league run-offs
+fits in the east block in place of padel.
