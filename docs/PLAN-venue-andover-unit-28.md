@@ -434,3 +434,28 @@ discretionary relief; personal guarantees (position: none, capped if unavoidable
 Adam's steer 2026-09-09: the venue does not need to meet England Netball's affiliated-venue
 standard. League play in a 7.1 m eaves building is acceptable; a fourth court at league run-offs
 fits in the east block in place of padel.
+
+## 12. Model at 3 netball + 5 padel, and the other options (added 2026-09-09)
+
+The spreadsheet now defaults to the surveyed layout: 3 netball courts, 5 padel, 2 pickleball
+courts in the span B end, retractable cricket nets over two courts on winter weekdays, gym in the
+span A end. A bouldering room is a switchable option in place of the two padel courts south of
+Court 3. New Layout sheet maps every block to a span.
+
+| Steady state, Base, full rates, after £82k loan service | Income | EBITDA | Net | Cum. cash Y1–Y5 | Capex |
+| --- | ---: | ---: | ---: | --- | ---: |
+| 3 netball + 5 padel + 2 pickleball + cricket nets | £1,579k | +£114k | +£33k | 32, (54), (21), 74, 206 | £1.72m |
+| Same, 80% rates relief | £1,584k | +£273k | +£191k | 190, 263, 454, 708, 998 | £1.72m |
+| Option: bouldering 460 sq m instead of 2 padel (3 padel) | £1,754k | +£221k | +£139k | 96, 101, 240, 447, 694 | £2.00m |
+| Option: 4 netball + 2 padel | £1,388k | (£70k) | (£152k) | (79), (321), (473), (572), (640) | £1.88m |
+| Without pickleball and cricket nets | £1,468k | +£7k | (£74k) | (32), (209), (284), (302), (286) | £1.71m |
+
+Pickleball and cricket nets add about £111k of income for under £50k of capex and move the
+full-rates case from break-even to £114k. Break-even padel fill after loan service is now 41%
+with full rates and 24% with 80% relief. A fourth netball court costs the venue £180k a year
+against the padel it displaces. Bouldering is the strongest option on paper (+£107k over the
+two padel courts it replaces) but adds £285k of capex, two staff and an operating model we do
+not know; treat it as a phase-two question.
+
+Caveat: cricket-net income overlaps daytime netball hire on the same courts in January to
+April; the two together may be 10 to 15% overstated in those weeks.
