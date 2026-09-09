@@ -257,7 +257,7 @@ and donations.
 | Loan repayments on £600,000 at 6% over 10 years | (82,000) | (82,000) | (82,000) |
 
 Base income by line: padel £340k, café £336k, gym £157k, netball external hire £208k, Momentum
-court hire £73k, camps £84k, sponsorship £69k, events £60k, physio £41k, parties £38k, S&C
+court hire £49k, camps £84k, sponsorship £69k, events £60k, physio £41k, parties £38k, S&C
 classes £32k, donations £20k, rooms £15k.
 
 ### What the model says
@@ -322,7 +322,7 @@ Momentum Netball Ltd stays the directors' business with no asset lock. The CIC i
 holds the lease, attracts the grants and the rates relief, and sells Momentum a block of
 evening court-hours at its published rate less the block-booking discount available to any
 block booker. For the CIC it is neutral to slightly positive against running the programmes
-itself: it loses the programme income and the coaching cost together and gains about £73,000
+itself: it loses the programme income and the coaching cost together and gains about £49,000
 of anchor court hire.
 
 The catch is on Momentum's side. School halls cost Momentum about £24 a court-hour today. At
