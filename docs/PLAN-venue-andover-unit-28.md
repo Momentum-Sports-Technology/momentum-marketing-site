@@ -235,3 +235,109 @@ footprint. Keep the Curchod, Mileway and Stratfords agents warm for other Walwor
 - TVBC Sport Facilities Strategy 2020: https://www.testvalley.gov.uk/assets/attach/10357/Sport-Facilities-Strategy-Continuum-2020.pdf
 - England Netball indoor club court guidance: https://d2cx26qpfwuhvu.cloudfront.net/englandnetball/wp-content/uploads/2018/07/02172514/3.-Netball-Design-Guidance-for-Indoor-Club-Courts.pdf
 - 2025 revenue model sheet: https://docs.google.com/spreadsheets/d/14TQSQi44KmhoPdtm2ZOabCPs5BLyQjbu6h1hZSKPc4A/edit
+
+## 9. Can it work? The model (added 2026-09-09, second pass)
+
+Spreadsheet: `docs/venue-model-andover-unit-28.xlsx` (Inputs, Structure, Steady state, 5 year,
+Capital, Momentum Ltd, Notes). Every yellow cell is an assumption. Cell C2 switches Low / Base /
+High, C3 switches the legal structure, which drives rates relief and Gift Aid.
+
+The venue modelled: 4 netball courts, 4 padel courts, a 300 sq m gym with netball strength and
+conditioning, two physio rooms in the offices, café, events, holiday camps, parties, sponsorship
+and donations.
+
+### Steady state (year 3), £ per year
+
+| | Low | Base | High |
+| --- | ---: | ---: | ---: |
+| Income | 875,000 | 1,448,000 | 2,203,000 |
+| Surplus before loans, CIC with no rates relief | (550,000) | (13,000) | 670,000 |
+| Surplus before loans, charity 80% relief | (394,000) | 146,000 | 832,000 |
+| Surplus before loans, CIC with TVBC 100% discretionary relief | (358,000) | 179,000 | 862,000 |
+| Loan repayments on £600,000 at 6% over 10 years | (82,000) | (82,000) | (82,000) |
+
+Base income by line: padel £340k, café £336k, gym £157k, netball external hire £208k, Momentum
+court hire £73k, camps £84k, sponsorship £69k, events £60k, physio £41k, parties £38k, S&C
+classes £32k, donations £20k, rooms £15k.
+
+### What the model says
+
+1. **Base case as a CIC with no rates relief is break-even before loan repayments** and loses
+   about £94,000 a year after them. Years 1 and 2 need roughly £90,000 of working capital
+   even with 12 months rent free.
+2. **Rates relief is the swing.** Charity status (80% mandatory) or TVBC discretionary relief
+   (up to 100% for a local non-profit recreation body under policy v2026.1) is worth £154,000
+   to £192,000 a year. No single income line is worth as much.
+3. **Padel and the café carry the daytime.** Netball, gym and events together are about half
+   the income. A netball-only or netball-plus-gym venue does not cover the rent.
+4. **The Low case is a £550,000 a year loss.** If fill rates come in a third below Base
+   across the board, the rent does not flex and the venue fails. That is the risk to price
+   into the lease negotiation: rent free, stepped rent, a break clause and a turnover rent.
+5. **Capital need is about £1.7m to £1.8m** including a six-month deposit and working
+   capital. The Capital sheet carries a target funding stack of £1.25m grants, donations and
+   equity plus £600,000 of loans. Every figure is a target from published programme ranges,
+   not a commitment.
+
+### Grants and donations, what is real at this scale
+
+| Source | Range | Who can apply | Note |
+| --- | --- | --- | --- |
+| Football Foundation multi-sport grassroots facilities | Project grants; £98m a year UK-wide | CICs, charities, clubs | Netball named as a beneficiary sport |
+| National Lottery Community Fund, Reaching Communities | £20k to £500k typical, more by discussion | CICs, charities | Funds building work and staff |
+| England Netball / Sport England | Via the Netball Development Officer | Clubs and community bodies | EN holds £21.2m from Sport England to 2029 |
+| Test Valley BC S106 / CIL | Project-specific | Any | Growth areas East Anton and Picket Twenty; strategy forecasts a 6 to 8 court hall need by 2036 |
+| Armed Forces Covenant Fund Trust | £5k to £250k by programme | Any with Forces community benefit | Army HQ is in Andover |
+| Charitable trusts (Garfield Weston, Bernard Sunley, Wolfson) | £10k to £250k | Registered charities only | Not open to a CIC |
+| Crowdfunder with Sport England match | Up to £15k match | Clubs, CICs | Small but fast |
+| LTA Quick Access / Facility Loan | £25k to £250k at 5%, 10 years | Registered padel venues | Loan, not grant |
+| Pitch Together (Sporting Assets, Triodos, Sport England) | £25k to £300k at 6%, ~7.5 years | Multi-sport community facilities | Loan |
+| Charity Bank / Triodos | £50k to several million | CICs and charities | Loan; wants a trading record or strong guarantors |
+| Sport England Movement Fund | £300 to £15k | Clubs | Too small for the venue; useful for programmes |
+
+Donations at Base are £20,000 a year. With Gift Aid (charity or CASC only) that becomes
+£25,000. Sponsorship is the bigger line at £69,000: venue naming, eight court sponsors and
+boards. Andover has Simplyhealth, Le Creuset, Stannah, Twinings, Lloyds and Ocado.
+
+### If we created a CIC
+
+A CIC limited by guarantee is the right vehicle to move fast: weeks to register, directors can
+be paid, and it opens the Lottery, Football Foundation, LTA, Pitch Together and Charity Bank
+routes. It costs two things:
+
+- No mandatory 80% rates relief. TVBC can award up to 100% discretionary relief to a local
+  non-profit recreation body, but the council bears 40% of the cost itself, the policy asks
+  for two years' signed accounts, and it is a yearly decision, not a right.
+- No Gift Aid, and no access to the charity-only trusts.
+
+Recommendation: register the CIC now and apply to TVBC for discretionary relief on day one.
+Found a charitable arm (a CIO) in parallel so donations, Gift Aid and trust grants have a home,
+or plan to move the venue-holding entity to a CIO once trading. The Structure sheet compares
+all four options. VAT needs an accountant before anything is signed: a VAT-exempt sports body
+cannot recover VAT on £1.4m of fit-out or on the rent.
+
+### Momentum Netball Ltd renting courts from the CIC
+
+This is the cleanest structure and the model now runs on it by default (Inputs, mode 2).
+Momentum Netball Ltd stays the directors' business with no asset lock. The CIC is the venue,
+holds the lease, attracts the grants and the rates relief, and sells Momentum a block of
+evening court-hours at its published rate less the block-booking discount available to any
+block booker. For the CIC it is neutral to slightly positive against running the programmes
+itself: it loses the programme income and the coaching cost together and gains about £73,000
+of anchor court hire.
+
+The catch is on Momentum's side. School halls cost Momentum about £24 a court-hour today. At
+an arm's-length £41 (£48 less 15%) the current £18 per team per match no longer covers the
+court:
+
+| | Today | In the CIC, same fees | In the CIC, £25 per team per match |
+| --- | ---: | ---: | ---: |
+| League income | 32,400 | 64,800 | 90,000 |
+| Court hire | (14,400) | (48,960) | (48,960) |
+| Other direct costs | (5,400) | (10,800) | (10,800) |
+| League gross profit | 12,600 | 5,040 | 30,240 |
+
+Commercial leagues charge £56 to £70 per team per match. A move from £18 to £25 is a
+£400 to £560 season sub, still the cheapest in the market, and it is what makes Momentum
+Ltd better off in the new venue than it is today. Governance: shared directors declare the
+conflict, the CIC board gets independent members, and the court-hire contract is at the
+published rate.
