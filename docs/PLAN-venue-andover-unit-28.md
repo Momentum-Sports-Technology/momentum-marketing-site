@@ -544,3 +544,22 @@ Funding stack in the model now carries: local sports charity seed £25k; local p
 £250k as patient capital (if it arrives as a 6% loan, add about £34k a year of service);
 Crowdfunder with Sport England match £30k. Sources total about £2.0m against a £1.72m need;
 the surplus is contingency.
+
+## 15. Correction: league fees (2026-09-10)
+
+Adam: 24 teams at £450 a season. Four seasons a year gives £43,200, matching Xero's £43,781
+league sales. So a team pays about £40 a match, not the £18 assumed in sections 9 and 11. The
+league runs 12 matches a week on about 8 court-hours; the rest of the £14,647 venue spend is
+mixed, training, Netball Hour and pay-to-play.
+
+| Women's league, per year | Today | In the hub, same fees | 36 teams at £480 |
+| --- | ---: | ---: | ---: |
+| Income | £43,200 | £43,200 | £69,120 |
+| Court hire (8 h @ £24 / 8 h @ £41 / 12 h @ £41, 40 weeks) | (£7,680) | (£13,056) | (£19,584) |
+| Umpires, insurance, prizes (£6 a match) | (£2,880) | (£2,880) | (£4,320) |
+| Gross profit | £32,640 | £27,264 | £45,216 |
+
+The arm's-length court rate costs the league about £5,400 a year, £56 per team per season. No
+fee shock is needed; the pitch now asks for a growth plan (24 to 36 teams, £450 to about £480)
+instead. Momentum's 30 court-hour block in the venue model assumes the league and programmes
+roughly double; at today's usage the block is about £33,000, not £49,000.
