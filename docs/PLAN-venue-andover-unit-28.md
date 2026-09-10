@@ -570,3 +570,50 @@ three courts on five evenings, and more towns on the same model. A Basingstoke l
 set up now. The hub becomes the home for finals days, tournaments, training and pay-to-play
 across the network, which feeds the events line and makes Momentum Ltd a stronger anchor
 tenant. Basingstoke's own matches stay in Basingstoke halls; they do not fill Andover courts.
+
+## 16. Picket Twenty Sports Pavilion: the precedent (added 2026-09-10)
+
+Adam's understanding: TVBC intends to fit out the Picket Twenty pavilion and Andover Hockey Club
+would take it over. Nothing public names the hockey club, but the council's own capital
+programme tells the story of the scheme, from Cabinet reports packs on testvalley.moderngov.co.uk:
+
+| Cabinet report | What it says about "Picket Twenty – Pavilion/pitch changes" |
+| --- | --- |
+| Feb 2021 budget | £1,400k in the capital programme, already slipped from 2020/21 |
+| Dec 2021 | "a wider range of sites are currently being appraised following the adoption of the Sports and Recreation Strategy, so this project will slip" |
+| Dec 2022 | "the main slippage ... due to planning permission being impacted by ecology concerns" |
+| Nov 2023 | "in the early stages of scoping and pre-planning ... designs and forecasts of future project costs will be known by spring 2024" |
+| Nov 2024 | "planning application submission is due January 2025 so delivery will now not commence until 2025/26" |
+| Nov 2025 | "planning application preparation is underway with a target to complete the project by November 2026"; budget £70k 2025/26, £1,300k 2026/27 |
+| Jun 2026 outturn | £6.5k spent in 2025/26; £1,363.5k carried into 2026/27; total £1,370k |
+
+No planning application for the pavilion or pitches is on the portal as of today (searched by
+address, "pavilion" and "Picket Twenty"). The site is council-owned: 7 football pitches, a cricket
+pitch, MUGA, tennis court on ClubSpark, pavilion with changing rooms built by Persimmon under the
+S106 and adopted by TVBC (asset list 2024). The council's own FAQ page records "aspirations to
+provide an all-weather sports pitch". Andover Hockey Club plays at John Hanson School's
+artificial pitch; the December 2024 strategy update says its women's section is oversubscribed
+with a waiting list. Junior chair Sheela Putt, 07787 120352, juniorchair@andoverhockey.co.uk.
+The Jamie G Sporting Trust (charity 1134710) has funded the club's goalkeeping kit.
+
+Why it matters to us:
+1. **The model exists.** Council capital into a council-owned facility, run by a club. Ganger
+   Farm with Romsey Hockey Club, Picket Piece pavilion (adopted Sept 2024, netball court added
+   to the MUGA), Trojans and Broughton with CIL and CAF. Ask for the same shape: their asset,
+   our operation.
+2. **They cannot deliver on their own.** £1.37m has sat unspent for six years. A partner that
+   turns up with a survey, a layout, a funding stack and a tenant is what the programme lacks.
+3. **Timing.** The refreshed Playing Pitch and Sport Facilities Strategies go to Cabinet on
+   **23 September 2026** (notice published 26 August 2026; lead officer David Tasker, Director of
+   Community and Leisure, dtasker@testvalley.gov.uk; Portfolio Holder Cllr Terese Swain,
+   Community, Leisure and Tourism). The agenda pack appears about a week before. Members of the
+   public may speak on an agenda item by phoning 01264 368000 before 12 noon on the working
+   day before. That is the date to be in the room, or at least in the officer's inbox first.
+4. **What to ask them about Picket Twenty.** What the £1.37m is for and what has held it up;
+   whether the operating model is a club lease; whether S106 from Picket Twenty is ring-fenced
+   to that site or could support indoor provision in the same town under draft Policy HE1;
+   whether they would look at an indoor hub with the same partner structure.
+
+Sources: Cabinet packs 10 Feb 2021, 8 Dec 2021, 7 Dec 2022, 15 Nov 2023, 20 Nov 2024,
+19 Nov 2025, 24 Jun 2026 (all on testvalley.moderngov.co.uk, CId=137); Cabinet work programme
+issue IId=22842; TVBC Portfolio Holders page; TVBC Public Participation page.
