@@ -617,3 +617,25 @@ Why it matters to us:
 Sources: Cabinet packs 10 Feb 2021, 8 Dec 2021, 7 Dec 2022, 15 Nov 2023, 20 Nov 2024,
 19 Nov 2025, 24 Jun 2026 (all on testvalley.moderngov.co.uk, CId=137); Cabinet work programme
 issue IId=22842; TVBC Portfolio Holders page; TVBC Public Participation page.
+
+### Conversation zero: Sheela Putt, Andover Hockey Club (added 2026-09-10)
+
+Adam and Max know her well. Before the council call, informally. What we want to learn:
+
+1. What the club has actually been offered at Picket Twenty: a lease, a licence, a management
+   agreement, or a share of a council-run facility. Length, rent, who pays utilities, repairs,
+   insurance, staffing. Whether the £1.37m covers a hockey-standard artificial pitch or only the
+   pavilion.
+2. Who on the council side is driving it (officer names, the Sport Development Officer, David
+   Tasker, estates), how long the conversation has taken, and what has held it up each year.
+3. What the council asked the club to show: accounts, a business plan, England Hockey backing,
+   Sport England input, a club development plan. That is the checklist we will face.
+4. Whether S106 from Picket Twenty is paying for it, and whether officers spoke of other
+   unallocated sport money in Andover.
+5. Whether the club sees the refreshed Sports Facilities Strategy draft, and what it says about
+   hockey, netball and indoor provision.
+6. Whether the club would want winter training or an indoor programme at a hub, and whether a
+   joint approach to the council by two women's-sport-heavy clubs would help both.
+
+Do not pitch the venue to her yet. Listen, thank her, and ask whether she would be comfortable
+introducing us to the officer she deals with.
