@@ -547,8 +547,9 @@ the surplus is contingency.
 
 ## 15. Correction: league fees (2026-09-10)
 
-Adam: 24 teams at £450 a season. Four seasons a year gives £43,200, matching Xero's £43,781
-league sales. So a team pays about £40 a match, not the £18 assumed in sections 9 and 11. The
+Adam: 24 teams at £450 a season, each season about 10 weeks, four a year. That gives £43,200,
+matching Xero's £43,781 league sales, so a team pays £45 a match, not the £18 assumed in
+sections 9 and 11. The
 league runs 12 matches a week on about 8 court-hours; the rest of the £14,647 venue spend is
 mixed, training, Netball Hour and pay-to-play.
 
@@ -563,3 +564,9 @@ The arm's-length court rate costs the league about £5,400 a year, £56 per team
 fee shock is needed; the pitch now asks for a growth plan (24 to 36 teams, £450 to about £480)
 instead. Momentum's 30 court-hour block in the venue model assumes the league and programmes
 roughly double; at today's usage the block is about £33,000, not £49,000.
+
+Growth has two directions, and both matter to the CIC: more Andover divisions once there are
+three courts on five evenings, and more towns on the same model. A Basingstoke league is being
+set up now. The hub becomes the home for finals days, tournaments, training and pay-to-play
+across the network, which feeds the events line and makes Momentum Ltd a stronger anchor
+tenant. Basingstoke's own matches stay in Basingstoke halls; they do not fill Andover courts.
