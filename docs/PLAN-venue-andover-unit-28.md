@@ -515,3 +515,32 @@ evidence base, and (5) the freeholder's consent under the ground lease.
 Sources: SFS 2020 (`tvbc-sfs`), IDP Jan 2024, Draft Local Plan 2040 Reg 18 Stage 2 (Feb 2024)
 Policies HE1–HE2, Adopted Local Plan 2016 COM14–COM15, PPS/SFS Update Papers Feb 2022 and
 Dec 2024, TVBC Discretionary Rate Relief Policy v2026.1.
+
+## 14. First conversations (added 2026-09-10)
+
+Three conversations before any money is spent, in order. None asks for anything yet.
+
+1. **Test Valley Sport Development Officer, then the officer owning the Sports Facilities
+   Strategy refresh.** Sport is the front door, not planning. Take the survey plan and the
+   layout, not the spreadsheet. Quote their documents: SFS 2020 para 2.3.32, draft Policy HE1,
+   the December 2024 update (steering group reassembled from spring 2025, adoption early 2026,
+   new Sport Development Officer in post). Ask, do not pitch. Leave with: appetite; whether the
+   refresh can carry an Andover indoor hub; unallocated S106/CIL for indoor sport in Andover;
+   who owns the Walworth ground lease question (estates/Kier); how a local non-profit
+   recreation body is viewed under the discretionary relief policy; whether Places Leisure
+   should be involved; a named planning contact for the pre-app. Two directors on the call.
+   Same-day two-paragraph note back to them recording what was said. Switchboard 01264 368000,
+   Sports Development Team, Beech Hurst, Weyhill Road, Andover SP10 3AJ.
+2. **The founder of the sports charity Adam knows.** Seed for Phase 1 (survey, engineer,
+   pre-app) so no director funds it personally, and a read on which local people with capital
+   would consider patient equity, a rent-deposit guarantee, or a donation through a charitable
+   arm. Approach them only after the survey and the council steer are in hand.
+3. **Keith Enters, Curchod & Co, with Mileway behind him.** Ask for the Hollis survey pack
+   including sections, their view on a sports change of use, rent-free and stepped-rent
+   parameters, whether they would split the unit, and what covenant or deposit they expect from
+   a new CIC backed by a local funding group.
+
+Funding stack in the model now carries: local sports charity seed £25k; local private investors
+£250k as patient capital (if it arrives as a 6% loan, add about £34k a year of service);
+Crowdfunder with Sport England match £30k. Sources total about £2.0m against a £1.72m need;
+the surplus is contingency.
