@@ -459,3 +459,59 @@ not know; treat it as a phase-two question.
 
 Caveat: cricket-net income overlaps daytime netball hire on the same courts in January to
 April; the two together may be 10 to 15% overstated in those weeks.
+
+## 13. What Test Valley has to provide (added 2026-09-10)
+
+Short answer: nothing by statute. Sport and leisure are non-statutory council services; the
+2020 Sport Facilities Strategy says so itself (para 1.7.6). What binds the council is planning
+law and its own adopted evidence. That is what we can hold it to.
+
+**Planning duties (national).** NPPF: policies must rest on up-to-date assessments of need for
+sport and recreation facilities, and existing sports buildings and land may not be lost unless
+surplus, replaced, or outweighed by better sports provision. Sport England is a statutory
+consultee on playing fields and reviews sports-hall proposals.
+
+**Local Plan policies.**
+- Adopted 2011–2029 plan: COM14 resists the loss of community facilities; COM15 requires
+  development to fund the infrastructure it needs; LHW1 sets open-space standards.
+- Draft Local Plan 2040/2042 (Reg 18 Stage 2, Feb 2024): **Policy HE1** requires major housing to
+  provide 3 ha of open space per 1,000 people including **1 ha of outdoor sports facilities and/or
+  equivalent indoor sports facilities**, with off-site contributions "used towards projects
+  identified in the Council's Sports Facilities Strategy" and secured "towards indoor or outdoor
+  sports facilities ... within the same town as the development" (paras 5.284–5.285). **Policy
+  HE2** protects existing sports buildings and land. The plan is still in draft; this is the window
+  to get an Andover indoor hub into the evidence base.
+
+**Their own strategy (what they have written down).**
+- Sport Facilities Strategy 2020, para 2.3.32: population growth to 2036 makes a needs case for
+  6.32 badminton courts, "the equivalent of an additional 6 or 8 court sports hall (or up to two
+  4 court halls) with full community availability in the peak period by 2036".
+- Para 2.3.1 and IDP 2024 para 9.11: Andover Leisure Centre is the only sports hall in the borough
+  with full community availability. Para 2.9.1: its netball use is constrained by means of escape
+  and licensing. School halls have no daytime community access in term time.
+- Committed provision in the strategy is small: a 1–2 court activity hall at East Anton southern
+  local centre under S106, and a possible Enham Trust hall. Nothing at Andover scale.
+- Update paper December 2024, para 9.2: the council "no longer believe there to be an oversupply
+  in any sporting provision" and says "a more robust update would be valuable". Para 8.5 notes
+  padel growth (Trojans, 4 indoor courts with PadelStars). The 2022 update records ECB interest
+  in indoor cricket provision in Test Valley.
+
+**Money the council controls.**
+- S106 from the Andover growth areas (East Anton, Picket Twenty, Picket Piece) and future HE1
+  contributions, spendable on indoor sport in the same town.
+- CIL: the strategy is the evidence base for CIL awards (Trojans, Broughton).
+- Community Asset Fund: grants up to £25,000, 50% of project cost, not-for-profits only.
+- Discretionary rate relief up to 100% for a local non-profit recreation body (policy v2026.1).
+- The freehold of Walworth Business Park and the leisure operating contract (Places Leisure).
+
+**How to use it.** The ask to TVBC is not "please build us a hall". It is: your strategy says
+Andover needs another 6 to 8 courts by 2036, your only public hall cannot host netball events,
+your draft plan lets you spend sport contributions on indoor facilities in the same town, and a
+refurbished building on your own freehold can deliver three to four courts without capital from
+you. What we want is (1) the pre-application view on E(d) use, (2) discretionary rate relief,
+(3) S106/CIL towards fit-out, (4) the hub written into the strategy refresh and the Local Plan
+evidence base, and (5) the freeholder's consent under the ground lease.
+
+Sources: SFS 2020 (`tvbc-sfs`), IDP Jan 2024, Draft Local Plan 2040 Reg 18 Stage 2 (Feb 2024)
+Policies HE1–HE2, Adopted Local Plan 2016 COM14–COM15, PPS/SFS Update Papers Feb 2022 and
+Dec 2024, TVBC Discretionary Rate Relief Policy v2026.1.
