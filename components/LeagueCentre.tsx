@@ -7,7 +7,10 @@ import type { League, LeagueMatch } from "@/lib/mst";
 interface LeagueCentreProps {
   title: string;
   subtitle?: string;
-  league: League | null;
+  /** Newest first. */
+  leagues: League[];
+  /** League shown first; defaults to the first in the list. */
+  initialLeagueId?: string;
 }
 
 function MatchList({
@@ -49,9 +52,21 @@ function MatchList({
   );
 }
 
-/** Standings, latest results and next fixtures for one MST league, one division at a time. */
-export default function LeagueCentre({ title, subtitle, league }: LeagueCentreProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
+/**
+ * Standings, results and fixtures from MST, one league and one division at a
+ * time. The running league shows next fixtures; a finished league shows its
+ * final table and last results.
+ */
+export default function LeagueCentre({
+  title,
+  subtitle,
+  leagues,
+  initialLeagueId,
+}: LeagueCentreProps) {
+  const [leagueId, setLeagueId] = useState(initialLeagueId ?? leagues[0]?.id);
+  const [divisionIndex, setDivisionIndex] = useState(0);
+
+  const league = leagues.find((l) => l.id === leagueId) ?? leagues[0];
 
   if (!league || league.divisions.length === 0) {
     return (
@@ -67,19 +82,51 @@ export default function LeagueCentre({ title, subtitle, league }: LeagueCentrePr
     );
   }
 
-  const division = league.divisions[Math.min(activeIndex, league.divisions.length - 1)];
+  const division = league.divisions[Math.min(divisionIndex, league.divisions.length - 1)];
+
+  const handleSelectLeague = (id: string) => {
+    setLeagueId(id);
+    setDivisionIndex(0);
+  };
 
   return (
     <section id="fixtures" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{title}</h2>
           {subtitle && <p className="text-xl text-gray-600">{subtitle}</p>}
-          <p className="text-gray-500 mt-2">
-            {league.name}
-            {league.dates && ` · ${league.dates}`}
-          </p>
         </div>
+
+        {leagues.length > 1 && (
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex flex-wrap justify-center rounded-2xl bg-white border border-gray-200 p-1 gap-1">
+              {leagues.map((l) => (
+                <button
+                  key={l.id}
+                  type="button"
+                  onClick={() => handleSelectLeague(l.id)}
+                  aria-pressed={l.id === league.id}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${
+                    l.id === league.id
+                      ? "bg-momentum-dark text-white"
+                      : "text-gray-600 hover:text-momentum-orange"
+                  }`}
+                >
+                  {l.name}
+                  <span className="ml-2 text-xs font-normal opacity-75">
+                    {l.completed ? "Final" : "Live"}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <p className="text-center text-gray-500 mb-6">
+          {league.name}
+          {league.dates && ` · ${league.dates}`}
+          {league.completed && " · Final tables"}
+        </p>
 
         {league.divisions.length > 1 && (
           <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -87,9 +134,9 @@ export default function LeagueCentre({ title, subtitle, league }: LeagueCentrePr
               <button
                 key={d.id}
                 type="button"
-                onClick={() => setActiveIndex(index)}
+                onClick={() => setDivisionIndex(index)}
                 className={`px-5 py-2 rounded-full font-semibold transition-colors ${
-                  index === activeIndex
+                  d.id === division.id
                     ? "bg-momentum-orange text-white"
                     : "bg-white text-gray-700 border border-gray-200 hover:border-momentum-orange"
                 }`}
@@ -149,7 +196,7 @@ export default function LeagueCentre({ title, subtitle, league }: LeagueCentrePr
               />
             )}
             <MatchList
-              heading="Latest results"
+              heading={league.completed ? "Final results" : "Latest results"}
               matches={division.results}
               empty="No results yet."
               showScore
@@ -159,12 +206,12 @@ export default function LeagueCentre({ title, subtitle, league }: LeagueCentrePr
 
         <p className="text-center mt-8">
           <a
-            href={league.shareUrl}
+            href={league.completed ? `${league.shareUrl}?tab=standings` : league.shareUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-momentum-orange font-semibold hover:underline"
           >
-            Full fixtures, results and tables
+            Full fixtures, results and tables for {league.name}
             <ExternalLink size={16} />
           </a>
         </p>

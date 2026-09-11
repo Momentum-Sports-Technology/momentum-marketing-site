@@ -15,8 +15,8 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const site = await getContent("site");
   const leagues = await getLeagues(site.fixtures.leagues.map((l) => l.mstLeagueId));
-  // The running league if there is one, otherwise the most recent.
-  const currentLeague = leagues.find((l) => !l.completed) ?? leagues[0] ?? null;
+  // Open on the running league if there is one, otherwise the most recent.
+  const currentLeague = leagues.find((l) => !l.completed) ?? leagues[0];
   const featured = site.programmes.filter((p) => p.featured);
   const interests = [...site.programmes.map((p) => p.name), "Something else"];
 
@@ -77,7 +77,8 @@ export default async function HomePage() {
       <LeagueCentre
         title={site.fixtures.title}
         subtitle={site.fixtures.subtitle}
-        league={currentLeague}
+        leagues={leagues}
+        initialLeagueId={currentLeague?.id}
       />
 
       <Stats title="Momentum in numbers" subtitle={site.contact.area} stats={site.stats} />
