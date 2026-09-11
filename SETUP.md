@@ -3,11 +3,13 @@
 ## Initial Setup (5 minutes)
 
 ### 1. Install Dependencies
+
 ```bash
 yarn install
 ```
 
 ### 2. Configure Environment
+
 The `.env.local` file is already created. Update these values:
 
 ```env
@@ -20,6 +22,7 @@ NEXTAUTH_URL=http://localhost:3000
 ```
 
 ### 3. Start Development Server
+
 ```bash
 yarn dev
 ```
@@ -29,6 +32,7 @@ Visit: http://localhost:3000
 ## Using the Admin Panel
 
 ### Access
+
 1. Navigate to http://localhost:3000/admin
 2. Enter your `ADMIN_PASSWORD`
 3. Edit content and save
@@ -63,6 +67,7 @@ You can edit this file directly or use the admin panel.
 4. **Create content loader:** Add function to `lib/content.ts`
 
 Example:
+
 ```typescript
 // lib/content.ts
 export async function getWomensLeagueContent() {
@@ -82,46 +87,16 @@ export default async function WomensLeaguePage() {
 
 ## Email Integration
 
-### Registration Form with Resend
+### Form email
 
-1. **Install Resend:**
-```bash
-yarn add resend
-```
-
-2. **Add to .env.local:**
-```env
-RESEND_API_KEY=re_xxxxx
-ADMIN_EMAIL=admin@momentumnetball.co.uk
-```
-
-3. **Update `/app/api/register/route.ts`:**
-```typescript
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Inside POST function after saving registration:
-await resend.emails.send({
-  from: 'Momentum Netball <noreply@momentumnetball.co.uk>',
-  to: process.env.ADMIN_EMAIL,
-  subject: 'New Mixed League Registration',
-  html: `
-    <h2>New Registration</h2>
-    <p><strong>Name:</strong> ${registration.name}</p>
-    <p><strong>Email:</strong> ${registration.email}</p>
-    <p><strong>Phone:</strong> ${registration.phone}</p>
-    <p><strong>Experience:</strong> ${registration.experience}</p>
-    <p><strong>Message:</strong> ${registration.message}</p>
-  `
-});
-```
-
-## Customization
+Contact, registration and newsletter forms email `ADMIN_EMAIL` through SendGrid's HTTP API
+(`lib/email.ts`). Set `SENDGRID_API_KEY`; without it, messages are logged and still saved to
+`data/*.jsonl`, readable in the admin Submissions tab.
 
 ### Colors
 
 Edit `tailwind.config.ts`:
+
 ```typescript
 colors: {
   momentum: {
@@ -135,6 +110,7 @@ colors: {
 ### Fonts
 
 Edit `app/layout.tsx`:
+
 ```typescript
 import { YourFont } from "next/font/google";
 
@@ -144,6 +120,7 @@ const yourFont = YourFont({ subsets: ["latin"] });
 ### Images
 
 Add images to `/public/images/` and reference:
+
 ```typescript
 <Image src="/images/your-image.jpg" alt="..." />
 ```
@@ -151,6 +128,7 @@ Add images to `/public/images/` and reference:
 ## Troubleshooting
 
 ### Build Errors
+
 ```bash
 rm -rf .next node_modules
 yarn install
@@ -158,10 +136,12 @@ yarn build
 ```
 
 ### Content Not Updating
+
 - Check JSON syntax in content files
 - Restart dev server: `yarn dev`
 
 ### Admin Panel Not Working
+
 - Verify `ADMIN_PASSWORD` is set in `.env.local`
 - Check browser console for errors
 - Clear localStorage and try again
@@ -169,6 +149,7 @@ yarn build
 ## Production Checklist
 
 Before deploying:
+
 - [ ] Change `ADMIN_PASSWORD` to something secure (min 12 characters)
 - [ ] Generate new `NEXTAUTH_SECRET`: `openssl rand -base64 32`
 - [ ] Update `NEXTAUTH_URL` to production domain
@@ -184,4 +165,3 @@ Before deploying:
 - Next.js docs: https://nextjs.org/docs
 - Tailwind CSS: https://tailwindcss.com/docs
 - Framer Motion: https://www.framer.com/motion/
-

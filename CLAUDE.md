@@ -14,7 +14,7 @@ yarn build          # must pass before commit; also runs typechecking
 yarn tsc --noEmit -p .
 ```
 
-`.env.local` needs `ADMIN_PASSWORD` for the admin panel. `RESEND_API_KEY` is optional in dev:
+`.env.local` needs `ADMIN_PASSWORD` for the admin panel. `SENDGRID_API_KEY` is optional in dev:
 without it emails are logged, not sent. There is no ESLint config yet; `yarn lint` prompts to
 create one.
 
@@ -27,7 +27,7 @@ create one.
 | `app/mixed`                                                                                           | Mixed League page with its registration form                                                                       |
 | `app/admin`                                                                                           | Password-protected editor. Tabs map to content files. Mixed League has a form editor, the rest edit validated JSON |
 | `app/api/content/[slug]`                                                                              | GET public, PUT requires `Authorization: Bearer <session>`                                                         |
-| `app/api/contact`, `app/api/newsletter`, `app/api/register`                                           | Form endpoints: zod-validated, honeypot field `website`, append to `data/*.jsonl`, email via Resend                |
+| `app/api/contact`, `app/api/newsletter`, `app/api/register`                                           | Form endpoints: zod-validated, honeypot field `website`, append to `data/*.jsonl`, email via SendGrid                |
 | `lib/content.ts`                                                                                      | Zod schema per content file and the `getContent` / `updateContent` registry. Add a new file here first             |
 | `lib/sessions.ts`                                                                                     | Stateless HMAC session tokens signed with `SESSION_SECRET` or `ADMIN_PASSWORD`                                     |
 | `lib/urls.ts`                                                                                         | `BOOKING_URL` and `resolveCta`; client-safe, no Node imports                                                       |

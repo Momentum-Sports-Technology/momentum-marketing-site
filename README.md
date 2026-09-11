@@ -70,7 +70,7 @@ how this site, Mini Momentum (booking) and Momentum Sports Technology (fixtures)
 Docker on Hetzner via git-pull:
 
 ```bash
-cp .env.production.example .env   # fill in ADMIN_PASSWORD and RESEND_API_KEY
+cp .env.production.example .env   # fill in ADMIN_PASSWORD and SENDGRID_API_KEY
 docker compose -f docker-compose.production.yml up -d --build
 ```
 
@@ -79,7 +79,6 @@ in `/admin` are stored on a Docker volume and survive rebuilds.
 
 ## Future Enhancements
 
-- Email integration for registration forms (Resend/SendGrid)
 - Additional league pages (Women's, Juniors)
 - Database migration from JSON
 - Integration with booking systems
