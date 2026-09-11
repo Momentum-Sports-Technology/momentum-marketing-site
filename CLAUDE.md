@@ -27,11 +27,11 @@ create one.
 | `app/mixed`                                                                                           | Mixed League page with its registration form                                                                       |
 | `app/admin`                                                                                           | Password-protected editor. Tabs map to content files. Mixed League has a form editor, the rest edit validated JSON |
 | `app/api/content/[slug]`                                                                              | GET public, PUT requires `Authorization: Bearer <session>`                                                         |
-| `app/api/contact`, `app/api/newsletter`, `app/api/register`                                           | Form endpoints: zod-validated, honeypot field `website`, append to `data/*.jsonl`, email via SendGrid                |
+| `app/api/contact`, `app/api/newsletter`, `app/api/register`                                           | Form endpoints: zod-validated, honeypot field `website`, append to `data/*.jsonl`, email via SendGrid              |
 | `lib/content.ts`                                                                                      | Zod schema per content file and the `getContent` / `updateContent` registry. Add a new file here first             |
 | `lib/sessions.ts`                                                                                     | Stateless HMAC session tokens signed with `SESSION_SECRET` or `ADMIN_PASSWORD`                                     |
 | `lib/urls.ts`                                                                                         | `BOOKING_URL` and `resolveCta`; client-safe, no Node imports                                                       |
-| `components/FixturesEmbed.tsx`                                                                        | MST iframe, `https://<MST>/share/leagues/<id>?embed=1`, one tab per league in `site.json`                          |
+| `lib/mst.ts`, `components/LeagueCentre.tsx`, `components/LeagueChampions.tsx` | MST public league API (`/api/public/leagues/<id>`), cached 5 min; homepage tables/results/fixtures and the champions on Players of the Season. MST share pages cannot be iframed (X-Frame-Options SAMEORIGIN) |
 | `content/*.json`                                                                                      | The CMS. Edited through admin in production (Docker volume), committed here for dev                                |
 
 ## Conventions

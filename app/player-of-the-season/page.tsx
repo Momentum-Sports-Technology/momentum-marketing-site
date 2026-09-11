@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Trophy } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import LeagueChampions from "@/components/LeagueChampions";
 import { getContent } from "@/lib/content";
+import { getLeagues } from "@/lib/mst";
 
 export const dynamic = "force-dynamic";
 
@@ -11,11 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default async function PlayersOfTheSeasonPage() {
-  const content = await getContent("players-of-the-season");
+  const [content, site] = await Promise.all([
+    getContent("players-of-the-season"),
+    getContent("site"),
+  ]);
+  const leagues = await getLeagues(site.fixtures.leagues.map((l) => l.mstLeagueId));
 
   return (
     <>
       <PageHeader eyebrow="Awards" title={content.title} subtitle={content.intro} />
+
+      <LeagueChampions leagues={leagues} />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl space-y-16">

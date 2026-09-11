@@ -112,8 +112,17 @@
   ],
   "fixtures": {
     "title": "Results & Upcoming Fixtures",
-    "subtitle": "Live standings and fixtures, straight from our league system",
-    "leagues": []
+    "subtitle": "Live tables, results and fixtures from our league system",
+    "leagues": [
+      {
+        "name": "Summer Season 26",
+        "mstLeagueId": "2"
+      },
+      {
+        "name": "Summer One 2026",
+        "mstLeagueId": "1"
+      }
+    ]
   },
   "venues": [
     {

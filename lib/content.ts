@@ -62,7 +62,7 @@ export const siteSchema = z.object({
   fixtures: z.object({
     title: z.string(),
     subtitle: z.string(),
-    /** MST public league pages. Empty until Adam supplies the ids. */
+    /** MST leagues, newest first. The homepage shows the running one; finished ones list their champions. */
     leagues: z.array(z.object({ name: z.string(), mstLeagueId: z.string() })),
   }),
   venues: z.array(
