@@ -26,14 +26,20 @@ const tabs: Array<{ slug: TabSlug; label: string; hint: string }> = [
   },
   { slug: "code-of-conduct", label: "Code of Conduct", hint: "Sections and rules" },
   { slug: "shop", label: "Shop", hint: "Products and Stripe Payment Links" },
-  { slug: "submissions", label: "Submissions", hint: "Contact form, registrations and newsletter sign-ups" },
+  {
+    slug: "submissions",
+    label: "Submissions",
+    hint: "Contact form, registrations and newsletter sign-ups",
+  },
 ];
 
 export default function AdminPage() {
   const router = useRouter();
   const [authenticated, setAuthenticated] = useState(false);
   const [activeSlug, setActiveSlug] = useState<TabSlug>("site");
-  const [content, setContent] = useState<unknown>(null);
+  // Content is stored with the slug it was loaded for, so an editor never
+  // renders another tab's data during the switch.
+  const [loaded, setLoaded] = useState<{ slug: ContentSlug; data: unknown } | null>(null);
   const [loading, setLoading] = useState(true);
   const [saveState, setSaveState] = useState<SaveState>({ status: "idle" });
 
@@ -57,7 +63,7 @@ export default function AdminPage() {
     fetch(`/api/content/${activeSlug}`)
       .then((r) => r.json())
       .then((data) => {
-        if (!cancelled) setContent(data);
+        if (!cancelled) setLoaded({ slug: activeSlug as ContentSlug, data });
       })
       .catch((error) => console.error("Error fetching content:", error))
       .finally(() => {
@@ -84,7 +90,7 @@ export default function AdminPage() {
         const issues = Array.isArray(data.issues) ? `\n${data.issues.join("\n")}` : "";
         throw new Error(`${data.error || "Failed to save"}${issues}`);
       }
-      setContent(next);
+      setLoaded({ slug: activeSlug as ContentSlug, data: next });
       setSaveState({ status: "saved" });
     } catch (error) {
       setSaveState({
@@ -147,19 +153,19 @@ export default function AdminPage() {
 
         {activeSlug === "submissions" ? (
           <SubmissionsPanel />
-        ) : loading || content === null ? (
+        ) : loading || loaded === null || loaded.slug !== activeSlug ? (
           <p className="text-gray-500">Loading...</p>
         ) : activeSlug === "mixed-league" ? (
           <MixedLeagueEditor
             key={activeSlug}
-            initial={content as Parameters<typeof MixedLeagueEditor>[0]["initial"]}
+            initial={loaded.data as Parameters<typeof MixedLeagueEditor>[0]["initial"]}
             saveState={saveState}
             onSave={handleSave}
           />
         ) : (
           <JsonEditor
             key={activeSlug}
-            initial={content}
+            initial={loaded.data}
             saveState={saveState}
             onSave={handleSave}
           />
