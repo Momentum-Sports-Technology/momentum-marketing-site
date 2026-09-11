@@ -49,5 +49,7 @@ create one.
 
 Docker on hetzner-ts, git-pull, `docker compose -f docker-compose.production.yml up -d --build`.
 Container `momentum-marketing-prod` on 127.0.0.1:3120 behind nginx. Content and form data are
-on named volumes; the image seeds `/app/content` on first run only. Env in `.env` on the server,
+on named volumes; the image seeds `/app/content` on first run only. Content changes committed to
+`content/*.json` therefore do not reach a running deployment: edit them in admin, or merge the
+file into the volume (`docker exec -i momentum-marketing-prod sh -c 'cat > /app/content/<file>.json'`). Env in `.env` on the server,
 template in `.env.production.example`.

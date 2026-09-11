@@ -101,7 +101,7 @@ export default function LeagueCentre({ title, subtitle, league }: LeagueCentrePr
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-          <div className="lg:col-span-3 bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden">
+          <div className="lg:col-span-3 self-start bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full text-sm">
                 <thead className="bg-momentum-dark text-white">
