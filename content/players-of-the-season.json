@@ -1,6 +1,14 @@
 {
   "title": "Players of the Season",
   "intro": "Each division's Player of the Season is the player with the most Player of the Match awards over the season. Winners are celebrated alongside our division champions.",
+  "tieBreaks": [
+    {
+      "mstLeagueId": "1",
+      "division": "Division 2",
+      "name": "Katie",
+      "team": "OG Netchix"
+    }
+  ],
   "divisions": [
     {
       "name": "John Hanson Division 1",

@@ -23,7 +23,7 @@ export default async function PlayersOfTheSeasonPage() {
     <>
       <PageHeader eyebrow="Awards" title={content.title} subtitle={content.intro} />
 
-      <LeagueChampions leagues={leagues} />
+      <LeagueChampions leagues={leagues} tieBreaks={content.tieBreaks} />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl space-y-16">

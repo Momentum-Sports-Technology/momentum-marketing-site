@@ -84,6 +84,17 @@ export const siteSchema = z.object({
 export const playersOfTheSeasonSchema = z.object({
   title: z.string(),
   intro: z.string(),
+  /** Organisers' pick when several players tie on player of the match awards in a division. */
+  tieBreaks: z
+    .array(
+      z.object({
+        mstLeagueId: z.string(),
+        division: z.string(),
+        name: z.string(),
+        team: z.string(),
+      })
+    )
+    .default([]),
   divisions: z.array(
     z.object({
       name: z.string(),

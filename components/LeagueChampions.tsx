@@ -1,8 +1,33 @@
 import { Star, Trophy } from "lucide-react";
-import type { League } from "@/lib/mst";
+import type { League, PlayerAward } from "@/lib/mst";
+
+export interface TieBreak {
+  mstLeagueId: string;
+  division: string;
+  name: string;
+  team: string;
+}
+
+function pick(leaders: PlayerAward[], tieBreak: TieBreak | undefined): { winners: PlayerAward[]; tiedCount: number } {
+  if (leaders.length > 1 && tieBreak) {
+    const chosen = leaders.find(
+      (p) =>
+        p.name.toLowerCase() === tieBreak.name.trim().toLowerCase() &&
+        p.team.toLowerCase() === tieBreak.team.trim().toLowerCase()
+    );
+    if (chosen) return { winners: [chosen], tiedCount: leaders.length };
+  }
+  return { winners: leaders, tiedCount: leaders.length };
+}
 
 /** Division winners, runners-up and players of the season for completed MST leagues, newest first. */
-export default function LeagueChampions({ leagues }: { leagues: League[] }) {
+export default function LeagueChampions({
+  leagues,
+  tieBreaks = [],
+}: {
+  leagues: League[];
+  tieBreaks?: TieBreak[];
+}) {
   const finished = leagues.filter((league) => league.completed);
   if (finished.length === 0) return null;
 
@@ -19,6 +44,12 @@ export default function LeagueChampions({ leagues }: { leagues: League[] }) {
               {league.divisions.map((division) => {
                 const [winner, runnerUp] = division.standings;
                 if (!winner) return null;
+                const { winners, tiedCount } = pick(
+                  division.playersOfSeason,
+                  tieBreaks.find(
+                    (t) => t.mstLeagueId === league.id && t.division === division.name
+                  )
+                );
                 return (
                   <div
                     key={division.id}
@@ -37,14 +68,14 @@ export default function LeagueChampions({ leagues }: { leagues: League[] }) {
                         Runners-up: <span className="font-semibold">{runnerUp.team}</span>
                       </p>
                     )}
-                    {division.playersOfSeason.length > 0 && (
+                    {winners.length > 0 && (
                       <div className="mt-4 rounded-xl bg-orange-50 px-3 py-3">
                         <p className="flex items-center justify-center gap-1 text-xs font-semibold uppercase tracking-wider text-momentum-orange mb-1">
                           <Star size={14} className="fill-current" />
                           Player of the Season
                         </p>
                         <ul className="space-y-0.5">
-                          {division.playersOfSeason.map((p) => (
+                          {winners.map((p) => (
                             <li key={`${p.team}-${p.name}`} className="text-sm">
                               <span className="font-bold text-gray-900">{p.name}</span>{" "}
                               <span className="text-gray-500">({p.team})</span>
@@ -52,9 +83,12 @@ export default function LeagueChampions({ leagues }: { leagues: League[] }) {
                           ))}
                         </ul>
                         <p className="text-xs text-gray-500 mt-1">
-                          {division.playersOfSeason.length > 1 ? "Joint winners, " : ""}
-                          {division.playersOfSeason[0].awards} player of the match{" "}
-                          {division.playersOfSeason[0].awards === 1 ? "award" : "awards"}
+                          {winners.length > 1 ? "Joint winners, " : ""}
+                          {winners[0].awards} player of the match{" "}
+                          {winners[0].awards === 1 ? "award" : "awards"}
+                          {winners.length === 1 && tiedCount > 1
+                            ? `, chosen from a ${tiedCount}-way tie`
+                            : ""}
                         </p>
                       </div>
                     )}
