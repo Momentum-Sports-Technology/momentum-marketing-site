@@ -42,6 +42,8 @@ interface RawLeague {
     awayScore: number | null;
     venue?: { name?: string } | null;
     venueCourt?: { name?: string } | null;
+    homePlayerOfMatch?: string;
+    awayPlayerOfMatch?: string;
   }>;
 }
 
@@ -66,10 +68,18 @@ export interface LeagueMatch {
   venue: string;
 }
 
+export interface PlayerAward {
+  name: string;
+  team: string;
+  awards: number;
+}
+
 export interface LeagueDivision {
   id: number;
   name: string;
   standings: StandingRow[];
+  /** Most player of the match awards in the division; more than one when tied. */
+  playersOfSeason: PlayerAward[];
   results: LeagueMatch[];
   upcoming: LeagueMatch[];
 }
@@ -100,6 +110,42 @@ const dayFmt = new Intl.DateTimeFormat("en-GB", {
 
 function teamName(team: RawTeam): string {
   return team?.name?.trim() || "";
+}
+
+function tidyName(name: string): string {
+  return name
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/**
+ * Player of the season: the player with the most player of the match awards
+ * across every team in the division. Awards are counted per team, because
+ * players are recorded by first name only and the same name recurs in
+ * different teams.
+ */
+function playersOfSeason(matches: RawLeague["matches"]): PlayerAward[] {
+  const tally = new Map<string, PlayerAward>();
+  for (const m of matches) {
+    if (m.status !== "completed") continue;
+    for (const [team, player] of [
+      [teamName(m.homeTeam), m.homePlayerOfMatch],
+      [teamName(m.awayTeam), m.awayPlayerOfMatch],
+    ] as const) {
+      const name = tidyName(player ?? "");
+      if (!team || !name) continue;
+      const key = `${team.toLowerCase()}|${name.toLowerCase()}`;
+      const entry = tally.get(key) ?? { name, team, awards: 0 };
+      entry.awards += 1;
+      tally.set(key, entry);
+    }
+  }
+  const top = Math.max(0, ...[...tally.values()].map((p) => p.awards));
+  if (top === 0) return [];
+  return [...tally.values()]
+    .filter((p) => p.awards === top)
+    .sort((a, b) => a.team.localeCompare(b.team) || a.name.localeCompare(b.name));
 }
 
 function toLeague(id: string, raw: RawLeague, now: number): League {
@@ -151,6 +197,7 @@ function toLeague(id: string, raw: RawLeague, now: number): League {
         id: division.id,
         name: division.displayName || division.name,
         standings,
+        playersOfSeason: playersOfSeason(matches),
         results,
         upcoming,
       };

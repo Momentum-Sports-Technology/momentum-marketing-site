@@ -1,7 +1,7 @@
-import { Trophy } from "lucide-react";
+import { Star, Trophy } from "lucide-react";
 import type { League } from "@/lib/mst";
 
-/** Division winners and runners-up for completed MST leagues, newest first. */
+/** Division winners, runners-up and players of the season for completed MST leagues, newest first. */
 export default function LeagueChampions({ leagues }: { leagues: League[] }) {
   const finished = leagues.filter((league) => league.completed);
   if (finished.length === 0) return null;
@@ -12,7 +12,7 @@ export default function LeagueChampions({ leagues }: { leagues: League[] }) {
         {finished.map((league) => (
           <div key={league.id}>
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">{league.name} champions</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">{league.name}</h2>
               {league.dates && <p className="text-gray-500">{league.dates}</p>}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -36,6 +36,27 @@ export default function LeagueChampions({ leagues }: { leagues: League[] }) {
                       <p className="text-sm text-gray-600 border-t border-gray-100 pt-3">
                         Runners-up: <span className="font-semibold">{runnerUp.team}</span>
                       </p>
+                    )}
+                    {division.playersOfSeason.length > 0 && (
+                      <div className="mt-4 rounded-xl bg-orange-50 px-3 py-3">
+                        <p className="flex items-center justify-center gap-1 text-xs font-semibold uppercase tracking-wider text-momentum-orange mb-1">
+                          <Star size={14} className="fill-current" />
+                          Player of the Season
+                        </p>
+                        <ul className="space-y-0.5">
+                          {division.playersOfSeason.map((p) => (
+                            <li key={`${p.team}-${p.name}`} className="text-sm">
+                              <span className="font-bold text-gray-900">{p.name}</span>{" "}
+                              <span className="text-gray-500">({p.team})</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="text-xs text-gray-500 mt-1">
+                          {division.playersOfSeason.length > 1 ? "Joint winners, " : ""}
+                          {division.playersOfSeason[0].awards} player of the match{" "}
+                          {division.playersOfSeason[0].awards === 1 ? "award" : "awards"}
+                        </p>
+                      </div>
                     )}
                   </div>
                 );

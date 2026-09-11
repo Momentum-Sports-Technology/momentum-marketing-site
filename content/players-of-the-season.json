@@ -1,6 +1,6 @@
 {
   "title": "Players of the Season",
-  "intro": "Momentum Netball recognises players who demonstrate exceptional skill, sportsmanship, and dedication throughout the season. Winners are chosen by the umpires and announced at our end-of-season celebrations.",
+  "intro": "Each division's Player of the Season is the player with the most Player of the Match awards over the season. Winners are celebrated alongside our division champions.",
   "divisions": [
     {
       "name": "John Hanson Division 1",
@@ -8,51 +8,141 @@
         {
           "name": "Autumn (Outside) 2025",
           "players": [
-            { "name": "Sarah", "team": "Boozers" },
-            { "name": "Gemma", "team": "Court Queens" },
-            { "name": "Nicole", "team": "Net Ninjas" },
-            { "name": "Helen", "team": "Meerkats" },
-            { "name": "Lauren", "team": "Falcons" },
-            { "name": "Rhea", "team": "Goodies" }
+            {
+              "name": "Sarah",
+              "team": "Boozers"
+            },
+            {
+              "name": "Gemma",
+              "team": "Court Queens"
+            },
+            {
+              "name": "Nicole",
+              "team": "Net Ninjas"
+            },
+            {
+              "name": "Helen",
+              "team": "Meerkats"
+            },
+            {
+              "name": "Lauren",
+              "team": "Falcons"
+            },
+            {
+              "name": "Rhea",
+              "team": "Goodies"
+            }
           ]
         },
         {
           "name": "Autumn 2025",
           "players": [
-            { "name": "Wanda", "team": "OMG" },
-            { "name": "Dizzy", "team": "O. G Netchix" },
-            { "name": "Holly", "team": "Gems" },
-            { "name": "Jamie", "team": "Hoops" },
-            { "name": "Caroline", "team": "Victorious Hoops" },
-            { "name": "Charlie", "team": "Hotshotz" }
+            {
+              "name": "Wanda",
+              "team": "OMG"
+            },
+            {
+              "name": "Dizzy",
+              "team": "O. G Netchix"
+            },
+            {
+              "name": "Holly",
+              "team": "Gems"
+            },
+            {
+              "name": "Jamie",
+              "team": "Hoops"
+            },
+            {
+              "name": "Caroline",
+              "team": "Victorious Hoops"
+            },
+            {
+              "name": "Charlie",
+              "team": "Hotshotz"
+            }
           ]
         },
         {
           "name": "Summer (2) 2025",
           "players": [
-            { "name": "Sophie S", "team": "Hotshotz" },
-            { "name": "Nicky", "team": "Titans" },
-            { "name": "Lauren", "team": "Falcons" },
-            { "name": "Kiera", "team": "Gems" },
-            { "name": "Jamie", "team": "Hoops" },
-            { "name": "Debs", "team": "Won Direction" },
-            { "name": "Emmie", "team": "Marmite" },
-            { "name": "Rosie", "team": "Net Ninjas" }
+            {
+              "name": "Sophie S",
+              "team": "Hotshotz"
+            },
+            {
+              "name": "Nicky",
+              "team": "Titans"
+            },
+            {
+              "name": "Lauren",
+              "team": "Falcons"
+            },
+            {
+              "name": "Kiera",
+              "team": "Gems"
+            },
+            {
+              "name": "Jamie",
+              "team": "Hoops"
+            },
+            {
+              "name": "Debs",
+              "team": "Won Direction"
+            },
+            {
+              "name": "Emmie",
+              "team": "Marmite"
+            },
+            {
+              "name": "Rosie",
+              "team": "Net Ninjas"
+            }
           ]
         },
         {
           "name": "Summer 2025",
           "players": [
-            { "name": "Ellie and Jasmin", "team": "Falcons" },
-            { "name": "Harriet", "team": "Gems" },
-            { "name": "Sophie S.", "team": "Hotshotz" },
-            { "name": "Sue", "team": "Meerkats" },
-            { "name": "Emmie and Fliss", "team": "Marmite" },
-            { "name": "Claire H", "team": "OG Netchix" },
-            { "name": "Wanda", "team": "OMG" },
-            { "name": "Robyn", "team": "Titans" },
-            { "name": "Lucy S.", "team": "Whizzy Warriors" },
-            { "name": "Fiona", "team": "Net Ninjas" }
+            {
+              "name": "Ellie and Jasmin",
+              "team": "Falcons"
+            },
+            {
+              "name": "Harriet",
+              "team": "Gems"
+            },
+            {
+              "name": "Sophie S.",
+              "team": "Hotshotz"
+            },
+            {
+              "name": "Sue",
+              "team": "Meerkats"
+            },
+            {
+              "name": "Emmie and Fliss",
+              "team": "Marmite"
+            },
+            {
+              "name": "Claire H",
+              "team": "OG Netchix"
+            },
+            {
+              "name": "Wanda",
+              "team": "OMG"
+            },
+            {
+              "name": "Robyn",
+              "team": "Titans"
+            },
+            {
+              "name": "Lucy S.",
+              "team": "Whizzy Warriors"
+            },
+            {
+              "name": "Fiona",
+              "team": "Net Ninjas"
+            }
           ]
         }
       ]
@@ -63,36 +153,96 @@
         {
           "name": "Autumn 2025",
           "players": [
-            { "name": "Flo", "team": "Shimmering Sunflowers" },
-            { "name": "Georgina", "team": "Netchix" },
-            { "name": "Claire E", "team": "Whizzy Warriors" },
-            { "name": "Marinana", "team": "Fumblers" },
-            { "name": "Hannah S", "team": "Shooting Stars" }
+            {
+              "name": "Flo",
+              "team": "Shimmering Sunflowers"
+            },
+            {
+              "name": "Georgina",
+              "team": "Netchix"
+            },
+            {
+              "name": "Claire E",
+              "team": "Whizzy Warriors"
+            },
+            {
+              "name": "Marinana",
+              "team": "Fumblers"
+            },
+            {
+              "name": "Hannah S",
+              "team": "Shooting Stars"
+            }
           ]
         },
         {
           "name": "Summer (2) 2025",
           "players": [
-            { "name": "Shannon", "team": "Victorious Hoops" },
-            { "name": "Erin", "team": "Boozers" },
-            { "name": "Fraya", "team": "Thunder" },
-            { "name": "Ella", "team": "Warriors" },
-            { "name": "Molly", "team": "Drop It" },
-            { "name": "Erin", "team": "Shooting Stars" },
-            { "name": "Charlie", "team": "Meerkats" },
-            { "name": "Izzy", "team": "OG" }
+            {
+              "name": "Shannon",
+              "team": "Victorious Hoops"
+            },
+            {
+              "name": "Erin",
+              "team": "Boozers"
+            },
+            {
+              "name": "Fraya",
+              "team": "Thunder"
+            },
+            {
+              "name": "Ella",
+              "team": "Warriors"
+            },
+            {
+              "name": "Molly",
+              "team": "Drop It"
+            },
+            {
+              "name": "Erin",
+              "team": "Shooting Stars"
+            },
+            {
+              "name": "Charlie",
+              "team": "Meerkats"
+            },
+            {
+              "name": "Izzy",
+              "team": "OG"
+            }
           ]
         },
         {
           "name": "Summer 2025",
           "players": [
-            { "name": "Erin", "team": "Boozers" },
-            { "name": "Rhea & Georgie", "team": "Goodie Girls" },
-            { "name": "Leanne", "team": "Netchix" },
-            { "name": "Molly", "team": "Stumblers" },
-            { "name": "Alice", "team": "Shooting Stars" },
-            { "name": "Summer", "team": "Hoops There It Is" },
-            { "name": "Caroline", "team": "Victorious Hoops" }
+            {
+              "name": "Erin",
+              "team": "Boozers"
+            },
+            {
+              "name": "Rhea & Georgie",
+              "team": "Goodie Girls"
+            },
+            {
+              "name": "Leanne",
+              "team": "Netchix"
+            },
+            {
+              "name": "Molly",
+              "team": "Stumblers"
+            },
+            {
+              "name": "Alice",
+              "team": "Shooting Stars"
+            },
+            {
+              "name": "Summer",
+              "team": "Hoops There It Is"
+            },
+            {
+              "name": "Caroline",
+              "team": "Victorious Hoops"
+            }
           ]
         }
       ]
@@ -103,33 +253,84 @@
         {
           "name": "Autumn 2025",
           "players": [
-            { "name": "Charlotte", "team": "Winging It" },
-            { "name": "Tina", "team": "Spice Goals" },
-            { "name": "Jess", "team": "Mighty Manes" },
-            { "name": "Holly C", "team": "Boozers" },
-            { "name": "Lily", "team": "Pink Ladies" }
+            {
+              "name": "Charlotte",
+              "team": "Winging It"
+            },
+            {
+              "name": "Tina",
+              "team": "Spice Goals"
+            },
+            {
+              "name": "Jess",
+              "team": "Mighty Manes"
+            },
+            {
+              "name": "Holly C",
+              "team": "Boozers"
+            },
+            {
+              "name": "Lily",
+              "team": "Pink Ladies"
+            }
           ]
         },
         {
           "name": "Summer (2) 2025",
           "players": [
-            { "name": "Willow", "team": "Sunflowers" },
-            { "name": "Lauren", "team": "Spice Goals" },
-            { "name": "Kat", "team": "Netchix" },
-            { "name": "Liz", "team": "Fumblers" },
-            { "name": "Jade", "team": "Mighty Manes" },
-            { "name": "Hannah", "team": "Court Queens" }
+            {
+              "name": "Willow",
+              "team": "Sunflowers"
+            },
+            {
+              "name": "Lauren",
+              "team": "Spice Goals"
+            },
+            {
+              "name": "Kat",
+              "team": "Netchix"
+            },
+            {
+              "name": "Liz",
+              "team": "Fumblers"
+            },
+            {
+              "name": "Jade",
+              "team": "Mighty Manes"
+            },
+            {
+              "name": "Hannah",
+              "team": "Court Queens"
+            }
           ]
         },
         {
           "name": "Summer 2025",
           "players": [
-            { "name": "Livvy", "team": "Spice Goals" },
-            { "name": "Liz", "team": "Fumblers" },
-            { "name": "Nana", "team": "Pink Ladies" },
-            { "name": "Liv", "team": "Court Queens" },
-            { "name": "Molly", "team": "Mighty Manes" },
-            { "name": "Beth", "team": "Sunflowers" }
+            {
+              "name": "Livvy",
+              "team": "Spice Goals"
+            },
+            {
+              "name": "Liz",
+              "team": "Fumblers"
+            },
+            {
+              "name": "Nana",
+              "team": "Pink Ladies"
+            },
+            {
+              "name": "Liv",
+              "team": "Court Queens"
+            },
+            {
+              "name": "Molly",
+              "team": "Mighty Manes"
+            },
+            {
+              "name": "Beth",
+              "team": "Sunflowers"
+            }
           ]
         }
       ]
