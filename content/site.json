@@ -100,9 +100,9 @@
   ],
   "stats": [
     {
-      "value": "500",
-      "suffix": "+",
-      "label": "Active Players"
+      "value": "24",
+      "label": "Teams",
+      "source": "teams"
     },
     {
       "value": "12",

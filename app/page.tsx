@@ -27,7 +27,9 @@ export default async function HomePage() {
     const value =
       stat.source === "weeklyMatches"
         ? currentLeague.matchesPerWeek
-        : currentLeague.divisions.length;
+        : stat.source === "teams"
+          ? currentLeague.divisions.reduce((n, d) => n + d.standings.length, 0)
+          : currentLeague.divisions.length;
     return value > 0 ? { ...stat, value: String(value), suffix: undefined } : stat;
   });
   const featured = site.programmes.filter((p) => p.featured);

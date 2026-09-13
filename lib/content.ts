@@ -21,7 +21,7 @@ const statSchema = z.object({
   suffix: z.string().optional(),
   label: z.string(),
   /** Take the number from the current league instead of `value`. */
-  source: z.enum(["weeklyMatches", "divisions"]).optional(),
+  source: z.enum(["weeklyMatches", "divisions", "teams"]).optional(),
 });
 const featureSchema = z.object({ number: z.string(), title: z.string(), description: z.string() });
 
