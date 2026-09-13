@@ -9,6 +9,8 @@ import MixedLeagueEditor from "@/components/admin/MixedLeagueEditor";
 import JsonEditor from "@/components/admin/JsonEditor";
 import type { SaveState } from "@/components/admin/types";
 import SubmissionsPanel from "@/components/admin/SubmissionsPanel";
+import AlertBanner from "@/components/admin/AlertBanner";
+import { useAlerts } from "@/hooks/useAlerts";
 
 type TabSlug = ContentSlug | "submissions";
 
@@ -42,6 +44,7 @@ export default function AdminPage() {
   const [loaded, setLoaded] = useState<{ slug: ContentSlug; data: unknown } | null>(null);
   const [loading, setLoading] = useState(true);
   const [saveState, setSaveState] = useState<SaveState>({ status: "idle" });
+  const { alerts, handleDismiss: handleDismissAlerts } = useAlerts(authenticated);
 
   useEffect(() => {
     let cancelled = false;
@@ -132,6 +135,8 @@ export default function AdminPage() {
             <span>Sign out</span>
           </button>
         </div>
+
+        <AlertBanner alerts={alerts} onDismiss={handleDismissAlerts} />
 
         <div className="flex flex-wrap gap-2 mb-8">
           {tabs.map((tab) => (

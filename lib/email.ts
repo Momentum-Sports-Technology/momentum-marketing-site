@@ -4,6 +4,8 @@
 // SENDGRID_API_KEY the message is logged and the call reports `sent: false`,
 // so forms still succeed in development.
 
+import { recordAlert } from "@/lib/alerts";
+
 const FROM_EMAIL = process.env.EMAIL_FROM_ADDRESS || "noreply@momentumnetball.co.uk";
 const FROM_NAME = process.env.EMAIL_FROM_NAME || "Momentum Netball";
 export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "hello@momentumnetball.co.uk";
@@ -58,6 +60,10 @@ export async function notifyAdmin(args: Omit<SendArgs, "to">): Promise<{ sent: b
     return await sendEmail({ ...args, to: ADMIN_EMAIL });
   } catch (error) {
     console.error("[email] admin notification failed:", error);
+    recordAlert(
+      "email",
+      `Notification email failed: ${args.subject}. The submission is saved in the Submissions tab — reply to the sender yourself. (${error instanceof Error ? error.message : String(error)})`,
+    );
     return { sent: false };
   }
 }
