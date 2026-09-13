@@ -117,23 +117,6 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
               <div className="absolute inset-0 bg-gradient-to-tr from-momentum-purple/20 to-transparent" />
             </div>
 
-            {/* Floating stats card */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="absolute -bottom-8 -left-8 bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl shadow-xl"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-momentum-orange rounded-xl flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">4.9</span>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Player Rating</p>
-                  <p className="font-semibold text-white">Trusted by 100+ players</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
