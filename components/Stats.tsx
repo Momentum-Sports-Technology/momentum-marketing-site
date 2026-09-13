@@ -29,7 +29,14 @@ export default function Stats({ title, subtitle, stats }: StatsProps) {
           {subtitle && <p className="text-xl text-gray-400">{subtitle}</p>}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div
+          className={`grid grid-cols-2 gap-8 max-w-5xl mx-auto ${
+            // One row on desktop whatever the count, two per row on phones.
+            { 1: "md:grid-cols-1", 2: "md:grid-cols-2", 3: "md:grid-cols-3", 4: "md:grid-cols-4" }[
+              Math.min(stats.length, 4)
+            ] ?? "md:grid-cols-4"
+          }`}
+        >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
