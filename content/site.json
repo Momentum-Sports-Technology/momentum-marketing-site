@@ -50,6 +50,14 @@
       "ctaHref": "/events/thunder-pay-to-play"
     },
     {
+      "slug": "basingstoke",
+      "name": "Basingstoke",
+      "tagline": "Launching soon",
+      "description": "Friendly, social netball is coming to Basingstoke on Tuesday evenings, 6-8pm. Register your interest and you'll be first to hear when booking opens.",
+      "ctaText": "Register your interest",
+      "ctaHref": "/basingstoke"
+    },
+    {
       "slug": "netball-hour",
       "name": "Netball Hour",
       "tagline": "Monday evenings, Andover",
