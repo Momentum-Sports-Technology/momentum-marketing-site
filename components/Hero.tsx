@@ -116,7 +116,6 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-momentum-purple/20 to-transparent" />
             </div>
-
           </motion.div>
         </div>
       </div>

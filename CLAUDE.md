@@ -31,6 +31,7 @@ create one.
 | `lib/content.ts`                                                                                      | Zod schema per content file and the `getContent` / `updateContent` registry. Add a new file here first                                                                                                        |
 | `lib/sessions.ts`                                                                                     | Stateless HMAC session tokens signed with `SESSION_SECRET` or `ADMIN_PASSWORD`                                                                                                                                |
 | `lib/urls.ts`                                                                                         | `BOOKING_URL` and `resolveCta`; client-safe, no Node imports                                                                                                                                                  |
+| `lib/booking.ts`, `components/BookableCard.tsx` | Booking site's public API (`/api/event-categories`, `/api/event-availability`), cached 5 min. `/book` renders what is actually bookable — name, venue, price, next date, places left — instead of a hand-kept copy. Falls back to `site.programmes` if the booking site is unreachable |
 | `lib/mst.ts`, `components/LeagueCentre.tsx`, `components/LeagueChampions.tsx`                         | MST public league API (`/api/public/leagues/<id>`), cached 5 min; homepage tables/results/fixtures and the champions on Players of the Season. MST share pages cannot be iframed (X-Frame-Options SAMEORIGIN) |
 | `content/*.json`                                                                                      | The CMS. Edited through admin in production (Docker volume), committed here for dev                                                                                                                           |
 
@@ -44,6 +45,24 @@ create one.
 - Redirects for old WordPress URLs live in `next.config.js`. Keep them when adding routes.
 - Design tokens are in `tailwind.config.ts` (`momentum-orange`, `momentum-dark`). Headings use
   the Black Mango local font via `globals.css`.
+
+## The /book page
+
+Two sections. **Book now** comes from the booking system through `lib/booking.ts`
+— never edit those cards here, edit the programme in booking admin. **Other ways
+to play** is editorial: the `content/site.json` programmes whose `ctaHref` does
+*not* start with `/events/` (enquiries — Women's League, New to Netball,
+Individual Players).
+
+A programme therefore moves between sections by where its `ctaHref` points. Give
+it an `/events/<slug>` href and it leaves the editorial section, because the
+booking system is then describing it.
+
+The homepage stays editorial throughout: its featured cards are marketing copy.
+
+If the booking site cannot be reached, `/book` renders the full editorial list
+with no section headings — exactly what the page was before. Look for
+`[booking]` warnings in the server log if the live section is missing.
 
 ## Deploy
 

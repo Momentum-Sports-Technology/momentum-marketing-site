@@ -62,7 +62,7 @@ export async function notifyAdmin(args: Omit<SendArgs, "to">): Promise<{ sent: b
     console.error("[email] admin notification failed:", error);
     recordAlert(
       "email",
-      `Notification email failed: ${args.subject}. The submission is saved in the Submissions tab — reply to the sender yourself. (${error instanceof Error ? error.message : String(error)})`,
+      `Notification email failed: ${args.subject}. The submission is saved in the Submissions tab — reply to the sender yourself. (${error instanceof Error ? error.message : String(error)})`
     );
     return { sent: false };
   }
