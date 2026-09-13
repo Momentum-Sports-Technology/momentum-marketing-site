@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { ADMIN_EMAIL, escapeForEmail, sendEmail } from "@/lib/email";
+import { escapeForEmail, notifyAdmin } from "@/lib/email";
 import { appendSubmission } from "@/lib/submissions";
 
 const contactSchema = z.object({
@@ -22,8 +22,7 @@ export async function POST(request: NextRequest) {
 
   try {
     appendSubmission("contact", data);
-    await sendEmail({
-      to: ADMIN_EMAIL,
+    await notifyAdmin({
       replyTo: data.email,
       subject: `Website enquiry: ${escapeForEmail(data.interest)} from ${escapeForEmail(data.name)}`,
       text: [

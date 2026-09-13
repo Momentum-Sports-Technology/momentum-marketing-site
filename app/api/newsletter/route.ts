@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { ADMIN_EMAIL, escapeForEmail, sendEmail } from "@/lib/email";
+import { escapeForEmail, notifyAdmin } from "@/lib/email";
 import { appendSubmission } from "@/lib/submissions";
 
 // Sign-ups are appended to data/newsletter.jsonl and emailed to the admin
@@ -24,8 +24,7 @@ export async function POST(request: NextRequest) {
   try {
     const { email, name, phone, source } = parsed.data;
     appendSubmission("newsletter", { email, name, phone, source });
-    await sendEmail({
-      to: ADMIN_EMAIL,
+    await notifyAdmin({
       replyTo: email,
       subject: `New sign-up (${escapeForEmail(source)}): ${escapeForEmail(name) || escapeForEmail(email)}`,
       text: [

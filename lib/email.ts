@@ -47,6 +47,21 @@ export async function sendEmail({
   return { sent: true };
 }
 
+/**
+ * Admin notification for a form submission. The submission is already stored by
+ * the time this runs, so a failure here must not fail the request — the person
+ * filling in the form would see an error and send it again. Log it for the
+ * operator instead, and report whether it went.
+ */
+export async function notifyAdmin(args: Omit<SendArgs, "to">): Promise<{ sent: boolean }> {
+  try {
+    return await sendEmail({ ...args, to: ADMIN_EMAIL });
+  } catch (error) {
+    console.error("[email] admin notification failed:", error);
+    return { sent: false };
+  }
+}
+
 export function escapeForEmail(value: unknown): string {
   return String(value ?? "")
     .replace(/[\r\n]+/g, " ")
