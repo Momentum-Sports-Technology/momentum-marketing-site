@@ -51,6 +51,8 @@ export const siteSchema = z.object({
   contact: z.object({
     email: z.string(),
     phone: z.string().optional(),
+    /** Google review link, shown in the footer when set. */
+    reviewUrl: z.string().optional(),
     instagram: z.string(),
     facebook: z.string(),
     area: z.string(),
@@ -131,6 +133,14 @@ export const shopSchema = z.object({
   ),
 });
 
+export const basingstokeSchema = z.object({
+  title: z.string(),
+  launchDate: z.string(),
+  intro: z.string(),
+  smallprint: z.string(),
+  successMessage: z.string(),
+});
+
 export type MixedLeagueContent = z.infer<typeof mixedLeagueSchema>;
 export type SiteContent = z.infer<typeof siteSchema>;
 export type Programme = z.infer<typeof programmeSchema>;
@@ -154,6 +164,7 @@ export const contentFiles = {
   "players-of-the-season": playersOfTheSeasonSchema,
   "code-of-conduct": codeOfConductSchema,
   shop: shopSchema,
+  basingstoke: basingstokeSchema,
 } as const;
 
 export type ContentSlug = keyof typeof contentFiles;

@@ -8,6 +8,10 @@ import { appendSubmission } from "@/lib/submissions";
 
 const schema = z.object({
   email: z.string().trim().email().max(200),
+  name: z.string().trim().max(120).optional().default(""),
+  phone: z.string().trim().max(40).optional().default(""),
+  /** Which page the sign-up came from, e.g. "basingstoke". */
+  source: z.string().trim().max(60).optional().default("website"),
   website: z.string().max(0).optional().default(""),
 });
 
@@ -18,11 +22,18 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    appendSubmission("newsletter", { email: parsed.data.email });
+    const { email, name, phone, source } = parsed.data;
+    appendSubmission("newsletter", { email, name, phone, source });
     await sendEmail({
       to: ADMIN_EMAIL,
-      subject: "New newsletter sign-up",
-      text: `${escapeForEmail(parsed.data.email)} signed up for news and events on the website.`,
+      replyTo: email,
+      subject: `New sign-up (${escapeForEmail(source)}): ${escapeForEmail(name) || escapeForEmail(email)}`,
+      text: [
+        `Email: ${escapeForEmail(email)}`,
+        `Name: ${escapeForEmail(name) || "-"}`,
+        `Mobile: ${escapeForEmail(phone) || "-"}`,
+        `Source: ${escapeForEmail(source)}`,
+      ].join("\n"),
     });
     return NextResponse.json({ success: true });
   } catch (error) {

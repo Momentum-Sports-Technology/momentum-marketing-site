@@ -8,7 +8,10 @@ export interface TieBreak {
   team: string;
 }
 
-function pick(leaders: PlayerAward[], tieBreak: TieBreak | undefined): { winners: PlayerAward[]; tiedCount: number } {
+function pick(
+  leaders: PlayerAward[],
+  tieBreak: TieBreak | undefined
+): { winners: PlayerAward[]; tiedCount: number } {
   if (leaders.length > 1 && tieBreak) {
     const chosen = leaders.find(
       (p) =>
@@ -46,9 +49,7 @@ export default function LeagueChampions({
                 if (!winner) return null;
                 const { winners, tiedCount } = pick(
                   division.playersOfSeason,
-                  tieBreaks.find(
-                    (t) => t.mstLeagueId === league.id && t.division === division.name
-                  )
+                  tieBreaks.find((t) => t.mstLeagueId === league.id && t.division === division.name)
                 );
                 return (
                   <div

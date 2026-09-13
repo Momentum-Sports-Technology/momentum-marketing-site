@@ -5,6 +5,7 @@ import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
 import ProgrammeCard from "@/components/ProgrammeCard";
 import LeagueCentre from "@/components/LeagueCentre";
+import LeagueChampions from "@/components/LeagueChampions";
 import ContactForm from "@/components/ContactForm";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { getContent } from "@/lib/content";
@@ -13,7 +14,10 @@ import { getLeagues } from "@/lib/mst";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const site = await getContent("site");
+  const [site, players] = await Promise.all([
+    getContent("site"),
+    getContent("players-of-the-season"),
+  ]);
   const leagues = await getLeagues(site.fixtures.leagues.map((l) => l.mstLeagueId));
   // Open on the running league if there is one, otherwise the most recent.
   const currentLeague = leagues.find((l) => !l.completed) ?? leagues[0];
@@ -80,6 +84,8 @@ export default async function HomePage() {
         leagues={leagues}
         initialLeagueId={currentLeague?.id}
       />
+
+      <LeagueChampions leagues={leagues} tieBreaks={players.tieBreaks} />
 
       <Stats title="Momentum in numbers" subtitle={site.contact.area} stats={site.stats} />
 

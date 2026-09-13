@@ -4,12 +4,13 @@ import { BOOKING_URL } from "@/lib/urls";
 
 interface FooterProps {
   email: string;
+  reviewUrl?: string;
   instagram: string;
   facebook: string;
   area: string;
 }
 
-export default function Footer({ email, instagram, facebook, area }: FooterProps) {
+export default function Footer({ email, reviewUrl, instagram, facebook, area }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const columns = [
@@ -21,6 +22,7 @@ export default function Footer({ email, instagram, facebook, area }: FooterProps
         { href: "/mixed", label: "Mixed League" },
         { href: "/#fixtures", label: "Fixtures & Results" },
         { href: "/#venues", label: "Venues" },
+        { href: "/basingstoke", label: "Basingstoke" },
       ],
     },
     {
@@ -117,6 +119,18 @@ export default function Footer({ email, instagram, facebook, area }: FooterProps
                   Contact form
                 </Link>
               </li>
+              {reviewUrl && (
+                <li>
+                  <a
+                    href={reviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Leave a Google review
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

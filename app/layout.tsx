@@ -55,6 +55,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <main>{children}</main>
         <Footer
           email={contact.email}
+          reviewUrl={contact.reviewUrl}
           instagram={contact.instagram}
           facebook={contact.facebook}
           area={contact.area}
