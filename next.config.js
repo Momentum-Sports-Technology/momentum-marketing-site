@@ -14,6 +14,14 @@ const nextConfig = {
       { source: "/product/:slug", destination: "/shop", permanent: true },
       { source: "/privacy-policy", destination: "/privacy", permanent: true },
       { source: "/mixed-league", destination: "/mixed", permanent: true },
+      // WooCommerce and WordPress-only paths with no equivalent here.
+      { source: "/my-account", destination: "/book", permanent: true },
+      { source: "/my-account/:path*", destination: "/book", permanent: true },
+      { source: "/basket", destination: "/shop", permanent: true },
+      { source: "/checkout", destination: "/shop", permanent: true },
+      { source: "/thanks", destination: "/", permanent: true },
+      { source: "/sample-page", destination: "/", permanent: true },
+      { source: "/player-of-the-season/:path*", destination: "/player-of-the-season", permanent: true },
     ];
   },
 };
