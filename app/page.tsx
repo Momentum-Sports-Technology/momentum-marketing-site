@@ -21,6 +21,15 @@ export default async function HomePage() {
   const leagues = await getLeagues(site.fixtures.leagues.map((l) => l.mstLeagueId));
   // Open on the running league if there is one, otherwise the most recent.
   const currentLeague = leagues.find((l) => !l.completed) ?? leagues[0];
+  // Stats marked with a source follow the live league, so they cannot go stale.
+  const stats = site.stats.map((stat) => {
+    if (!stat.source || !currentLeague) return stat;
+    const value =
+      stat.source === "weeklyMatches"
+        ? currentLeague.matchesPerWeek
+        : currentLeague.divisions.length;
+    return value > 0 ? { ...stat, value: String(value), suffix: undefined } : stat;
+  });
   const featured = site.programmes.filter((p) => p.featured);
   const interests = [...site.programmes.map((p) => p.name), "Something else"];
 
@@ -87,7 +96,7 @@ export default async function HomePage() {
 
       <LeagueChampions leagues={leagues} tieBreaks={players.tieBreaks} />
 
-      <Stats title="Momentum in numbers" subtitle={site.contact.area} stats={site.stats} />
+      <Stats title="Momentum in numbers" subtitle={site.contact.area} stats={stats} />
 
       {/* Find us */}
       <section id="venues" className="py-24 bg-white">

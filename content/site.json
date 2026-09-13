@@ -97,13 +97,14 @@
       "label": "Active Players"
     },
     {
-      "value": "40",
-      "suffix": "+",
-      "label": "Weekly Matches"
+      "value": "12",
+      "label": "Weekly Matches",
+      "source": "weeklyMatches"
     },
     {
-      "value": "3",
-      "label": "Divisions"
+      "value": "4",
+      "label": "Divisions",
+      "source": "divisions"
     },
     {
       "value": "30",

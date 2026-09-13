@@ -87,6 +87,8 @@ export interface LeagueDivision {
 export interface League {
   id: string;
   name: string;
+  /** Matches on a typical match night, across every division. */
+  matchesPerWeek: number;
   completed: boolean;
   dates: string;
   shareUrl: string;
@@ -203,6 +205,16 @@ function toLeague(id: string, raw: RawLeague, now: number): League {
       };
     });
 
+  // Most common number of matches per match night, ignoring cancellations.
+  const perNight = new Map<string, number>();
+  for (const m of raw.matches) {
+    if (m.status === "cancelled" || !teamName(m.homeTeam) || !teamName(m.awayTeam)) continue;
+    const day = m.scheduledDate.slice(0, 10);
+    perNight.set(day, (perNight.get(day) ?? 0) + 1);
+  }
+  const counts = [...perNight.values()].sort((a, b) => a - b);
+  const matchesPerWeek = counts.length ? counts[Math.floor(counts.length / 2)] : 0;
+
   const { start_date, end_date } = raw.league;
   const dates =
     start_date && end_date
@@ -212,6 +224,7 @@ function toLeague(id: string, raw: RawLeague, now: number): League {
   return {
     id,
     name: raw.league.name,
+    matchesPerWeek,
     completed: raw.league.status === "completed",
     dates,
     shareUrl: `${MST_URL}/share/leagues/${encodeURIComponent(id)}`,
