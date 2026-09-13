@@ -1,7 +1,15 @@
 {
-  "title": "Momentum Netball is coming to Basingstoke",
+  "title": "Momentum Netball Basingstoke",
   "launchDate": "Tuesdays, 6-8pm",
-  "intro": "Friendly, social netball on Tuesday evenings, 6-8pm — whether you played at school or haven't touched a ball in years. Leave your details and you'll be the first to hear when booking opens.",
-  "smallprint": "One message when booking opens. No spam, ever.",
-  "successMessage": "Thanks! We'll be in touch as soon as booking opens in Basingstoke."
+  "intro": "Friendly, social netball on Tuesday evenings at The Costello School — whether you played at school or haven't touched a ball in years. Book a single week at a time, no commitment.",
+  "smallprint": "We'll let you know about new dates and times. No spam, ever.",
+  "successMessage": "Thanks! We'll keep you posted about netball in Basingstoke.",
+  "booking": {
+    "href": "/events/basingstoke",
+    "ctaText": "Book a session",
+    "venue": "The Costello School, Crossborough Hill, Basingstoke RG21 4AL",
+    "price": "£5 a session",
+    "runs": "Every Tuesday, 15 September to 27 October",
+    "interestHeading": "Can't make it yet?"
+  }
 }

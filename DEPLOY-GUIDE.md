@@ -179,7 +179,7 @@ echo "======================================"
 
 if [ "$ENV" == "production" ]; then
     echo "Step 1: Syncing files from development to production..."
-    
+
     # Copy files excluding node_modules and .env
     rsync -av --delete \
         --exclude 'node_modules' \
@@ -187,19 +187,19 @@ if [ "$ENV" == "production" ]; then
         --exclude '.env' \
         --exclude '*.log' \
         "$DEV_DIR/" "$PROD_DIR/"
-    
+
     cd "$PROD_DIR"
-    
+
     echo "Step 2: Installing dependencies..."
     yarn install --production
-    
+
     echo "Step 3: Restarting PM2 service..."
     pm2 restart my-app-api || pm2 start src/server.js --name my-app-api
     pm2 save
-    
+
     echo "Step 4: Checking service status..."
     pm2 list | grep my-app
-    
+
     echo "======================================"
     echo "Deployment complete!"
     echo "======================================"
@@ -235,16 +235,16 @@ if [ "$ENV" == "production" ]; then
         --exclude '.git' \
         --exclude '.env' \
         "$DEV_DIR/" "$PROD_DIR/"
-    
+
     cd "$PROD_DIR"
-    
+
     echo "Step 2: Rebuilding containers..."
     docker compose down
     docker compose up -d --build
-    
+
     echo "Step 3: Checking container status..."
     docker ps | grep my-app
-    
+
     echo "======================================"
     echo "Deployment complete!"
     echo "======================================"
@@ -305,7 +305,7 @@ sudo nano /etc/nginx/sites-available/my-app.mydomain.com
 server {
     listen 80;
     server_name my-app.mydomain.com;
-    
+
     # Redirect to HTTPS
     return 301 https://$server_name$request_uri;
 }
@@ -313,35 +313,35 @@ server {
 server {
     listen 443 ssl http2;
     server_name my-app.mydomain.com;
-    
+
     # SSL certificates (will be created by Certbot)
     ssl_certificate /etc/letsencrypt/live/my-app.mydomain.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/my-app.mydomain.com/privkey.pem;
-    
+
     # SSL configuration
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
-    
+
     # Root directory
     root /var/www/apps/deployments/production/my-app-name;
     index index.html;
-    
+
     # Logging
     access_log /var/log/nginx/my-app-access.log;
     error_log /var/log/nginx/my-app-error.log;
-    
+
     # Static files with caching
     location / {
         try_files $uri $uri/ /index.html;
-        
+
         # Cache static assets
         location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot)$ {
             expires 1y;
             add_header Cache-Control "public, immutable";
         }
     }
-    
+
     # Security headers
     add_header X-Frame-Options "SAMEORIGIN" always;
     add_header X-Content-Type-Options "nosniff" always;
@@ -361,15 +361,15 @@ server {
 server {
     listen 443 ssl http2;
     server_name my-app.mydomain.com;
-    
+
     ssl_certificate /etc/letsencrypt/live/my-app.mydomain.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/my-app.mydomain.com/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
-    
+
     access_log /var/log/nginx/my-app-access.log;
     error_log /var/log/nginx/my-app-error.log;
-    
+
     # API proxy
     location /api/ {
         proxy_pass http://localhost:3011/;
@@ -382,7 +382,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_cache_bypass $http_upgrade;
     }
-    
+
     # Static frontend
     location / {
         root /var/www/apps/deployments/production/my-app-name/frontend;
@@ -485,11 +485,14 @@ yarn install
 ### Running Locally
 
 \`\`\`bash
+
 # Backend
+
 cd backend
 yarn start
 
 # Frontend
+
 cd frontend
 yarn dev
 \`\`\`
@@ -549,6 +552,7 @@ sudo nano /var/www/apps/development/CLAUDE.md
 ```
 
 Add your app to the project portfolio section with:
+
 - Project name and path
 - Tech stack
 - Ports
@@ -655,4 +659,3 @@ sudo certbot certificates | grep my-app
 - **Node.js API**: `/var/www/apps/development/crm/`
 - **Docker Full Stack**: `/var/www/apps/development/adna/`
 - **PWA**: `/var/www/apps/development/scorer/`
-

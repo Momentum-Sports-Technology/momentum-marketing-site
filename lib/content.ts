@@ -141,6 +141,17 @@ export const basingstokeSchema = z.object({
   intro: z.string(),
   smallprint: z.string(),
   successMessage: z.string(),
+  /** Set once booking is open. Without it the page only captures interest. */
+  booking: z
+    .object({
+      href: z.string(),
+      ctaText: z.string(),
+      venue: z.string(),
+      price: z.string(),
+      runs: z.string(),
+      interestHeading: z.string(),
+    })
+    .optional(),
 });
 
 export type MixedLeagueContent = z.infer<typeof mixedLeagueSchema>;

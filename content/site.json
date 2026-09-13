@@ -52,10 +52,10 @@
     {
       "slug": "basingstoke",
       "name": "Basingstoke",
-      "tagline": "Launching soon",
-      "description": "Friendly, social netball is coming to Basingstoke on Tuesday evenings, 6-8pm. Register your interest and you'll be first to hear when booking opens.",
-      "ctaText": "Register your interest",
-      "ctaHref": "/basingstoke"
+      "tagline": "Tuesdays, 6-8pm",
+      "description": "Friendly, social netball at The Costello School, Basingstoke. £5 a session, book week by week, every ability welcome.",
+      "ctaText": "Book a session",
+      "ctaHref": "/events/basingstoke"
     },
     {
       "slug": "netball-hour",

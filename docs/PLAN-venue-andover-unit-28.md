@@ -20,20 +20,20 @@ Section 6 is the step-by-step plan. Section 7 is the go/no-go gates.
 
 ## 2. The building
 
-| Item | Value | Source |
-| --- | --- | --- |
-| Address | Unit 28 North Way, Walworth Business Park, Andover SP10 5AZ (rating list: SP10 5LH) | Brochure |
-| Floor area | 47,035 sq ft (4,369.7 sq m): warehouse 43,568 sq ft, offices 3,467 sq ft | Brochure |
-| Site | 1.91 acres, detached, private yard, parking | Brochure |
-| Eaves height | 7.1 m internal | Brochure |
-| Rent | £450,000 per year (£9.57 per sq ft), new FRI lease, term to be agreed | Brochure |
-| Rateable value | £400,000 from 1 April 2026 (2026 list, base rate £87.50 per sq m) | Valuation Office |
-| Business rates | £192,000 per year at the 48.0p standard multiplier | Calculated |
-| Freeholder | Test Valley Borough Council. Plots are on 150-year ground leases geared to market rent (Kier / TVBC joint venture) | Kier, brochure |
-| Head lessee / landlord | Mileway (brochure branded Mileway; JLL, Stratfords, Curchod joint agents) | Brochure |
-| Planning use | Industrial / warehouse (B2 / B8). Indoor sport is Class E(d). Change of use needs planning permission | Planning Portal |
-| Solar PV | 438 kWp roof array. EPC A+ | Brochure |
-| Vacancy | Previous assessment (Clearwater House) removed 5 April 2023. New assessment created 2 March 2026 after refurbishment. Marketed since at least October 2025 | Valuation Office |
+| Item                   | Value                                                                                                                                                      | Source           |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Address                | Unit 28 North Way, Walworth Business Park, Andover SP10 5AZ (rating list: SP10 5LH)                                                                        | Brochure         |
+| Floor area             | 47,035 sq ft (4,369.7 sq m): warehouse 43,568 sq ft, offices 3,467 sq ft                                                                                   | Brochure         |
+| Site                   | 1.91 acres, detached, private yard, parking                                                                                                                | Brochure         |
+| Eaves height           | 7.1 m internal                                                                                                                                             | Brochure         |
+| Rent                   | £450,000 per year (£9.57 per sq ft), new FRI lease, term to be agreed                                                                                      | Brochure         |
+| Rateable value         | £400,000 from 1 April 2026 (2026 list, base rate £87.50 per sq m)                                                                                          | Valuation Office |
+| Business rates         | £192,000 per year at the 48.0p standard multiplier                                                                                                         | Calculated       |
+| Freeholder             | Test Valley Borough Council. Plots are on 150-year ground leases geared to market rent (Kier / TVBC joint venture)                                         | Kier, brochure   |
+| Head lessee / landlord | Mileway (brochure branded Mileway; JLL, Stratfords, Curchod joint agents)                                                                                  | Brochure         |
+| Planning use           | Industrial / warehouse (B2 / B8). Indoor sport is Class E(d). Change of use needs planning permission                                                      | Planning Portal  |
+| Solar PV               | 438 kWp roof array. EPC A+                                                                                                                                 | Brochure         |
+| Vacancy                | Previous assessment (Clearwater House) removed 5 April 2023. New assessment created 2 March 2026 after refurbishment. Marketed since at least October 2025 | Valuation Office |
 
 ### Fit for netball
 
@@ -59,20 +59,20 @@ Bannatyne in Basingstoke, Winchester Racquets (3 courts).
 
 ## 3. Momentum Netball today (Xero)
 
-| | FY to 31 Aug 2025 | FY to 31 Aug 2026 |
-| --- | ---: | ---: |
-| Turnover | £41,550 | £55,154 |
-| of which Sales (league subs) | £31,850 | £43,781 |
-| of which Mini Momentum | – | £3,728 |
-| of which Mixed netball | £3,670 | £2,172 |
-| Venue hire (cost of sales) | £13,816 | £14,647 |
-| Gross profit | £24,299 | £34,033 |
-| Administrative costs | £22,800 | £39,133 |
-| of which Consulting | £10,955 | £12,393 |
-| of which Salaries | – | £8,833 |
-| of which Travel | £788 | £5,113 |
-| of which Advertising | £3,326 | £5,425 |
-| **Operating profit / (loss)** | **£1,500** | **(£5,099)** |
+|                               | FY to 31 Aug 2025 | FY to 31 Aug 2026 |
+| ----------------------------- | ----------------: | ----------------: |
+| Turnover                      |           £41,550 |           £55,154 |
+| of which Sales (league subs)  |           £31,850 |           £43,781 |
+| of which Mini Momentum        |                 – |            £3,728 |
+| of which Mixed netball        |            £3,670 |            £2,172 |
+| Venue hire (cost of sales)    |           £13,816 |           £14,647 |
+| Gross profit                  |           £24,299 |           £34,033 |
+| Administrative costs          |           £22,800 |           £39,133 |
+| of which Consulting           |           £10,955 |           £12,393 |
+| of which Salaries             |                 – |            £8,833 |
+| of which Travel               |              £788 |            £5,113 |
+| of which Advertising          |            £3,326 |            £5,425 |
+| **Operating profit / (loss)** |        **£1,500** |      **(£5,099)** |
 
 Balance sheet at 31 Aug 2026: cash £2,681, receivables £2,441, liabilities £8,732 (directors'
 loans £5,667, credit card £1,284, trade creditors £1,858). **Net assets (£3,610).** Cash in over
@@ -86,15 +86,15 @@ uses roughly 20 court-hours a week. A 6-court hall open 100 hours a week has 600
 
 Annual occupancy cost before staff, from the figures above and estimates marked (est):
 
-| Line | £ per year |
-| --- | ---: |
-| Rent | 450,000 |
-| Business rates (RV £400,000 x 48.0p) | 192,000 |
-| Insurance, service, FRI repairs provision (est) | 40,000 |
-| Utilities net of on-site PV (est) | 50,000 |
-| **Occupancy total** | **~732,000** |
-| Staff for a 7-day venue (est) | 150,000 |
-| **Cash cost before fit-out finance** | **~880,000** |
+| Line                                            |   £ per year |
+| ----------------------------------------------- | -----------: |
+| Rent                                            |      450,000 |
+| Business rates (RV £400,000 x 48.0p)            |      192,000 |
+| Insurance, service, FRI repairs provision (est) |       40,000 |
+| Utilities net of on-site PV (est)               |       50,000 |
+| **Occupancy total**                             | **~732,000** |
+| Staff for a 7-day venue (est)                   |      150,000 |
+| **Cash cost before fit-out finance**            | **~880,000** |
 
 That is about £17,000 a week, every week.
 
@@ -106,12 +106,12 @@ rent line alone, and its utilisation assumptions are aggressive for a sport that
 
 Bottom-up, netball-only, 6 courts:
 
-| Slot | Court-hours / week | Fill | Rate | £ / week |
-| --- | ---: | ---: | ---: | ---: |
-| Weekday evenings 18:00–22:00 | 120 | 70% | £50 | 4,200 |
-| Weekends 10 hrs x 2 days | 120 | 50% | £45 | 2,700 |
-| Weekday daytime 8 hrs x 5 | 240 | 20% | £30 | 1,440 |
-| Court hire total | | | | **8,340** |
+| Slot                         | Court-hours / week | Fill | Rate |  £ / week |
+| ---------------------------- | -----------------: | ---: | ---: | --------: |
+| Weekday evenings 18:00–22:00 |                120 |  70% |  £50 |     4,200 |
+| Weekends 10 hrs x 2 days     |                120 |  50% |  £45 |     2,700 |
+| Weekday daytime 8 hrs x 5    |                240 |  20% |  £30 |     1,440 |
+| Court hire total             |                    |      |      | **8,340** |
 
 About £430,000 a year from courts. Add memberships, coaching, camps, café, events and it reaches
 perhaps £600,000 to £700,000. Against £880,000 of cost that is a loss of £200,000 to £300,000 a
@@ -209,13 +209,13 @@ realistic structure is a padel-led or multi-sport venue with netball as the even
 
 ## 7. Go / no-go gates
 
-| Gate | Pass | Fail means |
-| --- | --- | --- |
-| Clear height | 7.5 m over at least 4 court footprints | Netball is recreational only; padel-led venue or a different building |
-| Ground lease and planning | TVBC pre-app is positive on E(d) use | Walk away from this unit; keep the plan, change the building |
-| Landlord | 12+ months rent free or a stepped rent, and willing to take the venue entity as tenant | Rent is uneconomic even for padel; look at 15,000 to 20,000 sq ft units instead |
-| Capital partner | A named operator or charity board committed to the head lease | Momentum stays a tenant of school halls and keeps looking |
-| Model | Venue entity breaks even by year 2 with netball at evening and weekend only | Do not sign |
+| Gate                      | Pass                                                                                   | Fail means                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Clear height              | 7.5 m over at least 4 court footprints                                                 | Netball is recreational only; padel-led venue or a different building           |
+| Ground lease and planning | TVBC pre-app is positive on E(d) use                                                   | Walk away from this unit; keep the plan, change the building                    |
+| Landlord                  | 12+ months rent free or a stepped rent, and willing to take the venue entity as tenant | Rent is uneconomic even for padel; look at 15,000 to 20,000 sq ft units instead |
+| Capital partner           | A named operator or charity board committed to the head lease                          | Momentum stays a tenant of school halls and keeps looking                       |
+| Model                     | Venue entity breaks even by year 2 with netball at evening and weekend only            | Do not sign                                                                     |
 
 ## 8. If this unit fails the gates
 
@@ -248,13 +248,13 @@ and donations.
 
 ### Steady state (year 3), £ per year
 
-| | Low | Base | High |
-| --- | ---: | ---: | ---: |
-| Income | 875,000 | 1,448,000 | 2,203,000 |
-| Surplus before loans, CIC with no rates relief | (550,000) | (13,000) | 670,000 |
-| Surplus before loans, charity 80% relief | (394,000) | 146,000 | 832,000 |
-| Surplus before loans, CIC with TVBC 100% discretionary relief | (358,000) | 179,000 | 862,000 |
-| Loan repayments on £600,000 at 6% over 10 years | (82,000) | (82,000) | (82,000) |
+|                                                               |       Low |      Base |      High |
+| ------------------------------------------------------------- | --------: | --------: | --------: |
+| Income                                                        |   875,000 | 1,448,000 | 2,203,000 |
+| Surplus before loans, CIC with no rates relief                | (550,000) |  (13,000) |   670,000 |
+| Surplus before loans, charity 80% relief                      | (394,000) |   146,000 |   832,000 |
+| Surplus before loans, CIC with TVBC 100% discretionary relief | (358,000) |   179,000 |   862,000 |
+| Loan repayments on £600,000 at 6% over 10 years               |  (82,000) |  (82,000) |  (82,000) |
 
 Base income by line: padel £340k, café £336k, gym £157k, netball external hire £208k, Momentum
 court hire £49k, camps £84k, sponsorship £69k, events £60k, physio £41k, parties £38k, S&C
@@ -280,19 +280,19 @@ classes £32k, donations £20k, rooms £15k.
 
 ### Grants and donations, what is real at this scale
 
-| Source | Range | Who can apply | Note |
-| --- | --- | --- | --- |
-| Football Foundation multi-sport grassroots facilities | Project grants; £98m a year UK-wide | CICs, charities, clubs | Netball named as a beneficiary sport |
-| National Lottery Community Fund, Reaching Communities | £20k to £500k typical, more by discussion | CICs, charities | Funds building work and staff |
-| England Netball / Sport England | Via the Netball Development Officer | Clubs and community bodies | EN holds £21.2m from Sport England to 2029 |
-| Test Valley BC S106 / CIL | Project-specific | Any | Growth areas East Anton and Picket Twenty; strategy forecasts a 6 to 8 court hall need by 2036 |
-| Armed Forces Covenant Fund Trust | £5k to £250k by programme | Any with Forces community benefit | Army HQ is in Andover |
-| Charitable trusts (Garfield Weston, Bernard Sunley, Wolfson) | £10k to £250k | Registered charities only | Not open to a CIC |
-| Crowdfunder with Sport England match | Up to £15k match | Clubs, CICs | Small but fast |
-| LTA Quick Access / Facility Loan | £25k to £250k at 5%, 10 years | Registered padel venues | Loan, not grant |
-| Pitch Together (Sporting Assets, Triodos, Sport England) | £25k to £300k at 6%, ~7.5 years | Multi-sport community facilities | Loan |
-| Charity Bank / Triodos | £50k to several million | CICs and charities | Loan; wants a trading record or strong guarantors |
-| Sport England Movement Fund | £300 to £15k | Clubs | Too small for the venue; useful for programmes |
+| Source                                                       | Range                                     | Who can apply                     | Note                                                                                           |
+| ------------------------------------------------------------ | ----------------------------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Football Foundation multi-sport grassroots facilities        | Project grants; £98m a year UK-wide       | CICs, charities, clubs            | Netball named as a beneficiary sport                                                           |
+| National Lottery Community Fund, Reaching Communities        | £20k to £500k typical, more by discussion | CICs, charities                   | Funds building work and staff                                                                  |
+| England Netball / Sport England                              | Via the Netball Development Officer       | Clubs and community bodies        | EN holds £21.2m from Sport England to 2029                                                     |
+| Test Valley BC S106 / CIL                                    | Project-specific                          | Any                               | Growth areas East Anton and Picket Twenty; strategy forecasts a 6 to 8 court hall need by 2036 |
+| Armed Forces Covenant Fund Trust                             | £5k to £250k by programme                 | Any with Forces community benefit | Army HQ is in Andover                                                                          |
+| Charitable trusts (Garfield Weston, Bernard Sunley, Wolfson) | £10k to £250k                             | Registered charities only         | Not open to a CIC                                                                              |
+| Crowdfunder with Sport England match                         | Up to £15k match                          | Clubs, CICs                       | Small but fast                                                                                 |
+| LTA Quick Access / Facility Loan                             | £25k to £250k at 5%, 10 years             | Registered padel venues           | Loan, not grant                                                                                |
+| Pitch Together (Sporting Assets, Triodos, Sport England)     | £25k to £300k at 6%, ~7.5 years           | Multi-sport community facilities  | Loan                                                                                           |
+| Charity Bank / Triodos                                       | £50k to several million                   | CICs and charities                | Loan; wants a trading record or strong guarantors                                              |
+| Sport England Movement Fund                                  | £300 to £15k                              | Clubs                             | Too small for the venue; useful for programmes                                                 |
 
 Donations at Base are £20,000 a year. With Gift Aid (charity or CASC only) that becomes
 £25,000. Sponsorship is the bigger line at £69,000: venue naming, eight court sponsors and
@@ -329,12 +329,12 @@ The catch is on Momentum's side. School halls cost Momentum about £24 a court-h
 an arm's-length £41 (£48 less 15%) the current £18 per team per match no longer covers the
 court:
 
-| | Today | In the CIC, same fees | In the CIC, £25 per team per match |
-| --- | ---: | ---: | ---: |
-| League income | 32,400 | 64,800 | 90,000 |
-| Court hire | (14,400) | (48,960) | (48,960) |
-| Other direct costs | (5,400) | (10,800) | (10,800) |
-| League gross profit | 12,600 | 5,040 | 30,240 |
+|                     |    Today | In the CIC, same fees | In the CIC, £25 per team per match |
+| ------------------- | -------: | --------------------: | ---------------------------------: |
+| League income       |   32,400 |                64,800 |                             90,000 |
+| Court hire          | (14,400) |              (48,960) |                           (48,960) |
+| Other direct costs  |  (5,400) |              (10,800) |                           (10,800) |
+| League gross profit |   12,600 |                 5,040 |                             30,240 |
 
 Commercial leagues charge £56 to £70 per team per match. A move from £18 to £25 is a
 £400 to £560 season sub, still the cheapest in the market, and it is what makes Momentum
@@ -355,14 +355,14 @@ https://view-applications.testvalley.gov.uk/online-applications/applicationDetai
 What the plan shows, scaled from the drawing (survey grid in metres, origin at the drawing's
 left edge):
 
-| Element | Position |
-| --- | --- |
-| West wall | x = 13.5 m |
-| Internal column row 1 | x = 34 m, six columns at y = 27, 34.5, 42, 49.5, 57, 64.5 m |
-| Internal column row 2 | x = 54 m, same six positions |
-| Extension | x = 54 to 75 m runs north to y = 11.5 m; the rest of the hall starts at y = 19.5 m |
-| East block | x = 75 to 96 m, y = 34.5 to 72 m, no columns drawn |
-| South wall | y = 72 m; office strip x = 62 to 96 m, y = 68 to 72 m, two stairs |
+| Element               | Position                                                                           |
+| --------------------- | ---------------------------------------------------------------------------------- |
+| West wall             | x = 13.5 m                                                                         |
+| Internal column row 1 | x = 34 m, six columns at y = 27, 34.5, 42, 49.5, 57, 64.5 m                        |
+| Internal column row 2 | x = 54 m, same six positions                                                       |
+| Extension             | x = 54 to 75 m runs north to y = 11.5 m; the rest of the hall starts at y = 19.5 m |
+| East block            | x = 75 to 96 m, y = 34.5 to 72 m, no columns drawn                                 |
+| South wall            | y = 72 m; office strip x = 62 to 96 m, y = 68 to 72 m, two stairs                  |
 
 So: **spans of 20 m, frames every 7.5 m, two internal column rows.** The aerial shows four
 roof spans, so the line at x = 75 m must carry the roof: either columns the survey omitted or a
@@ -405,19 +405,19 @@ depends on the 75 m line.
 Max is an accountant; the pitch page now carries the workings. Recorded here so they survive.
 All figures Base case, CIC with full rates unless stated, from the model.
 
-| One change at a time | EBITDA effect |
-| --- | ---: |
-| Rates relief 80% / 100% | +£158k / +£192k |
-| Padel fill 35% / 55% | −£73k / +£73k |
-| Rent stepped to £405k | +£45k |
-| Staff salaries ±10% | ∓£42k |
-| PV benefit lost / utilities +£20k | −£42k / −£21k |
-| Padel rate £32 / £40 | ∓£37k |
-| Sponsorship £30k / £110k | −£34k / +£40k |
-| Gym members 350 / 550 | ∓£34k |
-| Café visits 3,500 / 4,900 | ∓£28k |
-| Café spend £1.35 / £1.85 | ∓£26k |
-| Netball evening fill 55% / 85% | ∓£17k |
+| One change at a time              |   EBITDA effect |
+| --------------------------------- | --------------: |
+| Rates relief 80% / 100%           | +£158k / +£192k |
+| Padel fill 35% / 55%              |   −£73k / +£73k |
+| Rent stepped to £405k             |           +£45k |
+| Staff salaries ±10%               |           ∓£42k |
+| PV benefit lost / utilities +£20k |   −£42k / −£21k |
+| Padel rate £32 / £40              |           ∓£37k |
+| Sponsorship £30k / £110k          |   −£34k / +£40k |
+| Gym members 350 / 550             |           ∓£34k |
+| Café visits 3,500 / 4,900         |           ∓£28k |
+| Café spend £1.35 / £1.85          |           ∓£26k |
+| Netball evening fill 55% / 85%    |           ∓£17k |
 
 Fixed costs about £1,227k of £1,461k (84%). Break-even padel fill after £82k a year of loan
 repayments: 58% with full rates, 36% with 80% relief.
@@ -442,13 +442,13 @@ courts in the span B end, retractable cricket nets over two courts on winter wee
 span A end. A bouldering room is a switchable option in place of the two padel courts south of
 Court 3. New Layout sheet maps every block to a span.
 
-| Steady state, Base, full rates, after £82k loan service | Income | EBITDA | Net | Cum. cash Y1–Y5 | Capex |
-| --- | ---: | ---: | ---: | --- | ---: |
-| 3 netball + 5 padel + 2 pickleball + cricket nets | £1,579k | +£114k | +£33k | 32, (54), (21), 74, 206 | £1.72m |
-| Same, 80% rates relief | £1,584k | +£273k | +£191k | 190, 263, 454, 708, 998 | £1.72m |
-| Option: bouldering 460 sq m instead of 2 padel (3 padel) | £1,754k | +£221k | +£139k | 96, 101, 240, 447, 694 | £2.00m |
-| Option: 4 netball + 2 padel | £1,388k | (£70k) | (£152k) | (79), (321), (473), (572), (640) | £1.88m |
-| Without pickleball and cricket nets | £1,468k | +£7k | (£74k) | (32), (209), (284), (302), (286) | £1.71m |
+| Steady state, Base, full rates, after £82k loan service  |  Income | EBITDA |     Net | Cum. cash Y1–Y5                  |  Capex |
+| -------------------------------------------------------- | ------: | -----: | ------: | -------------------------------- | -----: |
+| 3 netball + 5 padel + 2 pickleball + cricket nets        | £1,579k | +£114k |   +£33k | 32, (54), (21), 74, 206          | £1.72m |
+| Same, 80% rates relief                                   | £1,584k | +£273k |  +£191k | 190, 263, 454, 708, 998          | £1.72m |
+| Option: bouldering 460 sq m instead of 2 padel (3 padel) | £1,754k | +£221k |  +£139k | 96, 101, 240, 447, 694           | £2.00m |
+| Option: 4 netball + 2 padel                              | £1,388k | (£70k) | (£152k) | (79), (321), (473), (572), (640) | £1.88m |
+| Without pickleball and cricket nets                      | £1,468k |   +£7k |  (£74k) | (32), (209), (284), (302), (286) | £1.71m |
 
 Pickleball and cricket nets add about £111k of income for under £50k of capex and move the
 full-rates case from break-even to £114k. Break-even padel fill after loan service is now 41%
@@ -472,6 +472,7 @@ surplus, replaced, or outweighed by better sports provision. Sport England is a 
 consultee on playing fields and reviews sports-hall proposals.
 
 **Local Plan policies.**
+
 - Adopted 2011–2029 plan: COM14 resists the loss of community facilities; COM15 requires
   development to fund the infrastructure it needs; LHW1 sets open-space standards.
 - Draft Local Plan 2040/2042 (Reg 18 Stage 2, Feb 2024): **Policy HE1** requires major housing to
@@ -483,6 +484,7 @@ consultee on playing fields and reviews sports-hall proposals.
   to get an Andover indoor hub into the evidence base.
 
 **Their own strategy (what they have written down).**
+
 - Sport Facilities Strategy 2020, para 2.3.32: population growth to 2036 makes a needs case for
   6.32 badminton courts, "the equivalent of an additional 6 or 8 court sports hall (or up to two
   4 court halls) with full community availability in the peak period by 2036".
@@ -497,6 +499,7 @@ consultee on playing fields and reviews sports-hall proposals.
   in indoor cricket provision in Test Valley.
 
 **Money the council controls.**
+
 - S106 from the Andover growth areas (East Anton, Picket Twenty, Picket Piece) and future HE1
   contributions, spendable on indoor sport in the same town.
 - CIL: the strategy is the evidence base for CIL awards (Trojans, Broughton).
@@ -553,12 +556,12 @@ sections 9 and 11. The
 league runs 12 matches a week on about 8 court-hours; the rest of the £14,647 venue spend is
 mixed, training, Netball Hour and pay-to-play.
 
-| Women's league, per year | Today | In the hub, same fees | 36 teams at £480 |
-| --- | ---: | ---: | ---: |
-| Income | £43,200 | £43,200 | £69,120 |
-| Court hire (8 h @ £24 / 8 h @ £41 / 12 h @ £41, 40 weeks) | (£7,680) | (£13,056) | (£19,584) |
-| Umpires, insurance, prizes (£6 a match) | (£2,880) | (£2,880) | (£4,320) |
-| Gross profit | £32,640 | £27,264 | £45,216 |
+| Women's league, per year                                  |    Today | In the hub, same fees | 36 teams at £480 |
+| --------------------------------------------------------- | -------: | --------------------: | ---------------: |
+| Income                                                    |  £43,200 |               £43,200 |          £69,120 |
+| Court hire (8 h @ £24 / 8 h @ £41 / 12 h @ £41, 40 weeks) | (£7,680) |             (£13,056) |        (£19,584) |
+| Umpires, insurance, prizes (£6 a match)                   | (£2,880) |              (£2,880) |         (£4,320) |
+| Gross profit                                              |  £32,640 |               £27,264 |          £45,216 |
 
 The arm's-length court rate costs the league about £5,400 a year, £56 per team per season. No
 fee shock is needed; the pitch now asks for a growth plan (24 to 36 teams, £450 to about £480)
@@ -577,15 +580,15 @@ Adam's understanding: TVBC intends to fit out the Picket Twenty pavilion and And
 would take it over. Nothing public names the hockey club, but the council's own capital
 programme tells the story of the scheme, from Cabinet reports packs on testvalley.moderngov.co.uk:
 
-| Cabinet report | What it says about "Picket Twenty – Pavilion/pitch changes" |
-| --- | --- |
-| Feb 2021 budget | £1,400k in the capital programme, already slipped from 2020/21 |
-| Dec 2021 | "a wider range of sites are currently being appraised following the adoption of the Sports and Recreation Strategy, so this project will slip" |
-| Dec 2022 | "the main slippage ... due to planning permission being impacted by ecology concerns" |
-| Nov 2023 | "in the early stages of scoping and pre-planning ... designs and forecasts of future project costs will be known by spring 2024" |
-| Nov 2024 | "planning application submission is due January 2025 so delivery will now not commence until 2025/26" |
-| Nov 2025 | "planning application preparation is underway with a target to complete the project by November 2026"; budget £70k 2025/26, £1,300k 2026/27 |
-| Jun 2026 outturn | £6.5k spent in 2025/26; £1,363.5k carried into 2026/27; total £1,370k |
+| Cabinet report   | What it says about "Picket Twenty – Pavilion/pitch changes"                                                                                    |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Feb 2021 budget  | £1,400k in the capital programme, already slipped from 2020/21                                                                                 |
+| Dec 2021         | "a wider range of sites are currently being appraised following the adoption of the Sports and Recreation Strategy, so this project will slip" |
+| Dec 2022         | "the main slippage ... due to planning permission being impacted by ecology concerns"                                                          |
+| Nov 2023         | "in the early stages of scoping and pre-planning ... designs and forecasts of future project costs will be known by spring 2024"               |
+| Nov 2024         | "planning application submission is due January 2025 so delivery will now not commence until 2025/26"                                          |
+| Nov 2025         | "planning application preparation is underway with a target to complete the project by November 2026"; budget £70k 2025/26, £1,300k 2026/27    |
+| Jun 2026 outturn | £6.5k spent in 2025/26; £1,363.5k carried into 2026/27; total £1,370k                                                                          |
 
 No planning application for the pavilion or pitches is on the portal as of today (searched by
 address, "pavilion" and "Picket Twenty"). The site is council-owned: 7 football pitches, a cricket
@@ -597,6 +600,7 @@ with a waiting list. Junior chair Sheela Putt, 07787 120352, juniorchair@andover
 The Jamie G Sporting Trust (charity 1134710) has funded the club's goalkeeping kit.
 
 Why it matters to us:
+
 1. **The model exists.** Council capital into a council-owned facility, run by a club. Ganger
    Farm with Romsey Hockey Club, Picket Piece pavilion (adopted Sept 2024, netball court added
    to the MUGA), Trojans and Broughton with CIL and CAF. Ask for the same shape: their asset,
