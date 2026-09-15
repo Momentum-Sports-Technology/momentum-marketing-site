@@ -35,11 +35,14 @@ export default function LeagueChampions({
   if (finished.length === 0) return null;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-momentum-light to-white">
+    <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl space-y-14">
         {finished.map((league) => (
           <div key={league.id}>
             <div className="text-center mb-8">
+              <p className="text-sm font-semibold uppercase tracking-wider text-momentum-orange mb-2">
+                Champions
+              </p>
               <h2 className="text-3xl md:text-4xl font-bold mb-2">{league.name}</h2>
               {league.dates && <p className="text-gray-500">{league.dates}</p>}
             </div>
@@ -54,7 +57,7 @@ export default function LeagueChampions({
                 return (
                   <div
                     key={division.id}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 text-center"
+                    className="flex flex-col bg-white rounded-2xl shadow-lg border border-gray-200 p-6 text-center"
                   >
                     <Trophy className="mx-auto text-momentum-orange mb-3" size={32} />
                     <p className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-1">
@@ -70,27 +73,29 @@ export default function LeagueChampions({
                       </p>
                     )}
                     {winners.length > 0 && (
-                      <div className="mt-4 rounded-xl bg-orange-50 px-3 py-3">
-                        <p className="flex items-center justify-center gap-1 text-xs font-semibold uppercase tracking-wider text-momentum-orange mb-1">
-                          <Star size={14} className="fill-current" />
-                          Player of the Season
-                        </p>
-                        <ul className="space-y-0.5">
-                          {winners.map((p) => (
-                            <li key={`${p.team}-${p.name}`} className="text-sm">
-                              <span className="font-bold text-gray-900">{p.name}</span>{" "}
-                              <span className="text-gray-500">({p.team})</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <p className="text-xs text-gray-500 mt-1">
-                          {winners.length > 1 ? "Joint winners, " : ""}
-                          {winners[0].awards} player of the match{" "}
-                          {winners[0].awards === 1 ? "award" : "awards"}
-                          {winners.length === 1 && tiedCount > 1
-                            ? `, chosen from a ${tiedCount}-way tie`
-                            : ""}
-                        </p>
+                      <div className="mt-auto pt-4">
+                        <div className="rounded-xl bg-orange-50 px-3 py-3">
+                          <p className="flex items-center justify-center gap-1 text-xs font-semibold uppercase tracking-wider text-momentum-orange mb-1">
+                            <Star size={14} className="fill-current" />
+                            Player of the Season
+                          </p>
+                          <ul className="space-y-0.5">
+                            {winners.map((p) => (
+                              <li key={`${p.team}-${p.name}`} className="text-sm">
+                                <span className="font-bold text-gray-900">{p.name}</span>{" "}
+                                <span className="text-gray-500">({p.team})</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-xs text-gray-500 mt-1">
+                            {winners.length > 1 ? "Joint winners, " : ""}
+                            {winners[0].awards} player of the match{" "}
+                            {winners[0].awards === 1 ? "award" : "awards"}
+                            {winners.length === 1 && tiedCount > 1
+                              ? `, chosen from a ${tiedCount}-way tie`
+                              : ""}
+                          </p>
+                        </div>
                       </div>
                     )}
                   </div>

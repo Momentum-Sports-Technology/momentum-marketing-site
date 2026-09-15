@@ -136,7 +136,7 @@ export default async function HomePage() {
 
       {/* Coming soon */}
       {site.events.length > 0 && (
-        <section id="events" className="py-24 bg-gradient-to-br from-momentum-light to-white">
+        <section id="events" className="py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Coming Soon</h2>
@@ -167,7 +167,7 @@ export default async function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">What Players Say</h2>
           </div>
           <div
-            className={`grid grid-cols-1 ${site.reviews.length > 1 ? "md:grid-cols-2 lg:grid-cols-3" : ""} gap-8 max-w-6xl mx-auto`}
+            className={`grid grid-cols-1 gap-8 mx-auto ${site.reviews.length > 1 ? "md:grid-cols-2 lg:grid-cols-3 max-w-6xl" : "max-w-3xl"}`}
           >
             {site.reviews.map((review) => (
               <blockquote
@@ -187,6 +187,19 @@ export default async function HomePage() {
               </blockquote>
             ))}
           </div>
+          {site.contact.reviewUrl && (
+            <p className="text-center mt-10">
+              <a
+                href={site.contact.reviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-momentum-orange font-semibold hover:underline"
+              >
+                Played with us? Leave a Google review
+                <ArrowRight className="ml-2" size={18} />
+              </a>
+            </p>
+          )}
         </div>
       </section>
 

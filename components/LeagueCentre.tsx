@@ -13,6 +13,9 @@ interface LeagueCentreProps {
   initialLeagueId?: string;
 }
 
+/** Enough to keep the column level with the table; the MST link below has the rest. */
+const MATCHES_SHOWN = 5;
+
 function MatchList({
   heading,
   matches,
@@ -24,6 +27,7 @@ function MatchList({
   empty: string;
   showScore: boolean;
 }) {
+  const shown = matches.slice(0, MATCHES_SHOWN);
   return (
     <div>
       <h3 className="text-lg font-bold mb-3">{heading}</h3>
@@ -31,8 +35,8 @@ function MatchList({
         <p className="text-gray-500 text-sm">{empty}</p>
       ) : (
         <ul className="space-y-2">
-          {matches.map((m) => (
-            <li key={m.id} className="bg-white rounded-xl border border-gray-200 px-4 py-3">
+          {shown.map((m) => (
+            <li key={m.id} className="bg-gray-50 rounded-xl border border-gray-200 px-4 py-3">
               <p className="text-xs text-gray-500 mb-1">
                 {m.when}
                 {m.venue && ` · ${m.venue}`}
@@ -70,7 +74,7 @@ export default function LeagueCentre({
 
   if (!league || league.divisions.length === 0) {
     return (
-      <section id="fixtures" className="py-24 bg-gray-50">
+      <section id="fixtures" className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{title}</h2>
           <p className="text-xl text-gray-600">
@@ -90,7 +94,7 @@ export default function LeagueCentre({
   };
 
   return (
-    <section id="fixtures" className="py-24 bg-gray-50">
+    <section id="fixtures" className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{title}</h2>
@@ -99,7 +103,7 @@ export default function LeagueCentre({
 
         {leagues.length > 1 && (
           <div className="flex justify-center mb-6">
-            <div className="inline-flex flex-wrap justify-center rounded-2xl bg-white border border-gray-200 p-1 gap-1">
+            <div className="inline-flex flex-wrap justify-center rounded-2xl bg-gray-50 border border-gray-200 p-1 gap-1">
               {leagues.map((l) => (
                 <button
                   key={l.id}
@@ -138,7 +142,7 @@ export default function LeagueCentre({
                 className={`px-5 py-2 rounded-full font-semibold transition-colors ${
                   d.id === division.id
                     ? "bg-momentum-orange text-white"
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-momentum-orange"
+                    : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-momentum-orange"
                 }`}
               >
                 {d.name}

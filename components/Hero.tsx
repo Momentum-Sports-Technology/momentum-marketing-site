@@ -105,7 +105,7 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
             transition={{ delay: 0.6, duration: 0.8 }}
             className="relative"
           >
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-72 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               {image ? (
                 <img src={image} alt={title} className="w-full h-full object-cover" />
               ) : (
