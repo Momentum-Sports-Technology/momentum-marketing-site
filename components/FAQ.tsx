@@ -19,7 +19,7 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-momentum-light to-white">
+    <section id="faq" className="py-24 bg-gradient-to-br from-momentum-light to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

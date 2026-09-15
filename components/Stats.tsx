@@ -47,9 +47,13 @@ export default function Stats({ title, subtitle, stats }: StatsProps) {
               className="text-center"
             >
               <div className="inline-flex items-baseline justify-center mb-4">
-                <span className="text-6xl md:text-7xl font-bold gradient-text">{stat.value}</span>
+                <span className="text-6xl md:text-7xl font-bold text-momentum-orange">
+                  {stat.value}
+                </span>
                 {stat.suffix && (
-                  <span className="text-4xl font-bold gradient-text ml-2">{stat.suffix}</span>
+                  <span className="text-4xl font-bold text-momentum-orange ml-2">
+                    {stat.suffix}
+                  </span>
                 )}
               </div>
               <p className="text-xl text-gray-300">{stat.label}</p>

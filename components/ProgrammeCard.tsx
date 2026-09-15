@@ -14,7 +14,7 @@ export default function ProgrammeCard({ programme, compact = false }: ProgrammeC
   const initial = programme.name.charAt(0);
 
   const cta = (
-    <span className="inline-flex items-center text-momentum-orange font-semibold group-hover:translate-x-2 transition-transform">
+    <span className="mt-auto inline-flex items-center text-momentum-orange font-semibold group-hover:translate-x-2 transition-transform">
       {programme.ctaText}
       <ArrowRight className="ml-2" size={18} />
     </span>
@@ -44,7 +44,7 @@ export default function ProgrammeCard({ programme, compact = false }: ProgrammeC
   );
 
   const className =
-    "group block h-full bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-momentum-orange";
+    "group flex flex-col h-full bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-momentum-orange";
 
   return external ? (
     <a href={href} className={className} target="_blank" rel="noopener noreferrer">
