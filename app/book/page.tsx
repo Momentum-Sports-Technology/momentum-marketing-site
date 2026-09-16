@@ -37,11 +37,13 @@ export default async function BookPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {!fallback && (
-            <div className="max-w-6xl mx-auto mb-16">
-              <h2 className="font-heading text-3xl md:text-4xl mb-2">Book now</h2>
-              <p className="text-gray-600 mb-8">
-                Live from our booking system, so dates and places are always up to date.
-              </p>
+            <div className="max-w-6xl mx-auto mb-20">
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-3">Book now</h2>
+                <p className="text-lg text-gray-600">
+                  Live from our booking system, so dates and places are always up to date.
+                </p>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {bookable.map((programme) => (
                   <BookableCard key={programme.slug} programme={programme} />
@@ -53,12 +55,12 @@ export default async function BookPage() {
           {firstSection.length > 0 && (
             <div className="max-w-6xl mx-auto">
               {!fallback && (
-                <>
-                  <h2 className="font-heading text-3xl md:text-4xl mb-2">Other ways to play</h2>
-                  <p className="text-gray-600 mb-8">
+                <div className="text-center max-w-2xl mx-auto mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">Other ways to play</h2>
+                  <p className="text-lg text-gray-600">
                     Get in touch and we will find you a team, a session or a coach.
                   </p>
-                </>
+                </div>
               )}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {firstSection.map((programme) => (
@@ -68,8 +70,8 @@ export default async function BookPage() {
             </div>
           )}
 
-          <div className="max-w-3xl mx-auto mt-16 bg-white rounded-3xl p-8 border border-gray-200 text-center">
-            <h2 className="text-2xl font-bold mb-3">Already booked?</h2>
+          <div className="max-w-3xl mx-auto mt-20 bg-white rounded-3xl p-8 md:p-10 shadow-lg text-center">
+            <h2 className="text-3xl font-bold mb-3">Already booked?</h2>
             <p className="text-gray-600 mb-6">
               View your upcoming sessions, manage your bookings, and make sure you never miss out on
               the action.
