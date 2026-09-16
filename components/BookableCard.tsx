@@ -14,14 +14,28 @@ interface BookableCardProps {
  */
 export default function BookableCard({ programme }: BookableCardProps) {
   const soldOut = programme.placesLeft === 0;
+  const scheduled = programme.nextDate !== "";
+
+  const cta = !scheduled ? "View programme" : soldOut ? "See other dates" : "Book a session";
 
   return (
     <Link
       href={resolveCta(programme.href)}
-      className="group flex flex-col bg-white rounded-3xl p-8 border border-gray-200 hover:border-momentum-orange hover:shadow-lg transition-all"
+      className="group flex flex-col bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-momentum-orange transition-all"
     >
-      <div className="inline-flex items-center justify-center w-14 h-14 bg-momentum-orange rounded-2xl mb-5">
-        <span className="text-white font-bold text-2xl">{programme.name.charAt(0)}</span>
+      <div className="flex flex-wrap items-center gap-2 mb-5">
+        {scheduled ? (
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-50 px-3 py-1 text-sm font-semibold text-momentum-orange">
+            <CalendarDays size={14} />
+            Next: {programme.nextDate}
+          </span>
+        ) : (
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-600">
+            <CalendarDays size={14} />
+            No dates yet
+          </span>
+        )}
+        <PlacesPill placesLeft={programme.placesLeft} />
       </div>
 
       <h3 className="text-2xl font-bold mb-3 group-hover:text-momentum-orange transition-colors">
@@ -31,16 +45,6 @@ export default function BookableCard({ programme }: BookableCardProps) {
       {programme.description && <p className="text-gray-600 mb-5">{programme.description}</p>}
 
       <dl className="space-y-2 text-sm text-gray-700 mb-6">
-        {programme.nextDate && (
-          <div className="flex items-center gap-2">
-            <CalendarDays size={16} className="text-momentum-orange shrink-0" />
-            <dt className="sr-only">Next session</dt>
-            <dd>
-              Next: {programme.nextDate}
-              {placesLabel(programme.placesLeft)}
-            </dd>
-          </div>
-        )}
         {programme.location && (
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-momentum-orange shrink-0" />
@@ -58,16 +62,35 @@ export default function BookableCard({ programme }: BookableCardProps) {
       </dl>
 
       <span className="mt-auto inline-flex items-center text-momentum-orange font-semibold group-hover:translate-x-2 transition-transform">
-        {soldOut ? "See other dates" : "Book a session"}
+        {cta}
         <ArrowRight className="ml-2" size={18} />
       </span>
     </Link>
   );
 }
 
-/** " - 3 places left" / " - full", or nothing when the count is unknown. */
-function placesLabel(placesLeft: number | null): string {
-  if (placesLeft === null) return "";
-  if (placesLeft === 0) return " - full";
-  return ` - ${placesLeft} ${placesLeft === 1 ? "place" : "places"} left`;
+/** "14 places left", "Only 2 left" or "Full"; nothing when the count is unknown. */
+function PlacesPill({ placesLeft }: { placesLeft: number | null }) {
+  if (placesLeft === null) return null;
+
+  const tone =
+    placesLeft === 0
+      ? "bg-gray-100 text-gray-600"
+      : placesLeft <= 3
+        ? "bg-amber-50 text-amber-700"
+        : "bg-green-50 text-green-700";
+  const label =
+    placesLeft === 0
+      ? "Full"
+      : placesLeft <= 3
+        ? `Only ${placesLeft} left`
+        : `${placesLeft} places left`;
+
+  return (
+    <span
+      className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${tone}`}
+    >
+      {label}
+    </span>
+  );
 }
