@@ -8,19 +8,16 @@ export interface TieBreak {
   team: string;
 }
 
-function pick(
-  leaders: PlayerAward[],
-  tieBreak: TieBreak | undefined
-): { winners: PlayerAward[]; tiedCount: number } {
+function pick(leaders: PlayerAward[], tieBreak: TieBreak | undefined): PlayerAward[] {
   if (leaders.length > 1 && tieBreak) {
     const chosen = leaders.find(
       (p) =>
         p.name.toLowerCase() === tieBreak.name.trim().toLowerCase() &&
         p.team.toLowerCase() === tieBreak.team.trim().toLowerCase()
     );
-    if (chosen) return { winners: [chosen], tiedCount: leaders.length };
+    if (chosen) return [chosen];
   }
-  return { winners: leaders, tiedCount: leaders.length };
+  return leaders;
 }
 
 /** Division winners, runners-up and players of the season for completed MST leagues, newest first. */
@@ -50,7 +47,7 @@ export default function LeagueChampions({
               {league.divisions.map((division) => {
                 const [winner, runnerUp] = division.standings;
                 if (!winner) return null;
-                const { winners, tiedCount } = pick(
+                const winners = pick(
                   division.playersOfSeason,
                   tieBreaks.find((t) => t.mstLeagueId === league.id && t.division === division.name)
                 );
@@ -91,9 +88,6 @@ export default function LeagueChampions({
                             {winners.length > 1 ? "Joint winners, " : ""}
                             {winners[0].awards} player of the match{" "}
                             {winners[0].awards === 1 ? "award" : "awards"}
-                            {winners.length === 1 && tiedCount > 1
-                              ? `, chosen from a ${tiedCount}-way tie`
-                              : ""}
                           </p>
                         </div>
                       </div>
