@@ -69,28 +69,21 @@ export default function BookableCard({ programme }: BookableCardProps) {
   );
 }
 
-/** "14 places left", "Only 2 left" or "Full"; nothing when the count is unknown. */
+/**
+ * "Only 2 left" or "Full". Nothing while places are plentiful: a healthy
+ * count says nothing useful and a thin one puts people off.
+ */
 function PlacesPill({ placesLeft }: { placesLeft: number | null }) {
-  if (placesLeft === null) return null;
+  if (placesLeft === null || placesLeft > 3) return null;
 
-  const tone =
-    placesLeft === 0
-      ? "bg-gray-100 text-gray-600"
-      : placesLeft <= 3
-        ? "bg-amber-50 text-amber-700"
-        : "bg-green-50 text-green-700";
-  const label =
-    placesLeft === 0
-      ? "Full"
-      : placesLeft <= 3
-        ? `Only ${placesLeft} left`
-        : `${placesLeft} places left`;
-
+  const full = placesLeft === 0;
   return (
     <span
-      className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${tone}`}
+      className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${
+        full ? "bg-gray-100 text-gray-600" : "bg-amber-50 text-amber-700"
+      }`}
     >
-      {label}
+      {full ? "Full" : `Only ${placesLeft} left`}
     </span>
   );
 }
