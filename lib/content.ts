@@ -154,12 +154,30 @@ export const basingstokeSchema = z.object({
     .optional(),
 });
 
+export const linksSchema = z.object({
+  title: z.string(),
+  intro: z.string().optional(),
+  links: z
+    .array(
+      z.object({
+        label: z.string(),
+        description: z.string().optional(),
+        /** A site path, "/events/<slug>" or "/my-bookings" on the booking site, or an absolute URL */
+        href: z.string(),
+        /** One link gets the solid button. Use it for the thing most people came for. */
+        primary: z.boolean().optional(),
+      })
+    )
+    .min(1),
+});
+
 export type MixedLeagueContent = z.infer<typeof mixedLeagueSchema>;
 export type SiteContent = z.infer<typeof siteSchema>;
 export type Programme = z.infer<typeof programmeSchema>;
 export type PlayersOfTheSeasonContent = z.infer<typeof playersOfTheSeasonSchema>;
 export type CodeOfConductContent = z.infer<typeof codeOfConductSchema>;
 export type ShopContent = z.infer<typeof shopSchema>;
+export type LinksContent = z.infer<typeof linksSchema>;
 
 // Re-exported for existing component props.
 export type HeroContent = z.infer<typeof heroSchema>;
@@ -178,6 +196,7 @@ export const contentFiles = {
   "code-of-conduct": codeOfConductSchema,
   shop: shopSchema,
   basingstoke: basingstokeSchema,
+  links: linksSchema,
 } as const;
 
 export type ContentSlug = keyof typeof contentFiles;
@@ -197,6 +216,20 @@ export async function getContent<S extends ContentSlug>(
 ): Promise<z.infer<(typeof contentFiles)[S]>> {
   const raw = fs.readFileSync(filePathFor(slug), "utf8");
   return contentFiles[slug].parse(JSON.parse(raw)) as z.infer<(typeof contentFiles)[S]>;
+}
+
+/**
+ * Like `getContent`, but `null` rather than ENOENT when the file is absent.
+ * Production seeds the content volume from the image on first run only, so a
+ * newly added content file is genuinely missing there until someone puts it
+ * in. A page that can say "not found" should use this; one whose content has
+ * always existed should not hide a broken deployment behind it.
+ */
+export async function getContentIfExists<S extends ContentSlug>(
+  slug: S
+): Promise<z.infer<(typeof contentFiles)[S]> | null> {
+  if (!fs.existsSync(filePathFor(slug))) return null;
+  return getContent(slug);
 }
 
 /** Validates then writes. Throws a ZodError on invalid input. */

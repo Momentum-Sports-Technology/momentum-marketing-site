@@ -6,13 +6,15 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { BOOKING_URL } from "@/lib/urls";
 
+// Seven fits across a 1024px bar beside the logo and the Contact button.
+// Home is the logo; Code of Conduct lives in the footer's Club column.
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/book", label: "Book" },
   { href: `${BOOKING_URL}/my-bookings`, label: "My Bookings", external: true },
   { href: "/#fixtures", label: "Fixtures" },
+  { href: "/mixed", label: "Mixed League" },
+  { href: "/basingstoke", label: "Basingstoke" },
   { href: "/player-of-the-season", label: "Players of the Season" },
-  { href: "/code-of-conduct", label: "Code of Conduct" },
   { href: "/shop", label: "Shop" },
 ];
 

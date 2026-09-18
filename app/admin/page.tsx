@@ -22,12 +22,18 @@ const tabs: Array<{ slug: TabSlug; label: string; hint: string }> = [
   },
   { slug: "mixed-league", label: "Mixed League", hint: "The /mixed page" },
   {
+    slug: "basingstoke",
+    label: "Basingstoke",
+    hint: "The /basingstoke page: intro, booking details, interest form copy",
+  },
+  {
     slug: "players-of-the-season",
     label: "Players of the Season",
     hint: "Divisions, seasons, winners",
   },
   { slug: "code-of-conduct", label: "Code of Conduct", hint: "Sections and rules" },
   { slug: "shop", label: "Shop", hint: "Products and Stripe Payment Links" },
+  { slug: "links", label: "Links", hint: "The /links page used in the Instagram bio" },
   {
     slug: "submissions",
     label: "Submissions",

@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Chrome from "@/components/Chrome";
 import { getContent } from "@/lib/content";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -51,15 +52,19 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang="en" className={`${inter.variable} ${blackMango.variable}`}>
       <body className={inter.className}>
-        <Navigation />
+        <Chrome>
+          <Navigation />
+        </Chrome>
         <main>{children}</main>
-        <Footer
-          email={contact.email}
-          reviewUrl={contact.reviewUrl}
-          instagram={contact.instagram}
-          facebook={contact.facebook}
-          area={contact.area}
-        />
+        <Chrome>
+          <Footer
+            email={contact.email}
+            reviewUrl={contact.reviewUrl}
+            instagram={contact.instagram}
+            facebook={contact.facebook}
+            area={contact.area}
+          />
+        </Chrome>
       </body>
     </html>
   );
