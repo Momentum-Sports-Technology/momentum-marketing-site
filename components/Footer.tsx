@@ -23,7 +23,7 @@ export default function Footer({ email, reviewUrl, instagram, facebook, area }: 
         { href: "/#fixtures", label: "Fixtures & Results" },
         { href: "/#venues", label: "Venues" },
         { href: "/basingstoke", label: "Basingstoke" },
-        { href: "https://minimomentum.uk", label: "Mini Momentum (schools)" },
+        { href: "https://minimomentum.co.uk", label: "Mini Momentum (schools)" },
       ],
     },
     {
