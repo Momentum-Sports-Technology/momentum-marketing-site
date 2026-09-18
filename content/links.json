@@ -1,0 +1,47 @@
+{
+  "title": "Momentum Netball",
+  "intro": "Netball in Andover, Basingstoke and across Hampshire. Pick where you're heading.",
+  "links": [
+    {
+      "label": "Book a session",
+      "description": "Every session that is open right now",
+      "href": "/book",
+      "primary": true
+    },
+    {
+      "label": "Basingstoke, Tuesday nights",
+      "description": "6–8pm at The Costello School, £5 a session",
+      "href": "/basingstoke"
+    },
+    {
+      "label": "Mixed League",
+      "description": "Register a team or come as an individual",
+      "href": "/mixed"
+    },
+    {
+      "label": "Fixtures and results",
+      "description": "Tables, results and player of the match",
+      "href": "/#fixtures"
+    },
+    {
+      "label": "My bookings",
+      "description": "Change or cancel a session you have booked",
+      "href": "/my-bookings"
+    },
+    {
+      "label": "Mini Momentum",
+      "description": "Netball in schools, run by the same team",
+      "href": "https://minimomentum.uk"
+    },
+    {
+      "label": "Shop",
+      "description": "Kit and Momentum merch",
+      "href": "/shop"
+    },
+    {
+      "label": "Get in touch",
+      "description": "Questions, teams, anything else",
+      "href": "/#contact"
+    }
+  ]
+}

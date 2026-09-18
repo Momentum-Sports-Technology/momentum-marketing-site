@@ -25,7 +25,8 @@ create one.
 | `app/page.tsx`                                                                                        | Homepage, server component, reads `content/site.json`                                                                                                                                                                                                                                  |
 | `app/book`, `app/shop`, `app/player-of-the-season`, `app/code-of-conduct`, `app/terms`, `app/privacy` | Inner pages, one content file each (terms is static and links the PDF in `public/docs`)                                                                                                                                                                                                |
 | `app/mixed`                                                                                           | Mixed League page with its registration form                                                                                                                                                                                                                                           |
-| `app/admin`                                                                                           | Password-protected editor. Tabs map to content files. Mixed League has a form editor, the rest edit validated JSON                                                                                                                                                                     |
+| `app/links`                                                                                           | Link tree for the Instagram bio. Renders without the nav and footer — `components/Chrome.tsx` hides them on the routes listed there. 404s rather than 500s when `content/links.json` is missing, because on a running deployment it is                                                  |
+| `app/admin`                                                                                           | Password-protected editor. Tabs map to content files and must be added by hand — the registry in `lib/content.ts` does not drive them. Mixed League has a form editor, the rest edit validated JSON                                                                                     |
 | `app/api/content/[slug]`                                                                              | GET public, PUT requires `Authorization: Bearer <session>`                                                                                                                                                                                                                             |
 | `app/api/contact`, `app/api/newsletter`, `app/api/register`                                           | Form endpoints: zod-validated, honeypot field `website`, append to `data/*.jsonl`, email via SendGrid                                                                                                                                                                                  |
 | `lib/content.ts`                                                                                      | Zod schema per content file and the `getContent` / `updateContent` registry. Add a new file here first                                                                                                                                                                                 |
@@ -70,5 +71,12 @@ Docker on hetzner-ts, git-pull, `docker compose -f docker-compose.production.yml
 Container `momentum-marketing-prod` on 127.0.0.1:3120 behind nginx. Content and form data are
 on named volumes; the image seeds `/app/content` on first run only. Content changes committed to
 `content/*.json` therefore do not reach a running deployment: edit them in admin, or merge the
-file into the volume (`docker exec -i momentum-marketing-prod sh -c 'cat > /app/content/<file>.json'`). Env in `.env` on the server,
+file into the volume (`docker exec -i momentum-marketing-prod sh -c 'cat > /app/content/<file>.json'`).
+
+**A brand-new content file needs the same step**, or the page that reads it has nothing to read
+— seed it from the repo after the deploy:
+
+```bash
+ssh hetzner-ts "docker exec -i momentum-marketing-prod sh -c 'cat > /app/content/<file>.json'" < content/<file>.json
+``` Env in `.env` on the server,
 template in `.env.production.example`.
