@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
 import { checkSession, getSessionId, signOut } from "@/lib/adminAuth";
-import type { ContentSlug } from "@/lib/content";
-import MixedLeagueEditor from "@/components/admin/MixedLeagueEditor";
-import JsonEditor from "@/components/admin/JsonEditor";
+import { contentFiles, type ContentSlug } from "@/lib/schemas";
+import ContentEditor from "@/components/admin/ContentEditor";
+import { specs } from "@/components/admin/specs";
 import type { SaveState } from "@/components/admin/types";
 import SubmissionsPanel from "@/components/admin/SubmissionsPanel";
 import AlertBanner from "@/components/admin/AlertBanner";
@@ -50,6 +50,9 @@ export default function AdminPage() {
   const [loaded, setLoaded] = useState<{ slug: ContentSlug; data: unknown } | null>(null);
   const [loading, setLoading] = useState(true);
   const [saveState, setSaveState] = useState<SaveState>({ status: "idle" });
+  const [dirty, setDirty] = useState(false);
+  // A tab the editor is holding back until unsaved edits are dealt with.
+  const [pendingSlug, setPendingSlug] = useState<TabSlug | null>(null);
   const { alerts, handleDismiss: handleDismissAlerts } = useAlerts(authenticated);
 
   useEffect(() => {
@@ -83,6 +86,14 @@ export default function AdminPage() {
     };
   }, [authenticated, activeSlug]);
 
+  // Closing the tab with unsaved edits should cost a confirmation.
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (event: BeforeUnloadEvent) => event.preventDefault();
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [dirty]);
+
   const handleSave = async (next: unknown) => {
     setSaveState({ status: "saving" });
     try {
@@ -100,6 +111,7 @@ export default function AdminPage() {
         throw new Error(`${data.error || "Failed to save"}${issues}`);
       }
       setLoaded({ slug: activeSlug as ContentSlug, data: next });
+      setDirty(false);
       setSaveState({ status: "saved" });
     } catch (error) {
       setSaveState({
@@ -107,6 +119,22 @@ export default function AdminPage() {
         message: error instanceof Error ? error.message : "Failed to save",
       });
     }
+  };
+
+  const handleSelectTab = (slug: TabSlug) => {
+    if (slug === activeSlug) return;
+    if (dirty) {
+      setPendingSlug(slug);
+      return;
+    }
+    setActiveSlug(slug);
+  };
+
+  const handleDiscard = () => {
+    if (pendingSlug === null) return;
+    setDirty(false);
+    setActiveSlug(pendingSlug);
+    setPendingSlug(null);
   };
 
   const handleSignOut = async () => {
@@ -149,7 +177,7 @@ export default function AdminPage() {
             <button
               key={tab.slug}
               type="button"
-              onClick={() => setActiveSlug(tab.slug)}
+              onClick={() => handleSelectTab(tab.slug)}
               className={`px-4 py-2 rounded-full font-semibold transition-colors ${
                 tab.slug === activeSlug
                   ? "bg-momentum-orange text-white"
@@ -160,25 +188,46 @@ export default function AdminPage() {
             </button>
           ))}
         </div>
+
+        {pendingSlug !== null && (
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-amber-300 bg-amber-50 px-6 py-4">
+            <p className="font-semibold text-amber-900">
+              You have unsaved changes on {activeTab.label}.
+            </p>
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={() => setPendingSlug(null)}
+                className="rounded-lg bg-white px-5 py-2 font-semibold text-gray-700 border border-gray-300"
+              >
+                Stay here
+              </button>
+              <button
+                type="button"
+                onClick={handleDiscard}
+                className="rounded-lg bg-amber-600 px-5 py-2 font-semibold text-white hover:bg-amber-700"
+              >
+                Discard and switch
+              </button>
+            </div>
+          </div>
+        )}
+
         <p className="text-sm text-gray-500 mb-6">{activeTab.hint}</p>
 
         {activeSlug === "submissions" ? (
           <SubmissionsPanel />
         ) : loading || loaded === null || loaded.slug !== activeSlug ? (
           <p className="text-gray-500">Loading...</p>
-        ) : activeSlug === "mixed-league" ? (
-          <MixedLeagueEditor
-            key={activeSlug}
-            initial={loaded.data as Parameters<typeof MixedLeagueEditor>[0]["initial"]}
-            saveState={saveState}
-            onSave={handleSave}
-          />
         ) : (
-          <JsonEditor
+          <ContentEditor
             key={activeSlug}
             initial={loaded.data}
+            fields={specs[activeSlug as ContentSlug]}
+            schema={contentFiles[activeSlug as ContentSlug]}
             saveState={saveState}
             onSave={handleSave}
+            onDirtyChange={setDirty}
           />
         )}
       </div>

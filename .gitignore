@@ -41,3 +41,6 @@ next-env.d.ts
 .idea/
 
 .gitnexus
+
+# One-step content backups written by the admin on save
+content/*.prev.json
