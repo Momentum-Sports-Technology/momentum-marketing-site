@@ -70,6 +70,13 @@ register both, then add the tab in `app/admin/page.tsx`.
 - Redirects for old WordPress URLs live in `next.config.js`. Keep them when adding routes.
 - Design tokens are in `tailwind.config.ts` (`momentum-orange`, `momentum-dark`). Headings use
   the Black Mango local font via `globals.css`.
+- **Two oranges, and the choice is not cosmetic.** `momentum-orange` (`#ba521f`) is for
+  light surfaces: button fills with white text, and orange text on white or grey.
+  `momentum-orange-on-dark` (`#e58f65`) is for text and icons sitting on
+  `momentum-dark`. Swapping them fails WCAG AA, and no single colour of any hue can
+  do both jobs — clearing 4.5:1 on `#fff7ed` needs luminance at or below 0.1698,
+  clearing it on `#1A1A2E` needs 0.2270 or above. Do not reintroduce `#e58f65` as a
+  literal; the photo overlays in `Hero` and `PageHeader` use the token.
 
 ## The /book page
 
