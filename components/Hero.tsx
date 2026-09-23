@@ -24,7 +24,7 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
           className="w-full h-full object-cover"
         />
         {/* Orange hue overlay */}
-        <div className="absolute inset-0 bg-[#e58f65]/40" />
+        <div className="absolute inset-0 bg-momentum-orange/40" />
       </div>
 
       {/* Background logo offset */}

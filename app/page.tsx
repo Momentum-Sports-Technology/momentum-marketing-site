@@ -175,11 +175,12 @@ export default async function HomePage() {
                 className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20"
               >
                 <div
+                  role="img"
                   className="flex items-center mb-4"
                   aria-label={`${review.rating} out of 5 stars`}
                 >
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="text-momentum-orange fill-current" size={20} />
+                    <Star key={i} className="text-momentum-orange-on-dark fill-current" size={20} />
                   ))}
                 </div>
                 <p className="text-gray-200 mb-6 leading-relaxed">“{review.quote}”</p>
@@ -193,7 +194,7 @@ export default async function HomePage() {
                 href={site.contact.reviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-momentum-orange font-semibold hover:underline"
+                className="inline-flex items-center text-momentum-orange-on-dark font-semibold hover:underline"
               >
                 Played with us? Leave a Google review
                 <ArrowRight className="ml-2" size={18} />

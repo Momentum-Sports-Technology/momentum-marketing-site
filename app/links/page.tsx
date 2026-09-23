@@ -86,7 +86,7 @@ export default async function LinksPage() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-gray-400 hover:text-momentum-orange transition-colors"
+            className="text-gray-400 hover:text-momentum-orange-on-dark transition-colors"
           >
             <Instagram size={24} />
           </a>
@@ -95,14 +95,14 @@ export default async function LinksPage() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-gray-400 hover:text-momentum-orange transition-colors"
+            className="text-gray-400 hover:text-momentum-orange-on-dark transition-colors"
           >
             <Facebook size={24} />
           </a>
           <a
             href={`mailto:${contact.email}`}
             aria-label="Email"
-            className="text-gray-400 hover:text-momentum-orange transition-colors"
+            className="text-gray-400 hover:text-momentum-orange-on-dark transition-colors"
           >
             <Mail size={24} />
           </a>

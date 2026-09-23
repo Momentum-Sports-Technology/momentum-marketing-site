@@ -38,7 +38,7 @@ export default function NewsletterSignup() {
         <div className="max-w-3xl mx-auto text-center">
           <Mail className="mx-auto mb-4" size={36} />
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Stay in the loop</h2>
-          <p className="text-lg text-white/90 mb-8">
+          <p className="text-lg text-white mb-8">
             Enter your email to receive information about our latest news and events.
           </p>
           <form
