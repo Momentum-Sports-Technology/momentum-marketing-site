@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -45,9 +46,11 @@ export default function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-3">
-            <img
+            <Image
               src={isScrolled ? "/images/logo.png" : "/images/logo-white.png"}
               alt=""
+              width={44}
+              height={44}
               className="h-11 w-11"
             />
             <span

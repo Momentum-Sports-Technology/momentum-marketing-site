@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -13,26 +11,41 @@ interface HeroProps {
   image?: string;
 }
 
+/**
+ * Server component on purpose. This was a client component animating every
+ * block with framer-motion, which meant the markup arrived as `opacity: 0` and
+ * the hero — including the LCP image — stayed invisible until the whole page
+ * had hydrated. That was 7.6s of the 9.6s LCP on mobile.
+ *
+ * The entrance is the same fade/slide/scale with the same delays, expressed as
+ * CSS keyframes (see tailwind.config.ts) so it runs off the first paint and
+ * needs no JavaScript.
+ */
 export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-momentum-dark">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/images/momentum-hero-background.jpg"
           alt="Netball action background"
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
         />
         {/* Orange hue overlay */}
-        <div className="absolute inset-0 bg-[#e58f65]/40" />
+        <div className="absolute inset-0 bg-momentum-orange/40" />
       </div>
 
       {/* Background logo offset */}
       <div className="absolute -top-[100px] -left-[150px] w-[1000px] h-[1000px] opacity-30 z-10">
-        <img
+        <Image
           src="/images/momentum-logo-background-white.png"
-          alt="Momentum logo background"
-          className="w-full h-full object-contain"
+          alt=""
+          fill
+          sizes="1000px"
+          className="object-contain"
         />
       </div>
 
@@ -43,51 +56,26 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
+          <div className="animate-fade-up space-y-8">
             {badge && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-white/20"
-              >
+              <div className="animate-fade-scale [animation-duration:300ms] [animation-delay:200ms] inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-white/20">
                 <span className="text-sm font-semibold text-white">{badge}</span>
-              </motion.div>
+              </div>
             )}
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-5xl md:text-7xl font-bold leading-tight text-white"
-            >
+            <h1 className="animate-fade-up [animation-delay:300ms] text-5xl md:text-7xl font-bold leading-tight text-white">
               {title.split("\n").map((line, i) => (
                 <span key={i} className="block">
                   {line}
                 </span>
               ))}
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl text-white max-w-xl"
-            >
+            <p className="animate-fade-up [animation-delay:400ms] text-xl text-white max-w-xl">
               {subtitle}
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            <div className="animate-fade-up [animation-delay:500ms] flex flex-col sm:flex-row gap-4">
               <Link
                 href={ctaLink}
                 className="group inline-flex items-center justify-center bg-momentum-orange text-white px-8 py-4 rounded-lg hover:shadow-2xl hover:bg-momentum-orange/90 transition-all font-semibold text-lg"
@@ -95,19 +83,21 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
                 {ctaText}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="relative"
-          >
+          <div className="animate-fade-scale [animation-delay:600ms] relative">
             <div className="relative w-full h-72 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               {image ? (
-                <img src={image} alt={title} className="w-full h-full object-cover" />
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  priority
+                  className="object-cover"
+                />
               ) : (
                 <div className="w-full h-full bg-momentum-orange flex items-center justify-center">
                   <span className="text-white text-6xl font-bold opacity-20">M</span>
@@ -116,7 +106,7 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, badge, image }
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-momentum-purple/20 to-transparent" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

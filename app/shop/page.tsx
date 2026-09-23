@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { getContent } from "@/lib/content";
@@ -25,12 +26,14 @@ export default async function ShopPage() {
                 key={product.name}
                 className="bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden flex flex-col"
               >
-                <div className="aspect-square bg-gray-100">
+                <div className="relative aspect-square bg-gray-100">
                   {product.image ? (
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-gray-300">

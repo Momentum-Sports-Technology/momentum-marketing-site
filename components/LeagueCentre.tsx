@@ -117,9 +117,7 @@ export default function LeagueCentre({
                   }`}
                 >
                   {l.name}
-                  <span className="ml-2 text-xs font-normal opacity-75">
-                    {l.completed ? "Final" : "Live"}
-                  </span>
+                  <span className="ml-2 text-xs font-normal">{l.completed ? "Final" : "Live"}</span>
                 </button>
               ))}
             </div>

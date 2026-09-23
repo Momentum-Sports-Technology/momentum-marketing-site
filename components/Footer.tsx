@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook, Mail } from "lucide-react";
 import { BOOKING_URL } from "@/lib/urls";
 
@@ -44,7 +45,13 @@ export default function Footer({ email, reviewUrl, instagram, facebook, area }: 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img src="/images/logo-white.png" alt="" className="w-11 h-11" />
+              <Image
+                src="/images/logo-white.png"
+                alt=""
+                width={44}
+                height={44}
+                className="w-11 h-11"
+              />
               <span className="font-bold text-xl font-black-mango">Momentum Netball</span>
             </div>
             <p className="text-gray-400 text-sm">
@@ -56,7 +63,7 @@ export default function Footer({ email, reviewUrl, instagram, facebook, area }: 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-gray-400 hover:text-momentum-orange transition-colors"
+                className="text-gray-400 hover:text-momentum-orange-on-dark transition-colors"
               >
                 <Instagram size={24} />
               </a>
@@ -65,14 +72,14 @@ export default function Footer({ email, reviewUrl, instagram, facebook, area }: 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-gray-400 hover:text-momentum-orange transition-colors"
+                className="text-gray-400 hover:text-momentum-orange-on-dark transition-colors"
               >
                 <Facebook size={24} />
               </a>
               <a
                 href={`mailto:${email}`}
                 aria-label="Email"
-                className="text-gray-400 hover:text-momentum-orange transition-colors"
+                className="text-gray-400 hover:text-momentum-orange-on-dark transition-colors"
               >
                 <Mail size={24} />
               </a>
