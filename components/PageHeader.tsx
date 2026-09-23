@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
@@ -9,10 +11,13 @@ export default function PageHeader({ title, subtitle, eyebrow }: PageHeaderProps
   return (
     <section className="relative bg-momentum-dark text-white pt-36 pb-20 overflow-hidden">
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/images/momentum-hero-background.jpg"
           alt=""
-          className="w-full h-full object-cover opacity-30"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-momentum-orange/30" />
       </div>

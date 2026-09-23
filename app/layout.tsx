@@ -10,7 +10,7 @@ import { getContent } from "@/lib/content";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const blackMango = localFont({
-  src: "../public/fonts/BlackMango-Regular.ttf",
+  src: "../public/fonts/BlackMango-Regular.woff2",
   variable: "--font-black-mango",
   display: "swap",
 });

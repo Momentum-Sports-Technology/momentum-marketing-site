@@ -60,3 +60,15 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   @apply opacity-80;
 }
+
+/* The hero entrance is CSS now, so it has to honour the OS setting itself —
+   framer-motion is no longer there to be asked. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-scale {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

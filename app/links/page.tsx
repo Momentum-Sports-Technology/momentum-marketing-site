@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Facebook, Instagram, Mail } from "lucide-react";
 import { getContent, getContentIfExists } from "@/lib/content";
@@ -34,7 +35,13 @@ export default async function LinksPage() {
     <div className="min-h-screen bg-momentum-dark text-white">
       <div className="mx-auto max-w-md px-5 py-12">
         <div className="text-center mb-10">
-          <img src="/images/logo-white.png" alt="" className="mx-auto h-16 w-16 mb-5" />
+          <Image
+            src="/images/logo-white.png"
+            alt=""
+            width={64}
+            height={64}
+            className="mx-auto h-16 w-16 mb-5"
+          />
           <h1 className="font-black-mango text-3xl mb-3">{content.title}</h1>
           {content.intro && (
             <p className="text-gray-400 leading-relaxed text-sm">{content.intro}</p>

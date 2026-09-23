@@ -2,73 +2,58 @@
 
 ## About
 
-Black Mango is the font used by Momentum Netball ([momentumnetball.co.uk](https://momentumnetball.co.uk/)).
+Black Mango is the heading font used by Momentum Netball
+([momentumnetball.co.uk](https://momentumnetball.co.uk/)).
 
-## Required Font Files
+## What is here
 
-Place the following font files in this directory:
+Only `BlackMango-Regular.woff2`. The `.ttf`, `.woff` and `.eot` copies were
+removed: `next/font/local` serves whichever single file it is given, and it was
+being pointed at the 90KB `.ttf` while the 24KB `.woff2` sat unused next to it.
+WOFF2 is supported by every browser this site targets, so the fallbacks were
+66KB of render-blocking download for nothing.
 
-- `BlackMango-Regular.woff2`
-- `BlackMango-Regular.woff`
-- `BlackMango-Bold.woff2`
-- `BlackMango-Bold.woff`
+There is no Bold. Headings use the regular weight with a CSS `font-weight`, so
+do not add a Bold file expecting it to be picked up — it would need its own
+`localFont` entry.
 
-## Where to Get the Font
+## Where to get the font
 
-### Option 1: Purchase from Creative Media Lab
+Purchase from
+**[Creative Media Lab](https://creativemedialab.net/typeface/black-mango-branding-font/)**.
+Free for personal use; commercial use needs a licence.
 
-The Black Mango font can be purchased from:
-**[Creative Media Lab - Black Mango Font](https://creativemedialab.net/typeface/black-mango-branding-font/)**
+If you only have `.ttf` or `.otf`, convert with
+[Transfonter](https://transfonter.org/) or the `woff2` CLI, and commit the
+`.woff2` only.
 
-- **Personal Use**: Free
-- **Commercial Use**: Requires license purchase
+## How it is wired up
 
-### Option 2: Extract from Momentum Netball Website
+`app/layout.tsx` loads it through `next/font/local`, which hashes the file into
+`_next/static/media`, emits the preload link and sets `font-display: swap`:
 
-If you already work with Momentum Netball or have permission, you can:
-
-1. Visit [momentumnetball.co.uk](https://momentumnetball.co.uk/)
-2. Open browser DevTools (F12)
-3. Go to Network tab
-4. Filter by "Font" or "woff"
-5. Download the font files
-6. Convert to `.woff2` and `.woff` formats if needed
-
-## Font Conversion
-
-If you only have `.ttf` or `.otf` files, convert them using:
-
-- **Online**: [Transfonter](https://transfonter.org/) (recommended)
-- **Command Line**: Use `fonttools` or `woff2` npm packages
-
-## Usage in Project
-
-The font is already configured in `/frontend/src/index.css` and applied to all `h1` and `h2` elements:
-
-```css
-h1,
-h2 {
-  font-family: "Black Mango", sans-serif;
-}
+```ts
+const blackMango = localFont({
+  src: "../public/fonts/BlackMango-Regular.woff2",
+  variable: "--font-black-mango",
+  display: "swap",
+});
 ```
 
-To use it elsewhere:
+`--font-black-mango` is wired to the `font-black-mango` Tailwind utility in
+`tailwind.config.ts`, and `app/globals.css` applies it to headings. Use
+`className="font-black-mango"` to apply it anywhere else.
 
-```css
-.my-class {
-  font-family: "Black Mango", sans-serif;
-}
-```
+Replacing the file means changing the `src` path above — nothing reads this
+directory directly.
 
 ## Verification
 
-After adding the font files:
+1. `yarn dev`
+2. Open http://127.0.0.1:3110
+3. Confirm headings render in Black Mango, and that the Network tab shows one
+   `.woff2` under `_next/static/media` and no `.ttf`.
 
-1. Start the dev server: `yarn dev`
-2. Open http://localhost:3000
-3. Check h1/h2 headings use the Black Mango font
-4. Inspect element in DevTools to confirm font loading
+## Licence
 
-## License Note
-
-⚠️ **Important**: Ensure you have the proper license for your use case (personal vs commercial).
+⚠️ Make sure the licence covers commercial use before this ships anywhere.
