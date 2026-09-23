@@ -25,16 +25,40 @@ create one.
 | `app/page.tsx`                                                                                        | Homepage, server component, reads `content/site.json`                                                                                                                                                                                                                                  |
 | `app/book`, `app/shop`, `app/player-of-the-season`, `app/code-of-conduct`, `app/terms`, `app/privacy` | Inner pages, one content file each (terms is static and links the PDF in `public/docs`)                                                                                                                                                                                                |
 | `app/mixed`                                                                                           | Mixed League page with its registration form                                                                                                                                                                                                                                           |
-| `app/links`                                                                                           | Link tree for the Instagram bio. Renders without the nav and footer — `components/Chrome.tsx` hides them on the routes listed there. 404s rather than 500s when `content/links.json` is missing, because on a running deployment it is                                                  |
-| `app/admin`                                                                                           | Password-protected editor. Tabs map to content files and must be added by hand — the registry in `lib/content.ts` does not drive them. Mixed League has a form editor, the rest edit validated JSON                                                                                     |
+| `app/links`                                                                                           | Link tree for the Instagram bio. Renders without the nav and footer — `components/Chrome.tsx` hides them on the routes listed there. 404s rather than 500s when `content/links.json` is missing, because on a running deployment it is                                                 |
+| `app/admin`                                                                                           | Password-protected editor. Tabs map to content files and must be added by hand — the registry in `lib/schemas.ts` does not drive them. Every tab is a labelled form generated from a field spec                                                                                        |
 | `app/api/content/[slug]`                                                                              | GET public, PUT requires `Authorization: Bearer <session>`                                                                                                                                                                                                                             |
 | `app/api/contact`, `app/api/newsletter`, `app/api/register`                                           | Form endpoints: zod-validated, honeypot field `website`, append to `data/*.jsonl`, email via SendGrid                                                                                                                                                                                  |
-| `lib/content.ts`                                                                                      | Zod schema per content file and the `getContent` / `updateContent` registry. Add a new file here first                                                                                                                                                                                 |
+| `lib/schemas.ts`, `lib/content.ts`                                                                    | `lib/schemas.ts` has the zod schema per content file and the `contentFiles` registry, and no `fs` import so the admin can use it. `lib/content.ts` re-exports it and adds `getContent` / `updateContent`. Add a new file to the registry first                                         |
 | `lib/sessions.ts`                                                                                     | Stateless HMAC session tokens signed with `SESSION_SECRET` or `ADMIN_PASSWORD`                                                                                                                                                                                                         |
 | `lib/urls.ts`                                                                                         | `BOOKING_URL` and `resolveCta`; client-safe, no Node imports                                                                                                                                                                                                                           |
 | `lib/booking.ts`, `components/BookableCard.tsx`                                                       | Booking site's public API (`/api/event-categories`, `/api/event-availability`), cached 5 min. `/book` renders what is actually bookable — name, venue, price, next date, places left — instead of a hand-kept copy. Falls back to `site.programmes` if the booking site is unreachable |
 | `lib/mst.ts`, `components/LeagueCentre.tsx`, `components/LeagueChampions.tsx`                         | MST public league API (`/api/public/leagues/<id>`), cached 5 min; homepage tables/results/fixtures and the champions on Players of the Season. MST share pages cannot be iframed (X-Frame-Options SAMEORIGIN)                                                                          |
 | `content/*.json`                                                                                      | The CMS. Edited through admin in production (Docker volume), committed here for dev                                                                                                                                                                                                    |
+
+## The admin forms
+
+Every content file is edited through a generated form, not raw JSON. Three pieces:
+
+- `lib/schemas.ts` holds the zod schemas and the `contentFiles` registry. It has no
+  `fs` import, so the admin can validate in the browser before saving.
+  `lib/content.ts` re-exports it and adds the file reading and writing.
+- `components/admin/specs/<file>.ts` says how one content file is presented: label,
+  help text and control for every field. `SpecFor<T>` requires one entry per key,
+  so adding a field to a schema without labelling it fails `yarn build` rather than
+  silently disappearing from the admin.
+- `components/admin/form/` renders any spec. Arrays get add, remove and move
+  up/down. Every array item carries a `_key` while editing so React keys survive a
+  reorder; `stripForSave` removes it, and drops optional fields left empty so a
+  no-op save produces no diff. Required empty strings stay, because shop's
+  `paymentLinkUrl` uses `""` to mean "coming soon".
+
+Each tab also has an "Advanced: edit as JSON" toggle for anything the form does not
+cover. Saving writes `content/<slug>.prev.json` first, so the previous version of a
+file survives one bad edit. Those backups are gitignored.
+
+To add a content file: schema in `lib/schemas.ts`, spec in `components/admin/specs/`,
+register both, then add the tab in `app/admin/page.tsx`.
 
 ## Conventions
 
@@ -76,7 +100,8 @@ file into the volume (`docker exec -i momentum-marketing-prod sh -c 'cat > /app/
 **A brand-new content file needs the same step**, or the page that reads it has nothing to read
 — seed it from the repo after the deploy:
 
-```bash
+````bash
 ssh hetzner-ts "docker exec -i momentum-marketing-prod sh -c 'cat > /app/content/<file>.json'" < content/<file>.json
 ``` Env in `.env` on the server,
 template in `.env.production.example`.
+````
