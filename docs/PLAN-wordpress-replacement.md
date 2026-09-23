@@ -22,7 +22,17 @@ Still open:
   exist. Needs the Momentum Netball Stripe account (decision 3 below).
 - **Newsletter goes to email and `data/newsletter.jsonl`, not Astonish.**
   Decision 4 was never taken; email is the fallback the plan allowed.
-- **Lighthouse has not been run** against the live site.
+- **Lighthouse**: run 2026-09-23. The live site scored **44** on mobile
+  performance: LCP 9.6s, of which 7.6s was the hero sitting at `opacity: 0`
+  waiting for framer-motion to hydrate, and 1.27MB of unoptimized images. Both
+  are fixed. On a local production build, medians of five runs, performance goes
+  **75 to 94** and page weight 1,582KB to 617KB. Accessibility went 93 to 100
+  once the brand orange was darkened for contrast. **The live figure still needs
+  measuring after this deploy** — the local harness has no TTFB and scores the
+  old code 75 where the live site scored 44.
+- **Still not static-first**: `Stats` and `FAQ` are framer-motion client
+  components whose content server-renders at `opacity: 0`, so those sections
+  need JavaScript to become visible. The hero no longer does.
 - **Search Console**: the sitemap exists at `/sitemap.xml` but has not been
   submitted.
 - **WordPress fallback**: the plan allowed leaving the old host up for 30 days.
