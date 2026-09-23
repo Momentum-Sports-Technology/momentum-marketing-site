@@ -68,6 +68,8 @@ register both, then add the tab in `app/admin/page.tsx`.
 - Programme `ctaHref` values starting with `/events/` or `/my-bookings` are paths on the booking site, resolved by
   `resolveCta`. Anything else is used as-is.
 - Redirects for old WordPress URLs live in `next.config.js`. Keep them when adding routes.
+- A new public page needs a line in `app/sitemap.ts`, which serves the `/sitemap.xml`
+  that `public/robots.txt` advertises. Leave out anything private or noindex.
 - Design tokens are in `tailwind.config.ts` (`momentum-orange`, `momentum-dark`). Headings use
   the Black Mango local font via `globals.css`.
 

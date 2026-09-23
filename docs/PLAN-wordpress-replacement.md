@@ -1,6 +1,32 @@
 # Plan: replace momentumnetball.co.uk (WordPress) with this site
 
-Status: proposed 2026-09-07, awaiting approval.
+Status: done and live. Proposed 2026-09-07, cut over to the Next.js site during
+September 2026. Kept as the record of what the replacement covered — see
+"Where it stands" below for what is still open.
+
+## Where it stands (2026-09-23)
+
+Live on the apex. DNS is Cloudflare, proxied to 138.199.209.100. The site runs
+as `momentum-marketing-prod` on 127.0.0.1:3120 behind nginx.
+
+Done: every URL in the parity table resolves or 301s; the homepage league
+tables, results and fixtures come from MST and update without a deploy; contact,
+registration and newsletter forms deliver email through SendGrid; admin edits
+content without a rebuild; `/links` link tree for the Instagram bio; the repo is
+in the portmap with its prod block.
+
+Still open:
+
+- **Shop has no Stripe Payment Links.** Both products show "coming soon"
+  because `paymentLinkUrl` is empty. Nothing can be bought until those links
+  exist. Needs the Momentum Netball Stripe account (decision 3 below).
+- **Newsletter goes to email and `data/newsletter.jsonl`, not Astonish.**
+  Decision 4 was never taken; email is the fallback the plan allowed.
+- **Lighthouse has not been run** against the live site.
+- **Search Console**: the sitemap exists at `/sitemap.xml` but has not been
+  submitted.
+- **WordPress fallback**: the plan allowed leaving the old host up for 30 days.
+  Whether it is still running, and when it gets switched off, is Adam's call.
 
 ## Goal
 
@@ -106,11 +132,11 @@ Fallback if Adam wants a cart: Mini Momentum already has `addon_products` and St
 
 ## Decisions needed from Adam
 
-1. MST league ids to embed, and whether one league or several on the homepage.
-2. Shop: Stripe Payment Links (recommended) or drop the shop.
+1. ~~MST league ids to embed~~ — settled. They live in `content/site.json` under `fixtures.leagues` and are edited in admin.
+2. ~~Shop: Stripe Payment Links or drop the shop~~ — Payment Links chosen. The page is built; the links themselves are not created yet.
 3. Stripe account for Momentum Netball bookings: shared with Mini Momentum or separate.
-4. Newsletter target: Astonish, or something else.
-5. Where DNS for momentumnetball.co.uk is managed.
+4. Newsletter target: Astonish, or something else. **Still open** — sign-ups currently email the admin and append to `data/newsletter.jsonl`.
+5. ~~Where DNS for momentumnetball.co.uk is managed~~ — Cloudflare.
 6. OK to trash the stale `momentum-booking` folder on Hetzner.
 
 ## Order of work
