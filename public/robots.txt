@@ -1,6 +1,7 @@
 # Allow all search engines
 User-agent: *
 Allow: /
+Disallow: /admin
 
 # Sitemap
 Sitemap: https://momentumnetball.co.uk/sitemap.xml
