@@ -33,10 +33,24 @@ Still open:
 - **Still not static-first**: `Stats` and `FAQ` are framer-motion client
   components whose content server-renders at `opacity: 0`, so those sections
   need JavaScript to become visible. The hero no longer does.
-- **Search Console**: the sitemap exists at `/sitemap.xml` but has not been
+- **Search Console**: the sitemap is live at `/sitemap.xml` but has not been
   submitted.
-- **WordPress fallback**: the plan allowed leaving the old host up for 30 days.
-  Whether it is still running, and when it gets switched off, is Adam's call.
+- **WordPress fallback**: the old host at 185.151.30.223 is still running. The
+  apex deliberately proxies `/wp-admin`, `/wp-login.php`, `/wp-json`,
+  `/wp-content` and `/wp-includes` to it so Max keeps Amelia and WooCommerce
+  access; public pages come from this site. When it gets switched off is Adam's
+  call, but see the wildcard below first.
+- **`*.momentumnetball.co.uk` is a proxied wildcard pointing at the old
+  WordPress host.** Found 2026-09-23 while retiring the staging domain. Any
+  subdomain with no record of its own — `new.`, or anything invented — resolves
+  and serves old WordPress: `/` 301s to the apex, but `/shop/` returns 200 with
+  the old WooCommerce shop, `/sitemap.xml` returns the WordPress sitemap index
+  advertising `wp-sitemap-*.xml` URLs that 404 on the apex, and `/robots.txt`
+  invites crawlers in. The apex itself is clean — `wp-sitemap*.xml` 404s there.
+  This is pre-existing, not caused by the cutover, and it has to be resolved
+  before or with the WordPress shutdown. Options: point the wildcard at
+  138.199.209.100 and add a catch-all vhost that 301s to the apex, or delete the
+  wildcard so undefined subdomains stop resolving.
 
 ## Goal
 
@@ -118,7 +132,7 @@ Fallback if Adam wants a cart: Mini Momentum already has `addon_products` and St
 
 - `Dockerfile` (multi-stage, `output: 'standalone'`), `docker-compose.production.yml`, `.env.production.example` (`ADMIN_PASSWORD`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL`, `RESEND_API_KEY`, `ASTONISH_*`). Content JSON and uploaded images live on a volume mount (small, single server, rebuild-safe, so a mount is fine per the storage rule).
 - Server: hetzner-ts, `/var/www/apps/deployments/production/momentum-marketing-site`, git-pull deploy, nginx site for `momentumnetball.co.uk` and `www`. Add to portmap.
-- Staging first at `new.momentumnetball.co.uk`. Adam reviews every page against WordPress side by side.
+- Staging first at `new.momentumnetball.co.uk`. Adam reviews every page against WordPress side by side. (Retired 2026-09-23: DNS record and nginx vhost removed, certificate deleted.)
 - Cutover: repoint the apex and `www` A records at 138.199.209.100, issue the certificate, leave WordPress running on its old host for 30 days as a fallback. Need to know where DNS lives (Cloudflare or the WP host) before this step.
 - Post-cutover: Lighthouse on `/`, `/book`, `/shop`; check all redirects; submit the new sitemap in Search Console.
 
