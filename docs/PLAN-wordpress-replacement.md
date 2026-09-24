@@ -40,17 +40,32 @@ Still open:
   `/wp-content` and `/wp-includes` to it so Max keeps Amelia and WooCommerce
   access; public pages come from this site. When it gets switched off is Adam's
   call, but see the wildcard below first.
-- **`*.momentumnetball.co.uk` is a proxied wildcard pointing at the old
-  WordPress host.** Found 2026-09-23 while retiring the staging domain. Any
-  subdomain with no record of its own — `new.`, or anything invented — resolves
-  and serves old WordPress: `/` 301s to the apex, but `/shop/` returns 200 with
-  the old WooCommerce shop, `/sitemap.xml` returns the WordPress sitemap index
-  advertising `wp-sitemap-*.xml` URLs that 404 on the apex, and `/robots.txt`
-  invites crawlers in. The apex itself is clean — `wp-sitemap*.xml` 404s there.
-  This is pre-existing, not caused by the cutover, and it has to be resolved
-  before or with the WordPress shutdown. Options: point the wildcard at
-  138.199.209.100 and add a catch-all vhost that 301s to the apex, or delete the
-  wildcard so undefined subdomains stop resolving.
+- **`*.momentumnetball.co.uk` wildcard — fixed 2026-09-24.** It was a proxied
+  wildcard pointing at the old WordPress host, so any subdomain without its own
+  record served old WordPress: `/shop/` returned the old WooCommerce shop,
+  `/sitemap.xml` a WordPress sitemap index advertising `wp-sitemap-*.xml` URLs
+  that 404 on the apex, and `/robots.txt` invited crawlers in. The A record now
+  points at 138.199.209.100 and
+  `/etc/nginx/sites-available/catchall.momentumnetball.co.uk` 301s every
+  undefined subdomain to the apex, preserving path and query string. The AAAA
+  wildcard was deleted rather than repointed: every other origin record in this
+  zone is A-only, and Cloudflare serves IPv6 clients regardless of which family
+  the origin record uses. Three things worth knowing about that vhost:
+  - It uses `server_name *.momentumnetball.co.uk`, **not** `default_server`.
+    This box serves other domains and their unmatched hostnames are not ours to
+    redirect — before this, an unmatched HTTPS request to the origin was
+    answered by `adam.brainsteam.cloud` with a 200. nginx matches an exact
+    `server_name` before a wildcard, so `www`, `booking`, `crm`, `scorer`,
+    `scorer-dev`, `mixed-league` and `basingstoke` are untouched, and the mail,
+    ftp, autodiscover, media and sendgrid names resolve to other hosts entirely.
+  - It presents the apex certificate, which does not match the subdomain being
+    requested. That is fine while Cloudflare proxies these names and is not in
+    Full (strict) mode — verified, undefined subdomains return 301 and not 526.
+    Switching the zone to Full (strict) would need a `*.momentumnetball.co.uk`
+    certificate issued over DNS-01.
+  - Cloudflare had cached the old WordPress `/robots.txt` with a 60-hour edge
+    TTL, so the zone cache was purged afterwards. Check `cf-cache-status` before
+    concluding a stale response is an origin problem.
 
 ## Goal
 
